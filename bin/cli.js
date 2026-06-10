@@ -7,9 +7,11 @@ import { TOOLS, PROFILES } from '../lib/tools.js';
 import { hasCommand, run, log, c } from '../lib/runner.js';
 
 // ── Prompts ──────────────────────────────────────────────────────────────────
+const isInteractive = Boolean(process.stdin.isTTY);
 const rl = createInterface({ input: process.stdin, output: process.stdout });
 
 async function confirm(message, defaultYes = true) {
+  if (!isInteractive) return defaultYes;
   const hint = defaultYes ? 'Y/n' : 'y/N';
   const answer = await rl.question(`  ${message} [${hint}] `);
   if (answer.trim() === '') return defaultYes;
@@ -17,6 +19,7 @@ async function confirm(message, defaultYes = true) {
 }
 
 async function selectChoice(message, choices) {
+  if (!isInteractive) return choices[0].value;
   console.log(`\n  ${c.bold(message)}`);
   choices.forEach(({ name, description }, i) => {
     console.log(`    ${c.cyan(String(i + 1))}. ${c.bold(name)}  ${c.dim(description)}`);
@@ -113,7 +116,7 @@ for (const tool of tools) {
   }
 
   if (tool.optional) {
-    const yes = await confirm(`Install ${c.bold(tool.name)}? ${c.dim(tool.description)}`);
+    const yes = await confirm(`Install ${c.bold(tool.name)}? ${c.dim(tool.description)}`, false);
     if (!yes) {
       skipped.push(tool.name);
       continue;
@@ -144,10 +147,7 @@ const fnmJustInstalled = installed.includes('fnm');
 const nodeAvailable = hasCommand('node');
 
 if (fnmJustInstalled || !nodeAvailable) {
-  const nodeCmd =
-    platform === 'windows'
-      ? 'fnm install lts-latest && fnm default lts-latest'
-      : 'fnm install lts-latest && fnm default lts-latest';
+  const nodeCmd = 'fnm install lts-latest && fnm default lts-latest';
   log.info('Installing Node.js LTS via fnm...');
   try {
     run(nodeCmd, { dryRun });
