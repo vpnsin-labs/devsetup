@@ -1,0 +1,13 @@
+{
+  // Tuned to coexist with Prettier (which owns whitespace/wrapping).
+  "config": {
+    "default": true,
+    "MD013": false, // line length — Prettier/readability decides wrapping
+    "MD033": false, // allow inline HTML
+    "MD036": false, // intentional bold (taglines, "Last updated:") is not a heading
+    "MD041": false, // first line need not be a top-level heading
+    "MD024": { "siblings_only": true }, // duplicate headings ok across sections
+  },
+  "globs": ["**/*.md"],
+  "ignores": ["node_modules", ".next", "dist", "build", "CHANGELOG.md", ".github/**/*.md"],
+}

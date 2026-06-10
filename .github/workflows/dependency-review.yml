@@ -1,0 +1,23 @@
+name: Dependency Review
+
+# Flags vulnerable or disallowed dependencies introduced in a pull request.
+# (GitHub Advanced Security — free on public repos.)
+on:
+  pull_request:
+    branches: [main, dev]
+
+permissions:
+  contents: read
+
+jobs:
+  dependency-review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Dependency Review
+        uses: actions/dependency-review-action@v5
+        with:
+          fail-on-severity: high
+          comment-summary-in-pr: on-failure

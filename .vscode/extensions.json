@@ -1,0 +1,53 @@
+{
+  "recommendations": [
+    // ── Formatting, linting & spell-check (the toolchain devkit wires up) ──
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "DavidAnson.vscode-markdownlint",
+    "streetsidesoftware.code-spell-checker",
+    "EditorConfig.EditorConfig",
+
+    // ── Diagnostics & DX ──
+    "usernamehw.errorlens",
+    "yoavbls.pretty-ts-errors",
+    "wix.vscode-import-cost",
+
+    // ── JavaScript / TypeScript / React authoring ──
+    "dsznajder.es7-react-js-snippets",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.npm-intellisense",
+    "christian-kohler.path-intellisense",
+    "wmaurer.change-case",
+
+    // ── Testing (Jest; pairs with `devkit init --jest`) ──
+    "orta.vscode-jest",
+    "firsttris.vscode-jest-runner",
+    "andys8.jest-snippets",
+
+    // ── Git & GitHub (devkit ships PR templates, governance & GH workflows) ──
+    "eamodio.gitlens",
+    "donjayamanne.githistory",
+    "ziyasal.vscode-open-in-github",
+    "github.vscode-pull-request-github",
+
+    // ── Code quality (pairs with `devkit init --sonar`) ──
+    "sonarsource.sonarlint-vscode",
+
+    // ── File-type support shipped by this scaffold ──
+    "mikestead.dotenv",
+    "redhat.vscode-yaml",
+    "github.vscode-github-actions",
+
+    // ── Markdown & docs ──
+    "yzhang.markdown-all-in-one",
+    "bierner.markdown-mermaid",
+    "tom-latham.markdown-pdf-plus",
+
+    // ── Productivity & navigation ──
+    "gruntfuggly.todo-tree",
+    "hediet.vscode-drawio",
+    "l13rary.l13-diff",
+    "bokuweb.vscode-ripgrep",
+    "ritwickdey.liveserver"
+  ]
+}
