@@ -17,11 +17,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vpnsin/ladevsetup.git"
+    "url": "git+https://github.com/vpnsin-labs/devsetup.git"
   },
-  "homepage": "https://github.com/vpnsin/ladevsetup#readme",
+  "homepage": "https://github.com/vpnsin-labs/devsetup#readme",
   "bugs": {
-    "url": "https://github.com/vpnsin/ladevsetup/issues"
+    "url": "https://github.com/vpnsin-labs/devsetup/issues"
   },
   "keywords": [
     "devtools",
