@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.3](https://github.com/vpnsin-labs/devsetup/compare/v0.1.2...v0.1.3) (2026-06-14)
+
+
+### Bug Fixes
+
+* correct npm scope from [@vpnsin-labs](https://github.com/vpnsin-labs) to [@vpnsin](https://github.com/vpnsin) ([6bde645](https://github.com/vpnsin-labs/devsetup/commit/6bde6454883d4492450512fbb485c47e528bbbe3))
+* lab update for org changes ([bf38c71](https://github.com/vpnsin-labs/devsetup/commit/bf38c711929bf757d2aa98dfef9b9c3267f301a1))
+* migrate npm scope to [@vpnsin-lab](https://github.com/vpnsin-lab) and pin CI registry scope ([d547f3d](https://github.com/vpnsin-labs/devsetup/commit/d547f3d20fa54376800431f745d476ef304ce7ba))
+
 ## [0.1.2](https://github.com/vpnsin-labs/devsetup/compare/v0.1.1...v0.1.2) (2026-06-12)
 
 ### Bug Fixes
