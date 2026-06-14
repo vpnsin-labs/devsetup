@@ -36,6 +36,7 @@ jobs:
         with:
           node-version-file: .nvmrc
           registry-url: 'https://registry.npmjs.org'
+          scope: '@vpnsin-lab'
           cache: npm
 
       - name: Install dependencies

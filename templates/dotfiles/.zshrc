@@ -1,5 +1,5 @@
 # ~/.zshrc — interactive shell (runs for every new terminal tab)
-# Managed by devsetup. Safe to customise; re-run `npx @vpnsin/devsetup --dotfiles` to reset.
+# Managed by devsetup. Safe to customise; re-run `npx @vpnsin-lab/devsetup --dotfiles` to reset.
 
 # ── fnm hook (interactive shell) ──────────────────────────────────────────────
 if command -v fnm &>/dev/null; then

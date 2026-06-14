@@ -1,5 +1,5 @@
 # ~/.zprofile — login shell (runs once on login, before .zshrc)
-# Managed by devsetup. Safe to customise; re-run `npx @vpnsin/devsetup --dotfiles` to reset.
+# Managed by devsetup. Safe to customise; re-run `npx @vpnsin-lab/devsetup --dotfiles` to reset.
 
 # ── Homebrew (Apple Silicon path; Intel Macs use /usr/local) ──────────────────
 if [[ -f /opt/homebrew/bin/brew ]]; then

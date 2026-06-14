@@ -1,5 +1,5 @@
 // ~/.gradle/init.gradle — runs before every Gradle build on this machine.
-// Managed by devsetup. Re-run `npx @vpnsin/devsetup --dotfiles` to reset.
+// Managed by devsetup. Re-run `npx @vpnsin-lab/devsetup --dotfiles` to reset.
 
 allprojects {
     // ── Enterprise repository mirror ─────────────────────────────────────────

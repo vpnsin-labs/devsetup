@@ -1,5 +1,5 @@
 // VS Code keybindings — managed by devsetup.
-// Re-run `npx @vpnsin/devsetup --dotfiles` to reset.
+// Re-run `npx @vpnsin-lab/devsetup --dotfiles` to reset.
 [
   // ── Terminal ──────────────────────────────────────────────────────────────
   {

@@ -52,7 +52,7 @@ if (has('--help') || has('-h')) {
   console.log(`
 ${c.bold('devsetup')} — developer machine bootstrap
 
-${c.bold('Usage:')}  npx @vpnsin/devsetup [command|profile] [options]
+${c.bold('Usage:')}  npx @vpnsin-lab/devsetup [command|profile] [options]
 
 ${c.bold('Tool profiles:')}
   --js           git, fnm, Node.js LTS, pnpm, VS Code, GitHub CLI
