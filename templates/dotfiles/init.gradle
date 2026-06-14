@@ -1,0 +1,29 @@
+// ~/.gradle/init.gradle — runs before every Gradle build on this machine.
+// Managed by devsetup. Re-run `npx @vpnsin/devsetup --dotfiles` to reset.
+
+allprojects {
+    // ── Enterprise repository mirror ─────────────────────────────────────────
+    // Redirect to an internal Artifactory/Nexus mirror. Uncomment if needed.
+    //
+    // buildscript {
+    //     repositories {
+    //         maven { url "https://artifactory.company.com/repository/gradle-plugins/" }
+    //     }
+    // }
+    // repositories {
+    //     maven { url "https://artifactory.company.com/repository/maven-public/" }
+    // }
+
+    // ── Build scan agreement (Gradle Enterprise) ──────────────────────────────
+    // Uncomment to auto-agree to Develocity / Gradle Enterprise terms:
+    // if (it.plugins.hasPlugin('com.gradle.enterprise')) {
+    //     gradleEnterprise.buildScan.termsOfServiceUrl = 'https://gradle.com/terms-of-service'
+    //     gradleEnterprise.buildScan.termsOfServiceAgree = 'yes'
+    // }
+
+    // ── Dependency resolution strategy ───────────────────────────────────────
+    configurations.all {
+        // Force refresh of SNAPSHOT dependencies on every build
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    }
+}
