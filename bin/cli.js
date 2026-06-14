@@ -18,6 +18,13 @@ async function confirm(message, defaultYes = true) {
   return answer.trim().toLowerCase().startsWith('y');
 }
 
+async function ask(message, defaultValue = '') {
+  if (!isInteractive) return defaultValue;
+  const hint = defaultValue ? ` (${c.dim(defaultValue)})` : '';
+  const answer = await rl.question(`  ${c.cyan('?')} ${message}${hint}: `);
+  return answer.trim() || defaultValue;
+}
+
 async function selectChoice(message, choices) {
   if (!isInteractive) return choices[0].value;
   console.log(`\n  ${c.bold(message)}`);
@@ -33,21 +40,35 @@ async function selectChoice(message, choices) {
 // ── Args ─────────────────────────────────────────────────────────────────────
 const argv = process.argv.slice(2);
 const has = (f) => argv.includes(f);
+const argAfter = (f) => {
+  const i = argv.indexOf(f);
+  return i !== -1 && argv[i + 1] && !argv[i + 1].startsWith('--') ? argv[i + 1] : null;
+};
 const dryRun = has('--dry-run');
+const autoYes = has('--yes') || has('-y');
+const noOptional = has('--no-optional');
 
 if (has('--help') || has('-h')) {
   console.log(`
 ${c.bold('devsetup')} — developer machine bootstrap
 
-${c.bold('Usage:')}  npx @vpnsin/devsetup [profile] [options]
+${c.bold('Usage:')}  npx @vpnsin/devsetup [command|profile] [options]
 
-${c.bold('Profiles:')}
-  --web          Node, pnpm, Docker, VS Code
-  --mobile       Java, Android Studio, CocoaPods, Flutter
-  --backend      Docker, Postgres, Redis, AWS CLI, jq, direnv
-  --full-stack   all profiles combined
+${c.bold('Tool profiles:')}
+  --js           git, fnm, Node.js LTS, pnpm, VS Code, GitHub CLI
+  --web          JS tools + Docker, Supabase, MongoDB, Postman
+  --mobile       Xcode CLI, Java, Android Studio, CocoaPods, Flutter
+  --backend      Docker, MongoDB, Supabase, Postgres, Redis, Kubernetes, AWS CLI
+  --devops       Docker, Kubernetes (kubectl, minikube, helm, k9s), AWS CLI
+  --full-stack   everything above combined
+
+${c.bold('Dotfiles & docs:')}
+  --dotfiles     install .gitconfig, .npmrc, .zshrc, VS Code settings, Gradle config
+  --docs [dir]   generate setup documentation into [dir] (default: ./docs)
 
 ${c.bold('Options:')}
+  --yes, -y      auto-confirm all optional tool prompts
+  --no-optional  skip all optional tools (required tools only)
   --dry-run      print commands without running them
   --help         show this help
 `);
@@ -60,9 +81,64 @@ console.log(`\n${c.bold('devsetup')} ${c.dim('— developer machine bootstrap')}
 const platform = detectPlatform();
 log.info(`Platform: ${c.bold(platform)} (${process.arch})`);
 if (dryRun) log.warn('Dry-run mode — no changes will be made');
+if (autoYes) log.info('Auto-yes mode — all optional tools will be installed');
+if (noOptional) log.info('No-optional mode — only required tools will be installed');
+
+// ── Dotfiles command ──────────────────────────────────────────────────────────
+if (has('--dotfiles')) {
+  const { getDotfileTargets, buildVars, installDotfile } = await import('../lib/dotfiles.js');
+
+  log.section('Dotfile setup');
+  console.log(`  ${c.dim('Existing files will be backed up with a .bak suffix.')}\n`);
+
+  const gitName = await ask('Your full name (for .gitconfig)');
+  const gitEmail = await ask('Your work email (for .gitconfig)');
+  const proxyUrl = await ask('Corporate proxy URL (leave blank if none)');
+  const zscalerCert = await ask('Zscaler CA cert path (leave blank if none)');
+
+  const vars = buildVars(platform, { gitName, gitEmail, proxyUrl, zscalerCert });
+  const targets = getDotfileTargets(platform);
+
+  console.log('');
+  for (const target of targets) {
+    const yes =
+      autoYes ||
+      (await confirm(`Install ${c.bold(target.label)}? ${c.dim(target.description)}`, false));
+    if (yes) {
+      await installDotfile(target, vars, { dryRun });
+    } else {
+      log.skip(`Skipped: ${target.label}`);
+    }
+  }
+
+  console.log(`\n${c.bold('─'.repeat(52))}`);
+  console.log(`\n${c.bold('Next steps:')}`);
+  console.log(`  1. Restart your terminal for shell file changes to take effect`);
+  console.log(`  2. Review each installed file and customise as needed\n`);
+  rl.close();
+  process.exit(0);
+}
+
+// ── Docs command ──────────────────────────────────────────────────────────────
+if (has('--docs')) {
+  const { generateDocs } = await import('../lib/docs.js');
+  const outputDir = argAfter('--docs') ?? 'docs';
+
+  log.section(`Generating documentation → ${c.bold(outputDir)}/`);
+  const count = generateDocs(outputDir, { dryRun });
+  log.ok(`Generated ${count} documentation files in ${c.bold(outputDir)}/`);
+  console.log(`\n  ${c.dim('Topics:')} macbook-setup, windows-setup, proxy-setup,`);
+  console.log(
+    `  ${c.dim('         ')} repository-cloning, environment-settings, azure-vpn-setup, utility-scripts\n`
+  );
+  rl.close();
+  process.exit(0);
+}
 
 // Select profile
-let profileKey = ['web', 'mobile', 'backend', 'full-stack'].find((p) => has(`--${p}`));
+let profileKey = ['js', 'web', 'mobile', 'backend', 'devops', 'full-stack'].find((p) =>
+  has(`--${p}`)
+);
 if (!profileKey) {
   profileKey = await selectChoice(
     'Which setup profile?',
@@ -116,7 +192,12 @@ for (const tool of tools) {
   }
 
   if (tool.optional) {
-    const yes = await confirm(`Install ${c.bold(tool.name)}? ${c.dim(tool.description)}`, false);
+    if (noOptional) {
+      skipped.push(tool.name);
+      continue;
+    }
+    const yes =
+      autoYes || (await confirm(`Install ${c.bold(tool.name)}? ${c.dim(tool.description)}`, false));
     if (!yes) {
       skipped.push(tool.name);
       continue;

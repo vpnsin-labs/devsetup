@@ -1,5 +1,5 @@
 {
-  "name": "@vpnsin/devsetup",
+  "name": "@vpnsin-labs/devsetup",
   "version": "0.1.2",
   "description": "Machine bootstrap CLI for web/mobile full-stack developers.",
   "type": "module",
