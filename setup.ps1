@@ -1,5 +1,5 @@
 # bootstrap for Windows PowerShell
-# Ensures fnm + Node LTS are present, then hands off to @vpnsin-lab/devsetup.
+# Ensures fnm + Node LTS are present, then hands off to @vpnsin-labs/devsetup.
 $ErrorActionPreference = 'Stop'
 
 function Write-Info  { Write-Host "  -> $args" -ForegroundColor Cyan }
@@ -39,4 +39,4 @@ if (Get-Command node -ErrorAction SilentlyContinue) {
 Write-Host ""
 Write-Host "devsetup - developer machine bootstrap" -ForegroundColor White
 Write-Host ""
-npx @vpnsin-lab/devsetup @args
+npx @vpnsin-labs/devsetup @args

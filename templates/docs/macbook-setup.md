@@ -52,8 +52,8 @@ curl -fsSL https://raw.githubusercontent.com/vpnsin-labs/devsetup/main/setup.sh 
 Or choose a specific profile directly:
 
 ```bash
-npx @vpnsin-lab/devsetup --web     # web development
-npx @vpnsin-lab/devsetup --full-stack --yes   # everything, no prompts
+npx @vpnsin-labs/devsetup --web     # web development
+npx @vpnsin-labs/devsetup --full-stack --yes   # everything, no prompts
 ```
 
 ---
@@ -61,7 +61,7 @@ npx @vpnsin-lab/devsetup --full-stack --yes   # everything, no prompts
 ## 4. Install dotfiles
 
 ```bash
-npx @vpnsin-lab/devsetup --dotfiles
+npx @vpnsin-labs/devsetup --dotfiles
 ```
 
 You will be prompted for:

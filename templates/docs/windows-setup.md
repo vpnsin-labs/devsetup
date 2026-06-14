@@ -62,8 +62,8 @@ irm https://raw.githubusercontent.com/vpnsin-labs/devsetup/main/setup.ps1 | iex
 Or with a specific profile:
 
 ```powershell
-npx @vpnsin-lab/devsetup --web
-npx @vpnsin-lab/devsetup --full-stack --yes
+npx @vpnsin-labs/devsetup --web
+npx @vpnsin-labs/devsetup --full-stack --yes
 ```
 
 This installs Git (with Git Bash), fnm, Node.js LTS, and your chosen tools.
@@ -73,7 +73,7 @@ This installs Git (with Git Bash), fnm, Node.js LTS, and your chosen tools.
 ## 4. Install dotfiles
 
 ```powershell
-npx @vpnsin-lab/devsetup --dotfiles
+npx @vpnsin-labs/devsetup --dotfiles
 ```
 
 On Windows this installs:

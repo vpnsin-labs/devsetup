@@ -7,25 +7,25 @@ A CLI that detects your OS and installs the tools you choose — web, mobile, ba
 ## Quick start
 
 ```bash
-npx @vpnsin-lab/devsetup
+npx @vpnsin-labs/devsetup
 ```
 
 Or skip the profile prompt by passing a flag:
 
 ```bash
-npx @vpnsin-lab/devsetup --js          # Minimal JavaScript dev
-npx @vpnsin-lab/devsetup --web         # Web + Docker + Supabase + MongoDB
-npx @vpnsin-lab/devsetup --mobile      # Android + iOS (Xcode CLI)
-npx @vpnsin-lab/devsetup --backend     # Docker + DBs + Kubernetes + AWS
-npx @vpnsin-lab/devsetup --devops      # Kubernetes-focused
-npx @vpnsin-lab/devsetup --full-stack  # Everything
+npx @vpnsin-labs/devsetup --js          # Minimal JavaScript dev
+npx @vpnsin-labs/devsetup --web         # Web + Docker + Supabase + MongoDB
+npx @vpnsin-labs/devsetup --mobile      # Android + iOS (Xcode CLI)
+npx @vpnsin-labs/devsetup --backend     # Docker + DBs + Kubernetes + AWS
+npx @vpnsin-labs/devsetup --devops      # Kubernetes-focused
+npx @vpnsin-labs/devsetup --full-stack  # Everything
 
 # Dotfiles (gitconfig, npmrc, zshrc, VS Code settings, Gradle config)
-npx @vpnsin-lab/devsetup --dotfiles
+npx @vpnsin-labs/devsetup --dotfiles
 
 # Documentation (7 markdown guides written to ./docs/)
-npx @vpnsin-lab/devsetup --docs
-npx @vpnsin-lab/devsetup --docs ./team-docs
+npx @vpnsin-labs/devsetup --docs
+npx @vpnsin-labs/devsetup --docs ./team-docs
 ```
 
 ## Bootstrap scripts

@@ -7,17 +7,17 @@ Quick reference for commands installed or configured by devsetup.
 ## devsetup
 
 ```bash
-npx @vpnsin-lab/devsetup                    # interactive profile selection
-npx @vpnsin-lab/devsetup --js               # minimal JavaScript dev
-npx @vpnsin-lab/devsetup --web              # web development profile
-npx @vpnsin-lab/devsetup --mobile           # mobile development
-npx @vpnsin-lab/devsetup --backend          # backend / API development
-npx @vpnsin-lab/devsetup --devops           # Kubernetes / DevOps
-npx @vpnsin-lab/devsetup --full-stack       # everything
-npx @vpnsin-lab/devsetup --full-stack --yes # everything, no prompts
-npx @vpnsin-lab/devsetup --dotfiles         # install dotfile templates
-npx @vpnsin-lab/devsetup --docs ./docs      # generate documentation
-npx @vpnsin-lab/devsetup --dry-run --web    # preview commands without running
+npx @vpnsin-labs/devsetup                    # interactive profile selection
+npx @vpnsin-labs/devsetup --js               # minimal JavaScript dev
+npx @vpnsin-labs/devsetup --web              # web development profile
+npx @vpnsin-labs/devsetup --mobile           # mobile development
+npx @vpnsin-labs/devsetup --backend          # backend / API development
+npx @vpnsin-labs/devsetup --devops           # Kubernetes / DevOps
+npx @vpnsin-labs/devsetup --full-stack       # everything
+npx @vpnsin-labs/devsetup --full-stack --yes # everything, no prompts
+npx @vpnsin-labs/devsetup --dotfiles         # install dotfile templates
+npx @vpnsin-labs/devsetup --docs ./docs      # generate documentation
+npx @vpnsin-labs/devsetup --dry-run --web    # preview commands without running
 ```
 
 ---

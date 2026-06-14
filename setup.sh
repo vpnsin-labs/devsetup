@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 # bootstrap for macOS / Linux
-# Ensures fnm + Node LTS are present, then hands off to @vpnsin-lab/devsetup.
+# Ensures fnm + Node LTS are present, then hands off to @vpnsin-labs/devsetup.
 set -e
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
@@ -44,4 +44,4 @@ fi
 
 # ── Run devsetup ──────────────────────────────────────────────────────────────
 printf "\n${bold}devsetup${reset} ${dim}— developer machine bootstrap${reset}\n\n"
-exec npx @vpnsin-lab/devsetup "$@"
+exec npx @vpnsin-labs/devsetup "$@"
