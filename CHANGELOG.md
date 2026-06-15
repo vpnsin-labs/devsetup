@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/vpnsin-labs/devsetup/compare/v0.1.3...v0.1.4) (2026-06-15)
+
+
+### Features
+
+* added peacock color ([dcbbce7](https://github.com/vpnsin-labs/devsetup/commit/dcbbce7ef7726764d03eda29b977a8d196bdf31c))
+
 ## [0.1.3](https://github.com/vpnsin-labs/devsetup/compare/v0.1.2...v0.1.3) (2026-06-14)
 
 
