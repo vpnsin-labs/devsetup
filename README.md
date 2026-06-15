@@ -153,9 +153,10 @@ irm https://raw.githubusercontent.com/vpnsin-labs/devsetup/main/setup.ps1 | iex
 
 ## Contributing
 
-See [CONTRIBUTING](.github/CONTRIBUTING.md). Commits follow
-[Conventional Commits](https://www.conventionalcommits.org/); releases are
-automated with release-please.
+See [CONTRIBUTING](.github/CONTRIBUTING.md) for the development workflow and commit
+conventions. See [ARCHITECTURE](.github/ARCHITECTURE.md) for an explanation of the
+codebase — how modules fit together, how to add tools, profiles, dotfiles, and doc
+templates, and how the CI/release pipeline works.
 
 ## Security
 

@@ -4,6 +4,9 @@ Thanks for contributing! This repository uses shared tooling from
 [`devkit`](https://github.com/vpnsin/devkit) — ESLint, Prettier,
 commitlint, markdownlint, Husky, and CI/release workflows.
 
+For a full explanation of how the codebase is structured, see
+[ARCHITECTURE.md](ARCHITECTURE.md).
+
 ## Getting started
 
 - **Node.js** >= 18.18 and **npm**
