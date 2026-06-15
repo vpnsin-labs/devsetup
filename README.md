@@ -73,17 +73,18 @@ irm https://raw.githubusercontent.com/vpnsin-labs/devsetup/main/setup.ps1 | iex
 
 ## Documentation
 
-`--docs` generates 7 markdown guides into `./docs/` (or a custom directory):
+`--docs` generates 7 markdown guides into `./docs/` (or a custom directory).
+The guides are also committed to this repo so they render on GitHub and npm:
 
-| File                      | Contents                                                               |
-| ------------------------- | ---------------------------------------------------------------------- |
-| `macbook-setup.md`        | Step-by-step macOS setup from scratch                                  |
-| `windows-setup.md`        | Step-by-step Windows setup from scratch                                |
-| `proxy-setup.md`          | Zscaler + corporate proxy config for git, npm, Gradle, Docker, VS Code |
-| `repository-cloning.md`   | SSH keys, PAT tokens, GitHub CLI auth, Azure DevOps                    |
-| `environment-settings.md` | `.env` files, direnv, global env vars, secret management               |
-| `azure-vpn-setup.md`      | Azure VPN Client, Windows App (AVD), RDP, Azure Bastion                |
-| `utility-scripts.md`      | Full command reference for all installed tools                         |
+| Guide                                                                                                     | Contents                                                               |
+| --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| [macbook-setup.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/macbook-setup.md)               | Step-by-step macOS setup from scratch                                  |
+| [windows-setup.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/windows-setup.md)               | Step-by-step Windows setup from scratch                                |
+| [proxy-setup.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/proxy-setup.md)                   | Zscaler + corporate proxy config for git, npm, Gradle, Docker, VS Code |
+| [repository-cloning.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/repository-cloning.md)     | SSH keys, PAT tokens, GitHub CLI auth, Azure DevOps                    |
+| [environment-settings.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/environment-settings.md) | `.env` files, direnv, global env vars, secret management               |
+| [azure-vpn-setup.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/azure-vpn-setup.md)           | Azure VPN Client, Windows App (AVD), RDP, Azure Bastion                |
+| [utility-scripts.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/utility-scripts.md)           | Full command reference for all installed tools                         |
 
 ## Options
 
