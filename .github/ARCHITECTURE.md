@@ -13,7 +13,7 @@ runtime framework. The published package contains only `bin/`, `lib/`, and
 is development tooling that stays out of the published artifact.
 
 ```
-npx @vpnsin-lab/devsetup [flags]
+npx @vpnsin-labs/devsetup [flags]
          │
          ▼
     bin/cli.js          ← entry point, flag parsing, interactive prompts
