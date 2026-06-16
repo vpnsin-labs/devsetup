@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/vpnsin-labs/devsetup/compare/v0.1.4...v0.1.5) (2026-06-16)
+
+
+### Bug Fixes
+
+* correct scope to [@vpnsin-labs](https://github.com/vpnsin-labs) in ARCHITECTURE.md ([3689454](https://github.com/vpnsin-labs/devsetup/commit/36894546fd3be6faee32b0169ecbde8ae0d1ae79))
+
 ## [0.1.4](https://github.com/vpnsin-labs/devsetup/compare/v0.1.3...v0.1.4) (2026-06-15)
 
 
