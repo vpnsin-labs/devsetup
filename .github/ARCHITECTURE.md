@@ -48,7 +48,7 @@ Entry point. Responsibilities:
   4. _(default)_ — profile selection → tool installation loop.
 - After tool installation, auto-bootstraps Node.js LTS via fnm if fnm was just
   installed or `node` is not yet on PATH.
-- Offers to run `npx @vpnsin/devkit init` if a `package.json` exists in the current
+- Offers to run `npx @vpnsin-labs/devkit init` if a `package.json` exists in the current
   working directory.
 
 Key flags and their effects:

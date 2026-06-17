@@ -1,1 +1,1 @@
-export { default } from '@vpnsin/devkit/commitlint';
+export { default } from '@vpnsin-labs/devkit/commitlint';

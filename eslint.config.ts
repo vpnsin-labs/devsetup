@@ -1,4 +1,4 @@
-import base from '@vpnsin/devkit/eslint/base';
+import base from '@vpnsin-labs/devkit/eslint/base';
 
 export default [
   ...base,

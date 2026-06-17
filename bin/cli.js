@@ -242,14 +242,14 @@ if (fnmJustInstalled || !nodeAvailable) {
 const hasPkgJson = existsSync('package.json');
 if (hasPkgJson) {
   const runDevkit = await confirm(
-    `Run ${c.cyan('npx @vpnsin/devkit init')} to set up project tooling in this directory?`,
+    `Run ${c.cyan('npx @vpnsin-labs/devkit init')} to set up project tooling in this directory?`,
     false
   );
   if (runDevkit) {
     try {
-      run('npx @vpnsin/devkit init', { dryRun });
+      run('npx @vpnsin-labs/devkit init', { dryRun });
     } catch {
-      log.warn('devkit init failed — run it manually: npx @vpnsin/devkit init');
+      log.warn('devkit init failed — run it manually: npx @vpnsin-labs/devkit init');
     }
   }
 }
@@ -263,7 +263,7 @@ if (skipped.length) log.warn(`Skipped:     ${skipped.join(', ')}`);
 console.log(`
 ${c.bold('Next steps:')}
   1. Restart your terminal so shell profile changes take effect
-  2. In each project: ${c.cyan('npx @vpnsin/devkit init')}
+  2. In each project: ${c.cyan('npx @vpnsin-labs/devkit init')}
 `);
 
 rl.close();
