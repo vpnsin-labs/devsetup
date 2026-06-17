@@ -150,7 +150,7 @@ The guides are also committed to this repo so they render on GitHub and npm:
 3. Checks which tools are already installed and skips them
 4. Installs required tools automatically; prompts before optional ones
 5. After fnm installs, bootstraps Node.js LTS automatically
-6. Offers to run `npx @vpnsin/devkit init` if a `package.json` is present in the current directory
+6. Offers to run `npx @vpnsin-labs/devkit init` if a `package.json` is present in the current directory
 
 ## Contributing
 

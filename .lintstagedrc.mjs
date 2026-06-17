@@ -1,1 +1,1 @@
-export { default } from '@vpnsin/devkit/lint-staged';
+export { default } from '@vpnsin-labs/devkit/lint-staged';
