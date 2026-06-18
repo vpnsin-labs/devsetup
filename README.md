@@ -46,14 +46,14 @@ irm https://raw.githubusercontent.com/vpnsin-labs/devsetup/main/setup.ps1 | iex
 
 ## Profiles
 
-| Profile        | Automatically installed | Optional (prompted)                                                                                                               |
-| -------------- | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| **js**         | git, fnm, Node.js LTS   | pnpm, GitHub CLI, VS Code, Bun, GitHub Desktop, Windows Terminal                                                                  |
-| **web**        | git, fnm, Node.js LTS   | pnpm, GitHub CLI, VS Code, Bun, Docker, Supabase CLI, MongoDB, Postman, GitHub Desktop                                            |
-| **mobile**     | git, fnm, Java 17       | VS Code, Xcode CLI, Android Studio, Watchman, CocoaPods, Flutter                                                                  |
-| **backend**    | git, fnm, jq            | pnpm, GitHub CLI, VS Code, Docker, MongoDB, Supabase CLI, Postgres, Redis, AWS CLI, direnv, kubectl, minikube, Helm, k9s, Postman |
-| **devops**     | git                     | Docker, jq, AWS CLI, kubectl, minikube, Helm, k9s                                                                                 |
-| **full-stack** | git, fnm, jq, Java 17   | everything above                                                                                                                  |
+| Profile        | Automatically installed | Optional (prompted)                                                                                                                                |
+| -------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **js**         | git, fnm, Node.js LTS   | pnpm, GitHub CLI, VS Code, Bun, GitHub Desktop, Windows Terminal                                                                                   |
+| **web**        | git, fnm, Node.js LTS   | pnpm, GitHub CLI, VS Code, Bun, WSL 2 (Windows), Docker, Supabase CLI, MongoDB, Postman, GitHub Desktop                                            |
+| **mobile**     | git, fnm, Java 17       | VS Code, Xcode CLI, Android Studio, Watchman, CocoaPods, Flutter                                                                                   |
+| **backend**    | git, fnm, jq            | pnpm, GitHub CLI, VS Code, WSL 2 (Windows), Docker, MongoDB, Supabase CLI, Postgres, Redis, AWS CLI, direnv, kubectl, minikube, Helm, k9s, Postman |
+| **devops**     | git                     | WSL 2 (Windows), Docker, jq, AWS CLI, kubectl, minikube, Helm, k9s                                                                                 |
+| **full-stack** | git, fnm, jq, Java 17   | everything above                                                                                                                                   |
 
 ## Dotfiles
 
@@ -73,27 +73,28 @@ irm https://raw.githubusercontent.com/vpnsin-labs/devsetup/main/setup.ps1 | iex
 
 ## Documentation
 
-`--docs` generates 7 markdown guides into `./docs/` (or a custom directory).
+`--docs` generates 8 markdown guides into `./docs/` (or a custom directory).
 The guides are also committed to this repo so they render on GitHub and npm:
 
-| Guide                                                                                                     | Contents                                                               |
-| --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| [macbook-setup.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/macbook-setup.md)               | Step-by-step macOS setup from scratch                                  |
-| [windows-setup.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/windows-setup.md)               | Step-by-step Windows setup from scratch                                |
-| [proxy-setup.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/proxy-setup.md)                   | Zscaler + corporate proxy config for git, npm, Gradle, Docker, VS Code |
-| [repository-cloning.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/repository-cloning.md)     | SSH keys, PAT tokens, GitHub CLI auth, Azure DevOps                    |
-| [environment-settings.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/environment-settings.md) | `.env` files, direnv, global env vars, secret management               |
-| [azure-vpn-setup.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/azure-vpn-setup.md)           | Azure VPN Client, Windows App (AVD), RDP, Azure Bastion                |
-| [utility-scripts.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/utility-scripts.md)           | Full command reference for all installed tools                         |
+| Guide                                                                                                     | Contents                                                                              |
+| --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| [macbook-setup.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/macbook-setup.md)               | Step-by-step macOS setup from scratch                                                 |
+| [windows-setup.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/windows-setup.md)               | Step-by-step Windows setup from scratch                                               |
+| [docker-local-dev.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/docker-local-dev.md)         | Run app stacks in Docker locally (Docker Desktop, WSL 2, file sharing, registry auth) |
+| [proxy-setup.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/proxy-setup.md)                   | Zscaler + corporate proxy config for git, npm, Gradle, Docker, VS Code                |
+| [repository-cloning.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/repository-cloning.md)     | SSH keys, PAT tokens, GitHub CLI auth, Azure DevOps                                   |
+| [environment-settings.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/environment-settings.md) | `.env` files, direnv, global env vars, secret management                              |
+| [azure-vpn-setup.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/azure-vpn-setup.md)           | Azure VPN Client, Windows App (AVD), RDP, Azure Bastion                               |
+| [utility-scripts.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/utility-scripts.md)           | Full command reference for all installed tools                                        |
 
 ## Options
 
-| Flag            | Description                                   |
-| --------------- | --------------------------------------------- |
-| `--yes`, `-y`   | Auto-confirm all optional tool prompts        |
-| `--no-optional` | Skip all optional tools (required tools only) |
-| `--dry-run`     | Print install commands without running them   |
-| `--help`        | Show help                                     |
+| Flag            | Description                                                                        |
+| --------------- | ---------------------------------------------------------------------------------- |
+| `--yes`, `-y`   | Auto-confirm all optional tool prompts                                             |
+| `--no-optional` | Skip all optional tools (required tools only)                                      |
+| `--dry-run`     | Print the full ordered install plan (primary + fallbacks) without running anything |
+| `--help`        | Show help                                                                          |
 
 ## Tools
 
@@ -113,6 +114,7 @@ The guides are also committed to this repo so they render on GitHub and npm:
 
 ### Containers & Kubernetes
 
+- **WSL 2** — Windows Subsystem for Linux 2; Docker Desktop's engine backend (Windows only)
 - **Docker** — container platform (Docker Desktop on macOS/Windows)
 - **kubectl** — Kubernetes CLI
 - **minikube** — local Kubernetes cluster
@@ -145,12 +147,35 @@ The guides are also committed to this repo so they render on GitHub and npm:
 
 ## How it works
 
-1. Detects your OS (macOS → Homebrew, Linux → apt, Windows → winget)
+1. Detects your OS and which package managers are actually installed
+   (macOS → Homebrew; Linux → apt/dnf/yum/pacman/zypper + snap/flatpak;
+   Windows → winget/scoop/choco)
 2. Prompts for a setup profile if you haven't passed one
 3. Checks which tools are already installed and skips them
 4. Installs required tools automatically; prompts before optional ones
 5. After fnm installs, bootstraps Node.js LTS automatically
 6. Offers to run `npx @vpnsin-labs/devkit init` if a `package.json` is present in the current directory
+
+## Install fallbacks
+
+Each tool can be installed by more than one method. devsetup detects which
+package managers are present, then tries the available methods **in order**
+until one succeeds — so a missing or broken package manager no longer blocks a
+tool. Examples:
+
+- **Linux** is no longer apt-only. On Fedora it uses `dnf`, on Arch `pacman`,
+  on openSUSE `zypper`; GUI apps (VS Code, Postman, Android Studio) fall back
+  from `snap` to `flatpak`. Package names that differ across distros (e.g.
+  Redis is `redis-tools` on apt but `redis` on dnf/pacman) are handled
+  explicitly — devsetup never guesses a name across managers.
+- **Windows** falls back from `winget` to `scoop` (no admin) to `choco`. If
+  **no** package manager is found, devsetup offers to install Scoop for you.
+- **macOS** installs Homebrew automatically if it is missing.
+
+When a method exits with an error, devsetup automatically moves on to the next
+one; if every method is exhausted, it prints the exact command so you can run it
+manually. Use `--dry-run` to print the full ordered plan (primary + fallbacks)
+for every tool without changing anything.
 
 ## Contributing
 

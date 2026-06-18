@@ -2,9 +2,23 @@
 
 import { createInterface } from 'node:readline/promises';
 import { existsSync } from 'node:fs';
-import { detectPlatform, ensurePackageManager, buildInstallCmd } from '../lib/platform.js';
+import {
+  detectPlatform,
+  ensurePackageManager,
+  buildInstallCmd,
+  detectManagers,
+  chooseCandidates,
+  managerKeyOf,
+} from '../lib/platform.js';
 import { TOOLS, PROFILES } from '../lib/tools.js';
 import { hasCommand, run, log, c } from '../lib/runner.js';
+
+// Resolve a tool's post-install note for the current platform (string or map).
+function postInstallNote(tool, platform) {
+  if (!tool.postInstall) return null;
+  if (typeof tool.postInstall === 'string') return tool.postInstall;
+  return tool.postInstall[platform] ?? null;
+}
 
 // ── Prompts ──────────────────────────────────────────────────────────────────
 const isInteractive = Boolean(process.stdin.isTTY);
@@ -148,8 +162,10 @@ if (!profileKey) {
 const profile = PROFILES[profileKey];
 console.log(`\n  Profile: ${c.bold(profile.name)} — ${c.dim(profile.description)}\n`);
 
-// Ensure system package manager (Homebrew on macOS)
-await ensurePackageManager(platform, { dryRun });
+// Ensure a usable package manager (Homebrew on macOS; offer Scoop on Windows
+// when none is present). Detect which managers are available for fallback.
+await ensurePackageManager(platform, { dryRun, autoYes, confirm });
+const managers = detectManagers(platform);
 
 // Gather tools for this profile, filtered to this platform
 const tools = profile.ids
@@ -177,16 +193,20 @@ for (const tool of tools) {
     continue;
   }
 
-  const installSpec = tool.install?.[platform];
-  if (!installSpec) {
+  const spec = tool.install?.[platform];
+  if (!spec) {
     log.warn(`${tool.name} — no installer for ${platform}`);
     skipped.push(tool.name);
     continue;
   }
 
-  const cmd = buildInstallCmd(installSpec);
-  if (!cmd) {
-    log.warn(`${tool.name} — could not build install command`);
+  // Build the ordered list of install methods that are actually runnable on
+  // this machine. Empty means every candidate's package manager is missing.
+  const candidates = chooseCandidates(spec, managers);
+  if (candidates.length === 0) {
+    log.warn(
+      `${tool.name} — no available package manager for ${platform} (install methods unavailable)`
+    );
     skipped.push(tool.name);
     continue;
   }
@@ -206,19 +226,55 @@ for (const tool of tools) {
     log.info(`Installing ${c.bold(tool.name)} (${tool.description})...`);
   }
 
-  try {
-    run(cmd, { dryRun });
+  const note = postInstallNote(tool, platform);
+
+  // Dry-run: print the full ordered plan instead of executing anything.
+  if (dryRun) {
+    candidates.forEach((candidate, i) => {
+      const tag = i === 0 ? 'primary' : `fallback ${i}`;
+      log.info(
+        `would try (${tag}, ${managerKeyOf(candidate)}): ${c.cyan(buildInstallCmd(candidate))}`
+      );
+    });
+    log.ok(`${tool.name} planned`);
+    installed.push(tool.name);
+    if (note) log.warn(note);
+    continue;
+  }
+
+  // Try each method in order; the first one that exits cleanly wins. We trust
+  // the installer's exit code rather than re-probing the command afterwards —
+  // most managers (winget/scoop/choco/snap, curl-to-~/.local scripts) only put
+  // the new binary on PATH for *future* shells, so a same-process check would
+  // false-fail a successful install. A non-zero exit throws and falls through.
+  let succeeded = false;
+  let lastCmd = null;
+  const tried = [];
+  for (let i = 0; i < candidates.length; i++) {
+    const candidate = candidates[i];
+    const cmd = buildInstallCmd(candidate);
+    if (!cmd) continue;
+    const key = managerKeyOf(candidate);
+    lastCmd = cmd;
+    tried.push(key);
+    if (i > 0) log.info(`Trying alternative for ${c.bold(tool.name)} via ${key}...`);
+    try {
+      run(cmd, { dryRun });
+      succeeded = true;
+      break;
+    } catch {
+      log.warn(`${tool.name}: install via ${key} failed — trying next method...`);
+    }
+  }
+
+  if (succeeded) {
     log.ok(`${tool.name} installed`);
     installed.push(tool.name);
-
-    const msg = tool.postInstall
-      ? typeof tool.postInstall === 'string'
-        ? tool.postInstall
-        : tool.postInstall[platform]
-      : null;
-    if (msg) log.warn(msg);
-  } catch {
-    log.error(`${tool.name} install failed — run manually: ${cmd}`);
+    if (note) log.warn(note);
+  } else {
+    log.error(
+      `${tool.name} install failed — all methods exhausted (tried: ${tried.join(', ')}). Run manually: ${lastCmd}`
+    );
     skipped.push(tool.name);
   }
 }
