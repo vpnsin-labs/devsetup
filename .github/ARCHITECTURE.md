@@ -46,6 +46,15 @@ Entry point. Responsibilities:
   2. `--dotfiles` — delegates to `lib/dotfiles.js` after collecting user inputs.
   3. `--docs` — delegates to `lib/docs.js`.
   4. _(default)_ — profile selection → tool installation loop.
+- The installation loop builds each tool's runnable methods via
+  `chooseCandidates(tool.install[platform], managers)` and tries them in order.
+  The first method that exits cleanly wins; any non-zero exit throws and falls
+  through to the next method. (It trusts the installer's exit code rather than
+  re-probing afterwards — most managers only add the new binary to PATH for
+  _future_ shells, so a same-process check would false-fail a real install.) If
+  every method is exhausted it logs the methods tried and the last command to
+  run manually. `--dry-run` prints the full ordered plan (primary + each
+  fallback) without executing anything.
 - After tool installation, auto-bootstraps Node.js LTS via fnm if fnm was just
   installed or `node` is not yet on PATH.
 - Offers to run `npx @vpnsin-labs/devkit init` if a `package.json` exists in the current
@@ -95,18 +104,54 @@ Pure data — no I/O. Exports `TOOLS` (array) and `PROFILES` (object).
 postInstall: 'Start your cluster: minikube start';
 ```
 
-**Install spec keys** (only one is used per platform entry, in priority order as
-resolved by `lib/platform.js → buildInstallCmd`):
+**Install spec keys** (`buildInstallCmd` picks the highest-priority key present
+in a single candidate object; `normalizeSpec` expands a multi-key object into
+ordered single-key candidates using this same order):
 
-| Key      | Expands to                                                          |
-| -------- | ------------------------------------------------------------------- |
-| `brew`   | `brew install <value>`                                              |
-| `cask`   | `brew install --cask <value>`                                       |
-| `apt`    | `sudo apt-get install -y <value>`                                   |
-| `snap`   | `sudo snap install <value>`                                         |
-| `winget` | `winget install --silent --id <value>`                              |
-| `npm`    | `npm install -g <value>`                                            |
-| `script` | Raw shell command (used when the official installer is a curl pipe) |
+| Key       | Expands to                                                                       |
+| --------- | -------------------------------------------------------------------------------- |
+| `brew`    | `brew install <value>`                                                           |
+| `cask`    | `brew install --cask <value>`                                                    |
+| `apt`     | `sudo apt-get install -y <value>`                                                |
+| `dnf`     | `sudo dnf install -y <value>`                                                    |
+| `yum`     | `sudo yum install -y <value>`                                                    |
+| `pacman`  | `sudo pacman -S --noconfirm <value>`                                             |
+| `zypper`  | `sudo zypper install -y <value>`                                                 |
+| `snap`    | `sudo snap install <value>` (value may carry flags, e.g. `code --classic`)       |
+| `flatpak` | `flatpak remote-add --if-not-exists flathub … && flatpak install -y flathub <v>` |
+| `winget`  | `winget install --silent --id <value>`                                           |
+| `scoop`   | `scoop install <value>`                                                          |
+| `choco`   | `choco install -y <value>`                                                       |
+| `npm`     | `npm install -g <value>`                                                         |
+| `script`  | Raw shell command (used when the official installer is a curl pipe)              |
+
+**Single value vs. ordered fallbacks.** A platform's value is EITHER a single
+spec object (legacy shape, still valid and byte-identical) OR an ordered array
+of spec objects tried first-to-last until one is runnable and verifiably
+succeeds:
+
+```js
+// Single — picked exactly as before
+linux: { apt: 'jq' },
+
+// Ordered fallbacks — name divergence handled explicitly per manager
+linux: [
+  { apt: 'redis-tools' }, // Debian/Ubuntu split out the client
+  { dnf: 'redis' },
+  { pacman: 'redis' },
+  { zypper: 'redis' },
+],
+
+// Windows: winget → scoop (no admin) → choco (note choco's different id)
+windows: [{ winget: 'Kubernetes.kubectl' }, { scoop: 'kubectl' }, { choco: 'kubernetes-cli' }],
+```
+
+**Never auto-translate package names across managers.** Cross-distro/manager
+names frequently differ (`redis-tools` vs `redis`, `openjdk-17-jdk` vs
+`java-17-openjdk-devel` vs `jdk17-openjdk`). Give each manager its own explicit
+value, or omit it entirely and let a `script`/manual path handle it — omitting
+is correct when you are unsure, since the loop simply skips an unavailable or
+unlisted manager rather than running a wrong command.
 
 **Profile entry shape:**
 
@@ -125,17 +170,47 @@ available on the current platform are silently skipped (filtered by `tool.platfo
 
 ### `lib/platform.js`
 
-Three exports:
+Detection, normalisation, and package-manager bootstrap:
 
 - **`detectPlatform()`** — maps `process.platform` (`darwin` → `macos`,
   `linux` → `linux`, `win32` → `windows`, anything else → `linux`).
 
-- **`ensurePackageManager(platform, { dryRun })`** — on macOS, installs Homebrew
-  if `brew` is not on PATH. On Linux/Windows, assumes `apt`/`winget` is present.
+- **`detectManagers(platform, { force })`** — returns a memoised `Set` of the
+  package-manager keys actually present, probed via `hasCommand`. macOS: `brew`
+  (and `cask`, the same binary) + `npm`. Linux: `apt`/`dnf`/`yum`/`pacman`/
+  `zypper`/`snap`/`flatpak` + `npm`. Windows: `winget`/`scoop`/`choco` + `npm`.
+  `script` is universally runnable and is never probed. Pass `{ force: true }`
+  (or call `resetManagerCache()`) to re-probe after a bootstrap.
 
-- **`buildInstallCmd(spec)`** — given one platform's install spec object, returns
-  the shell command string (or `null` if the spec is empty/unrecognised). Priority:
-  `brew` → `cask` → `apt` → `snap` → `winget` → `npm` → `script`.
+- **`normalizeSpec(value)`** — flattens a platform install value (single object,
+  multi-key object, or array of objects) into an ordered list of single-key
+  candidate objects, preserving array order and, within an object, the
+  `buildInstallCmd` priority order. `null`/`undefined` → `[]`.
+
+- **`isRunnable(candidate, managers)`** / **`chooseCandidates(spec, managers)`** —
+  a candidate is runnable if it is a `script` or its manager is in the detected
+  `Set`. `chooseCandidates` is `normalizeSpec` then filter, giving the ordered
+  list of methods to actually attempt.
+
+- **`managerKeyOf(candidate)`** — the single manager key of a normalised
+  candidate (for logging).
+
+- **`ensurePackageManager(platform, { dryRun, autoYes, confirm })`** — best-effort,
+  conservative bootstrap. macOS: installs Homebrew if missing. Windows: if no
+  `winget`/`scoop`/`choco` is found, offers (confirm-gated, auto under `--yes`,
+  printed-only under `--dry-run`) to install Scoop, which needs no admin. Linux:
+  never auto-installs a system package manager (apt/dnf/pacman _are_ the OS) —
+  only warns if none is present. After a real bootstrap it prepends the new
+  manager's bin/shims directory to `process.env.PATH` (the installers only edit
+  shell profiles / the registry) so it is genuinely invocable for the rest of
+  the run; under `--dry-run` it instead records the manager as assumed-present
+  (per platform) so the printed plan reflects it.
+
+- **`buildInstallCmd(spec)`** — given a single candidate object, returns the
+  shell command (or `null`). Priority: `brew` → `cask` → `apt` → `dnf` → `yum`
+  → `pacman` → `zypper` → `snap` → `flatpak` → `winget` → `scoop` → `choco` →
+  `npm` → `script`. A legacy single-key object therefore produces a
+  byte-identical command to before this layer existed.
 
 ---
 
@@ -242,13 +317,28 @@ Edit `lib/tools.js`. Add an entry to the `TOOLS` array:
   platforms: ['macos', 'linux', 'windows'],
   install: {
     macos:   { brew: 'my-tool' },          // or { cask: '...' }
-    linux:   { apt: 'my-tool' },           // or { script: '...' }
+    linux:   { apt: 'my-tool' },           // single method, or an array (below)
     windows: { winget: 'Publisher.MyTool' },
   },
   // postInstall is optional:
   postInstall: 'Run: my-tool init to complete setup.',
 }
 ```
+
+**Adding fallbacks.** Make a platform's value an ordered array to try multiple
+methods. List the most-preferred method first; on a given machine, methods whose
+package manager is absent are skipped, and a method that runs but fails to put
+the binary on PATH falls through to the next:
+
+```js
+linux:   [{ apt: 'my-tool' }, { dnf: 'my-tool' }, { script: 'curl … | sh' }],
+windows: [{ winget: 'Publisher.MyTool' }, { scoop: 'my-tool' }, { choco: 'my-tool' }],
+```
+
+Only reuse a package name across managers when you know it matches. When a
+distro's name differs (or you are unsure), give that manager its own explicit
+value or omit it — an omitted manager is skipped, which is safer than installing
+the wrong package.
 
 Then reference the `id` in whichever `PROFILES.ids` arrays should include it. A tool
 not listed in any profile is never installed; a tool listed in a profile but not
