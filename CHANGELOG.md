@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.6](https://github.com/vpnsin-labs/devsetup/compare/v0.1.5...v0.1.6) (2026-06-18)
+
+
+### Features
+
+* add package-manager install fallbacks ([325c882](https://github.com/vpnsin-labs/devsetup/commit/325c8825d063fdbcf45b07c8dbb045db6042d769))
+* add package-manager install fallbacks ([#10](https://github.com/vpnsin-labs/devsetup/issues/10)) ([d0dcd47](https://github.com/vpnsin-labs/devsetup/commit/d0dcd47208e21880c30046634e5489f7ad751c39))
+
 ## [0.1.5](https://github.com/vpnsin-labs/devsetup/compare/v0.1.4...v0.1.5) (2026-06-16)
 
 
