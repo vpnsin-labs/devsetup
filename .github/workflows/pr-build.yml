@@ -1,0 +1,63 @@
+name: PR Build
+
+# Validation build for FEATURE pull requests.
+#
+# Runs only on pull_request — never on push/merge to a branch — so merging a PR into main triggers
+# no build (CI already ran here, on the PR). The release-please PR is skipped: pre-release-build.yml
+# owns that one. Together with release-build.yml this gives three distinct pipelines:
+#   pr-build (feature PRs)  ->  pre-release-build (the release PR)  ->  release-build (on release).
+on:
+  pull_request:
+    branches: [main, dev]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-build-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Lint, type-check & build
+    # Skip the release-please PR — pre-release-build.yml validates that one.
+    if: ${{ !startsWith(github.head_ref, 'release-please--') }}
+    runs-on: ubuntu-latest
+    # Hard cap so a hung job can't drain the Actions minute quota (metered on private repos).
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Free dependency vulnerability check — works on public and private repos,
+      # and stands in for GHAS Dependency Review on private repos. Non-blocking.
+      - name: Audit dependencies
+        run: npm audit --audit-level=high
+        continue-on-error: true
+
+      - name: Type-check
+        run: npm run type-check --if-present
+
+      - name: Lint (ESLint)
+        run: npm run lint --if-present
+
+      - name: Lint (Markdown)
+        run: npm run lint:md --if-present
+
+      - name: Prettier check
+        run: npm run format:check --if-present
+
+      - name: Build
+        run: npm run build --if-present
+
+      - name: Test
+        run: npm test --if-present

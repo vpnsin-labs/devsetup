@@ -1,9 +1,11 @@
 name: Release Please
 
-# Maintains a release PR from Conventional Commits; merging it bumps the version,
-# updates CHANGELOG.md, creates a GitHub release + tag, and publishes to npm.
-# Publish is integrated here (rather than a separate `on: release` workflow)
-# because a release created by GITHUB_TOKEN does not trigger other workflows.
+# Release manager. On every push to main it maintains a release PR from Conventional Commits;
+# merging that PR bumps the version, updates CHANGELOG.md and creates a GitHub release + tag. It is
+# the only workflow that runs on push to main — and it is not a build: a plain feature merge just
+# refreshes the release PR. The release itself is built/published by release-build.yml, which this
+# workflow calls directly when a release is created (a GITHUB_TOKEN-created release would not trigger
+# an `on: release` workflow, so we invoke it as a reusable workflow instead — no PAT required).
 on:
   push:
     branches: [main]
@@ -11,7 +13,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
-  id-token: write # npm provenance
+  id-token: write # passed through to release-build for npm provenance
 
 # Serialize release/publish runs per ref; never cancel one mid-flight (cancel-in-progress: false).
 concurrency:
@@ -23,6 +25,8 @@ jobs:
     runs-on: ubuntu-latest
     # Hard cap so a hung job can't drain the Actions minute quota (metered on private repos).
     timeout-minutes: 15
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
     steps:
       - name: Run release-please
         id: release
@@ -32,26 +36,10 @@ jobs:
           config-file: release-please-config.json
           manifest-file: .release-please-manifest.json
 
-      # Publish to npm only when a release was just created.
-      - name: Checkout
-        if: ${{ steps.release.outputs.release_created }}
-        uses: actions/checkout@v6
-
-      - name: Setup Node
-        if: ${{ steps.release.outputs.release_created }}
-        uses: actions/setup-node@v6
-        with:
-          node-version-file: .nvmrc
-          registry-url: 'https://registry.npmjs.org'
-          scope: '@vpnsin-labs'
-          cache: npm
-
-      - name: Install dependencies
-        if: ${{ steps.release.outputs.release_created }}
-        run: npm ci
-
-      - name: Publish to npm
-        if: ${{ steps.release.outputs.release_created }}
-        run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  # When a release was just created, run the release build (build + publish). Calling the reusable
+  # workflow here is what lets it fire — the release event created by GITHUB_TOKEN would not.
+  release-build:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created }}
+    uses: ./.github/workflows/release-build.yml
+    secrets: inherit

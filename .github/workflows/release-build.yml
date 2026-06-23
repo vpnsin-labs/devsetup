@@ -1,0 +1,50 @@
+name: Release Build
+
+# The actual release: build + publish to npm.
+#
+# This is a REUSABLE workflow invoked by release-please.yml the moment a release is created. It is
+# NOT triggered by `on: release` on purpose — a release created by GITHUB_TOKEN does not trigger
+# other workflows, so wiring it as a callable step of the release job is what makes it fire without
+# a PAT. `workflow_dispatch` is kept for manual re-runs.
+on:
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-build-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Build & publish
+    runs-on: ubuntu-latest
+    # Hard cap so a hung job can't drain the Actions minute quota (metered on private repos).
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      id-token: write # npm provenance
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@vpnsin-labs'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build --if-present
+
+      - name: Publish to npm
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

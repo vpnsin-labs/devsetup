@@ -1,21 +1,25 @@
-name: CI
+name: Pre-release Build
 
+# Validation build for the RELEASE-PLEASE pull request — the automated version-bump + CHANGELOG PR.
+# Merging that PR cuts a release, so this proves the release candidate is green beforehand. It is a
+# pull_request build (not a push build): merging it does not re-run this — release-build.yml takes
+# over once the release is created.
 on:
-  push:
-    branches: [main, dev]
   pull_request:
-    branches: [main, dev]
+    branches: [main]
 
 permissions:
   contents: read
 
 concurrency:
-  group: ci-${{ github.workflow }}-${{ github.ref }}
+  group: pre-release-build-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   quality:
     name: Lint, type-check & build
+    # Only the release-please PR; feature PRs are handled by pr-build.yml.
+    if: ${{ startsWith(github.head_ref, 'release-please--') }}
     runs-on: ubuntu-latest
     # Hard cap so a hung job can't drain the Actions minute quota (metered on private repos).
     timeout-minutes: 15
@@ -31,12 +35,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
-      # Free dependency vulnerability check — works on public and private repos,
-      # and stands in for GHAS Dependency Review on private repos. Non-blocking.
-      - name: Audit dependencies
-        run: npm audit --audit-level=high
-        continue-on-error: true
 
       - name: Type-check
         run: npm run type-check --if-present
