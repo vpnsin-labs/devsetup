@@ -1,0 +1,44 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+#
+# Template for the LA Node + TypeScript backend services (Express 5 + Mongoose 8, compiled to
+# dist/, backed by an EXTERNAL MongoDB via DATABASE_URI). Copy this file to a repo's ROOT as
+# `render.yaml`, then customise the marked spots.
+#
+# How to use
+#   1. Set `name` (e.g. laconsoleapi, labackend) and `branch`.
+#   2. Keep buildCommand / startCommand / healthCheckPath in step with the repo's package.json
+#      scripts and its health route — the LA services already expose GET /health.
+#   3. Declare EVERY runtime env var the service reads under `envVars`:
+#        - secrets / per-environment values -> `sync: false`  (set the value in the Render
+#          dashboard or a shared env group; NEVER commit secret values to git)
+#        - non-secret constants             -> `value: <literal>`  (quote numbers so they stay
+#          strings, e.g. value: "20")
+#   4. Do NOT set PORT — Render injects it and the app must listen on process.env.PORT (it does).
+#
+# One blueprint can define multiple services and env groups; this template ships one web service.
+services:
+  - type: web
+    name: REPLACE-ME # dashboard name, lowercase (e.g. laconsoleapi)
+    runtime: node
+    plan: starter # free | starter | standard | pro — right-size per service
+    region: singapore # co-locate with the MongoDB region to cut latency
+    branch: main # branch Render auto-deploys from
+    autoDeploy: true
+    buildCommand: npm ci && npm run build # tsc -> dist/
+    startCommand: npm start # node dist/server.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "20" # matches package.json engines (node >= 20)
+      - key: NODE_ENV
+        value: production
+      # --- Datastore (external MongoDB; the URI must include the database name in its path) ---
+      - key: DATABASE_URI
+        sync: false
+      # --- Shared auth secret (the LA services verify the same JWTs) ---
+      - key: TOKEN_SECRET
+        sync: false
+      # --- Add the rest of THIS service's env vars below (see its .env.example / source). ---
+      # Secrets use `sync: false`; non-secret defaults use `value:`.
+      # - key: CORS_ORIGINS
+      #   sync: false
