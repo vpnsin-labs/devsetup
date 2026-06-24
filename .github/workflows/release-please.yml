@@ -35,7 +35,7 @@ jobs:
       # Publish to npm only when a release was just created.
       - name: Checkout
         if: ${{ steps.release.outputs.release_created }}
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Setup Node
         if: ${{ steps.release.outputs.release_created }}
