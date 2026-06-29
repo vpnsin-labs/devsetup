@@ -69,6 +69,7 @@ ${c.bold('devsetup')} — developer machine bootstrap
 ${c.bold('Usage:')}  npx @vpnsin-labs/devsetup [command|profile] [options]
 
 ${c.bold('Tool profiles:')}
+  --essentials   everyday laptop apps — VS Code, Notepad++, Chrome, GitHub, 7-Zip, VLC, PowerToys
   --js           git, fnm, Node.js LTS, pnpm, VS Code, GitHub CLI
   --web          JS tools + Docker, Supabase, MongoDB, Postman
   --mobile       Xcode CLI, Java, Android Studio, CocoaPods, Flutter
@@ -150,8 +151,8 @@ if (has('--docs')) {
 }
 
 // Select profile
-let profileKey = ['js', 'web', 'mobile', 'backend', 'devops', 'full-stack'].find((p) =>
-  has(`--${p}`)
+let profileKey = ['essentials', 'js', 'web', 'mobile', 'backend', 'devops', 'full-stack'].find(
+  (p) => has(`--${p}`)
 );
 if (!profileKey) {
   profileKey = await selectChoice(
