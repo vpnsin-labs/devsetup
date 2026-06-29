@@ -2,9 +2,31 @@
 
 > Bootstrap your JavaScript development environment in one command.
 
-A CLI that detects your OS and installs the tools you choose — web, mobile, backend, DevOps, or the full stack. Runs on macOS, Linux, and Windows.
+A CLI that detects your OS and installs the tools you choose — everyday laptop essentials, web, mobile, backend, DevOps, or the full stack. Runs on macOS, Linux, and Windows.
+
+## Fresh machine setup
+
+Start here on a **brand-new machine that doesn't have Node.js yet**. These bootstrap
+scripts install fnm + Node.js first, then launch devsetup for you.
+
+**macOS / Linux:**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/vpnsin-labs/devsetup/main/setup.sh | bash
+```
+
+**Windows (PowerShell):**
+
+```powershell
+irm https://raw.githubusercontent.com/vpnsin-labs/devsetup/main/setup.ps1 | iex
+```
+
+You can pass any profile flag straight through, e.g. `... | bash -s -- --essentials`
+(macOS/Linux) or append the flag after the command on Windows.
 
 ## Quick start
+
+If you **already have Node.js**, run devsetup directly with npx:
 
 ```bash
 npx @vpnsin-labs/devsetup
@@ -13,6 +35,7 @@ npx @vpnsin-labs/devsetup
 Or skip the profile prompt by passing a flag:
 
 ```bash
+npx @vpnsin-labs/devsetup --essentials  # Everyday apps for a new laptop
 npx @vpnsin-labs/devsetup --js          # Minimal JavaScript dev
 npx @vpnsin-labs/devsetup --web         # Web + Docker + Supabase + MongoDB
 npx @vpnsin-labs/devsetup --mobile      # Android + iOS (Xcode CLI)
@@ -28,26 +51,11 @@ npx @vpnsin-labs/devsetup --docs
 npx @vpnsin-labs/devsetup --docs ./team-docs
 ```
 
-## Bootstrap scripts
-
-Run these on a fresh machine — they install fnm + Node.js first, then run devsetup.
-
-**macOS / Linux:**
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/vpnsin-labs/devsetup/main/setup.sh | bash
-```
-
-**Windows (PowerShell):**
-
-```powershell
-irm https://raw.githubusercontent.com/vpnsin-labs/devsetup/main/setup.ps1 | iex
-```
-
 ## Profiles
 
 | Profile        | Automatically installed | Optional (prompted)                                                                                                                                |
 | -------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **essentials** | git                     | VS Code, Notepad++ (Windows), GitHub Desktop, GitHub CLI, Google Chrome, VLC, 7-Zip (Windows), PowerToys (Windows), Obsidian                       |
 | **js**         | git, fnm, Node.js LTS   | pnpm, GitHub CLI, VS Code, Bun, GitHub Desktop, Windows Terminal                                                                                   |
 | **web**        | git, fnm, Node.js LTS   | pnpm, GitHub CLI, VS Code, Bun, WSL 2 (Windows), Docker, Supabase CLI, MongoDB, Postman, GitHub Desktop                                            |
 | **mobile**     | git, fnm, Java 17       | VS Code, Xcode CLI, Android Studio, Watchman, CocoaPods, Flutter                                                                                   |
@@ -97,6 +105,20 @@ The guides are also committed to this repo so they render on GitHub and npm:
 | `--help`        | Show help                                                                          |
 
 ## Tools
+
+### Everyday apps (`--essentials`)
+
+For a new laptop — useful whether or not you write code:
+
+- **VS Code** — code/text editor
+- **Notepad++** — lightweight text & code editor (Windows)
+- **GitHub Desktop** — GUI git client (macOS/Windows)
+- **GitHub CLI (`gh`)** — manage PRs, issues, and repos from the terminal
+- **Google Chrome** — web browser (macOS/Windows)
+- **VLC** — media player for video and audio
+- **7-Zip** — file archiver (Windows)
+- **PowerToys** — Windows power-user utilities (Windows)
+- **Obsidian** — markdown notes & knowledge base
 
 ### JavaScript ecosystem
 
