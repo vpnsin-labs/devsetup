@@ -1,8 +1,12 @@
-name: CI
+name: PR Build
 
+# Validation build for FEATURE pull requests.
+#
+# Runs only on pull_request — never on push/merge to a branch — so merging a PR into main triggers
+# no build (CI already ran here, on the PR). The release-please PR is skipped: pre-release-build.yml
+# owns that one. Together with release-build.yml this gives three distinct pipelines:
+#   pr-build (feature PRs)  ->  pre-release-build (the release PR)  ->  release-build (on release).
 on:
-  push:
-    branches: [main, dev]
   pull_request:
     branches: [main, dev]
 
@@ -10,12 +14,14 @@ permissions:
   contents: read
 
 concurrency:
-  group: ci-${{ github.workflow }}-${{ github.ref }}
+  group: pr-build-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   quality:
     name: Lint, type-check & build
+    # Skip the release-please PR — pre-release-build.yml validates that one.
+    if: ${{ !startsWith(github.head_ref, 'release-please--') }}
     runs-on: ubuntu-latest
     # Hard cap so a hung job can't drain the Actions minute quota (metered on private repos).
     timeout-minutes: 15
