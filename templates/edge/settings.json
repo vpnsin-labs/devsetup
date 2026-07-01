@@ -1,0 +1,14 @@
+{
+  "_comment": "Curated, non-personal Microsoft Edge settings baseline shipped with devsetup. Applied as Edge managed policies (Windows registry HKCU, macOS defaults, Linux managed JSON). Policy-managed settings appear as 'managed by your organization' and are chosen to be broadly beneficial: security, privacy, and sensible UX. No personal data, accounts, passwords, payment autofill, search engine, or homepage URLs are set.",
+  "policies": {
+    "FavoritesBarEnabled": true,
+    "ShowHomeButton": true,
+    "TrackingPrevention": 2,
+    "SmartScreenEnabled": true,
+    "SmartScreenPuaEnabled": true,
+    "PromptForDownloadLocation": true,
+    "AutofillCreditCardEnabled": false,
+    "SleepingTabsEnabled": true,
+    "StartupBoostEnabled": true
+  }
+}
