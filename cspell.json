@@ -61,6 +61,9 @@
     "zypper"
   ],
   "ignorePaths": [
+    "templates/edge/bookmarks.json",
+    "templates/edge/extensions.json",
+    "templates/dotfiles/vscode/extensions.json",
     "node_modules/**",
     "dist/**",
     "build/**",

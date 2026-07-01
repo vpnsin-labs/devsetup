@@ -41,11 +41,13 @@ Entry point. Responsibilities:
   `argAfter` helper).
 - Detects interactive mode via `process.stdin.isTTY`; falls back to defaults when
   piped or in CI.
-- Handles three top-level modes, each exiting early after completion:
+- Handles several top-level modes, each exiting early after completion:
   1. `--help` — prints usage and exits.
   2. `--dotfiles` — delegates to `lib/dotfiles.js` after collecting user inputs.
   3. `--docs` — delegates to `lib/docs.js`.
-  4. _(default)_ — profile selection → tool installation loop.
+  4. `--edge` — delegates to `lib/edge.js` (Microsoft Edge baseline).
+  5. `--vscode` — delegates to `lib/vscode.js` (extensions + settings/keybindings).
+  6. _(default)_ — profile selection → tool installation loop.
 - The installation loop builds each tool's runnable methods via
   `chooseCandidates(tool.install[platform], managers)` and tries them in order.
   The first method that exits cleanly wins; any non-zero exit throws and falls
@@ -300,6 +302,45 @@ Handles `--docs`. Single export:
 **`generateDocs(outputDir, { dryRun })`** — reads every `.md` file from
 `templates/docs/`, copies each one verbatim (no template variable substitution) to
 `outputDir`, creating the directory if needed. Returns the count of files copied.
+
+---
+
+### `lib/edge.js`
+
+Handles `--edge`. Single export `setupEdge(platform, { dryRun, autoYes, confirm })`,
+which installs Microsoft Edge (reusing `platform.js`'s ordered-fallback installer
+machinery) and applies a curated, non-personal baseline read from `templates/edge/`:
+
+- **`extensions.json`** — recommended Edge Add-ons IDs, applied as an
+  `ExtensionSettings` policy with `installation_mode: normal_installed` (auto-installed
+  but user-removable).
+- **`settings.json`** — generic Edge policy settings (security/privacy/UX).
+- **`bookmarks.json`** — curated public bookmarks in a simplified
+  `{ bookmark_bar, other, synced }` tree; `materializeBookmarks()` expands it into a
+  valid Edge `Bookmarks` file (assigning `guid`/`id`/`date_added`).
+
+Policies are delivered via Edge's supported managed-policy mechanism per OS:
+Windows generates a `.reg` file imported into `HKCU\Software\Policies\Microsoft\Edge`
+(no admin); macOS uses `defaults write com.microsoft.Edge`; Linux writes
+`/etc/opt/edge/policies/managed/devsetup-edge.json` (sudo). Bookmarks are written into
+the `Default` profile, backing up any existing `Bookmarks` file. Everything honours
+`--dry-run`. Windows is the primary tested path; macOS/Linux policy delivery is
+best-effort. All template content is sanitised (no accounts, passwords, payment data,
+or internal/personal URLs).
+
+### `lib/vscode.js`
+
+Handles `--vscode`. Single export `setupVscode(platform, { dryRun, autoYes, confirm })`:
+
+- **Extensions** — reads the vendored `templates/dotfiles/vscode/extensions.json`
+  (`{ recommendations: [...] }`, VS Code's standard format) and installs each via
+  `code --install-extension <id> --force`, detecting `code` (or `code-insiders`) on
+  PATH; missing CLI skips extensions with a hint.
+- **Settings & keybindings** — reuses `dotfiles.js` (`getDotfileTargets` filtered to
+  the `vscode-*` targets + `installDotfile`) to write `settings.json`/`keybindings.json`,
+  backing up existing files.
+
+`loadRecommendations()` is also exported for tests. Everything honours `--dry-run`.
 
 ---
 

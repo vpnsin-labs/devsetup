@@ -1,0 +1,36 @@
+{
+  "_comment": "Curated, reputable Microsoft Edge extension baseline shipped with devsetup. Applied via the Edge ExtensionSettings/ExtensionInstallForcelist policy (installation_mode: normal_installed, so users can remove them). IDs are Microsoft Edge Add-ons store IDs; update_url is the Edge Add-ons CRX endpoint. Known privacy/security-risk extensions (free VPNs, video downloaders, webcam access) are intentionally excluded.",
+  "update_url": "https://edge.microsoft.com/extensionwebstorebase/v1/crx",
+  "recommended": [
+    {
+      "id": "odfafepnkmbhccpbejgmiehpchacaeak",
+      "name": "uBlock Origin",
+      "description": "Efficient, open-source content & ad blocker",
+      "store_url": "https://microsoftedge.microsoft.com/addons/detail/odfafepnkmbhccpbejgmiehpchacaeak"
+    },
+    {
+      "id": "fdpohaocaechififmbbbbbknoalclacl",
+      "name": "GoFullPage - Full Page Screen Capture",
+      "description": "Capture a full-page screenshot of the current tab",
+      "store_url": "https://microsoftedge.microsoft.com/addons/detail/fdpohaocaechififmbbbbbknoalclacl"
+    },
+    {
+      "id": "dlgfaleeejmphhnemjgiaekdbonkagkd",
+      "name": "Enhancer for YouTube",
+      "description": "Extra controls for the YouTube player (speed, volume, themes)",
+      "store_url": "https://microsoftedge.microsoft.com/addons/detail/dlgfaleeejmphhnemjgiaekdbonkagkd"
+    },
+    {
+      "id": "jdoanlopeanabgejgmdncljhkdplcfed",
+      "name": "Momentum",
+      "description": "Personal new-tab dashboard (clock, weather, focus)",
+      "store_url": "https://microsoftedge.microsoft.com/addons/detail/jdoanlopeanabgejgmdncljhkdplcfed"
+    },
+    {
+      "id": "ghbmnnjooekpmoecnnnilnnbdlolhkhi",
+      "name": "Google Docs Offline",
+      "description": "Edit Google Docs, Sheets & Slides offline",
+      "store_url": "https://chromewebstore.google.com/detail/ghbmnnjooekpmoecnnnilnnbdlolhkhi"
+    }
+  ]
+}
