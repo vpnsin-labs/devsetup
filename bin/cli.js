@@ -80,6 +80,8 @@ ${c.bold('Tool profiles:')}
 ${c.bold('Dotfiles & docs:')}
   --dotfiles     install .gitconfig, .npmrc, .zshrc, VS Code settings, Gradle config
   --docs [dir]   generate setup documentation into [dir] (default: ./docs)
+  --edge         set up Microsoft Edge with a curated extensions/settings/bookmarks baseline
+  --vscode       install recommended VS Code extensions + settings and keybindings
 
 ${c.bold('Options:')}
   --yes, -y      auto-confirm all optional tool prompts
@@ -146,6 +148,22 @@ if (has('--docs')) {
   console.log(
     `  ${c.dim('         ')} repository-cloning, environment-settings, azure-vpn-setup, utility-scripts\n`
   );
+  rl.close();
+  process.exit(0);
+}
+
+// ── Edge baseline command ─────────────────────────────────────────────────────
+if (has('--edge')) {
+  const { setupEdge } = await import('../lib/edge.js');
+  await setupEdge(platform, { dryRun, autoYes, confirm });
+  rl.close();
+  process.exit(0);
+}
+
+// ── VS Code setup command ──────────────────────────────────────────────────────
+if (has('--vscode')) {
+  const { setupVscode } = await import('../lib/vscode.js');
+  await setupVscode(platform, { dryRun, autoYes, confirm });
   rl.close();
   process.exit(0);
 }

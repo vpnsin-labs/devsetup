@@ -49,6 +49,12 @@ npx @vpnsin-labs/devsetup --dotfiles
 # Documentation (7 markdown guides written to ./docs/)
 npx @vpnsin-labs/devsetup --docs
 npx @vpnsin-labs/devsetup --docs ./team-docs
+
+# Microsoft Edge baseline (curated extensions, settings & bookmarks)
+npx @vpnsin-labs/devsetup --edge
+
+# VS Code (recommended extensions + settings & keybindings)
+npx @vpnsin-labs/devsetup --vscode
 ```
 
 ## Profiles
@@ -94,6 +100,43 @@ The guides are also committed to this repo so they render on GitHub and npm:
 | [environment-settings.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/environment-settings.md) | `.env` files, direnv, global env vars, secret management                              |
 | [azure-vpn-setup.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/azure-vpn-setup.md)           | Azure VPN Client, Windows App (AVD), RDP, Azure Bastion                               |
 | [utility-scripts.md](https://github.com/vpnsin-labs/devsetup/blob/main/docs/utility-scripts.md)           | Full command reference for all installed tools                                        |
+
+## Microsoft Edge baseline
+
+`--edge` installs Microsoft Edge (if missing) and applies a small, **curated and
+non-personal** baseline:
+
+- **Extensions** — a reputable recommended set (uBlock Origin, GoFullPage,
+  Enhancer for YouTube, Momentum, Google Docs Offline), auto-installed as
+  removable via the Edge `ExtensionSettings` policy. Free VPNs, downloaders and
+  webcam extensions are deliberately excluded.
+- **Settings** — generic security/privacy/UX policies (favorites bar, Tracking
+  Prevention, SmartScreen, ask-where-to-save downloads, no payment autofill).
+  No accounts, passwords, payment data, search engine or homepage are touched.
+- **Bookmarks** — a curated set of public links (internal/personal/tokenised
+  URLs are stripped), written into the profile with the existing file backed up.
+  Includes icon-only quick-launch favourites on the bar and a `🎨 Workspace`
+  folder of themed groups (Learn & Explore Tech with free Microsoft/Google/AWS/
+  Anthropic courses, Indian Stock Market, SME IPO, Geopolitics, Archives & Free
+  Resources).
+
+Applied via Edge's supported managed-policy mechanism: registry `HKCU` on Windows
+(no admin), `defaults` on macOS, and a managed JSON file on Linux (sudo). Restart
+Edge afterwards. Use `--dry-run` to preview every change first.
+
+## VS Code setup
+
+`--vscode` sets up Visual Studio Code in one step:
+
+- **Extensions** — installs a curated recommended set (Prettier, ESLint,
+  markdownlint, code spell-checker, GitLens, Error Lens, Jest, YAML, GitHub
+  Actions, and more) via `code --install-extension`.
+- **Settings & keybindings** — writes the same `settings.json` and
+  `keybindings.json` shipped by `--dotfiles`, backing up any existing files.
+
+If the `code` command isn't on your PATH, extension install is skipped with a
+hint (install VS Code first via `--essentials`, or add `code` to PATH). Use
+`--dry-run` to preview the exact commands.
 
 ## Options
 

@@ -1,0 +1,2802 @@
+{
+  "bookmark_bar": {
+    "type": "folder",
+    "name": "Favourites bar",
+    "children": [
+      {
+        "type": "url",
+        "name": "",
+        "url": "https://teams.microsoft.com"
+      },
+      {
+        "type": "url",
+        "name": "",
+        "url": "https://outlook.com"
+      },
+      {
+        "type": "url",
+        "name": "",
+        "url": "https://onenote.com"
+      },
+      {
+        "type": "url",
+        "name": "",
+        "url": "https://m365.cloud.microsoft"
+      },
+      {
+        "type": "url",
+        "name": "",
+        "url": "https://notion.so"
+      },
+      {
+        "type": "url",
+        "name": "",
+        "url": "https://youtube.com"
+      },
+      {
+        "type": "url",
+        "name": "",
+        "url": "https://mail.google.com"
+      },
+      {
+        "type": "url",
+        "name": "",
+        "url": "https://drive.google.com"
+      },
+      {
+        "type": "url",
+        "name": "",
+        "url": "https://calendar.google.com"
+      },
+      {
+        "type": "url",
+        "name": "",
+        "url": "https://google.com/finance"
+      },
+      {
+        "type": "url",
+        "name": "",
+        "url": "https://google.com/maps"
+      },
+      {
+        "type": "url",
+        "name": "",
+        "url": "https://mckinsey.com"
+      },
+      {
+        "type": "url",
+        "name": "",
+        "url": "https://claude.ai"
+      },
+      {
+        "type": "url",
+        "name": "",
+        "url": "https://chatgpt.com"
+      },
+      {
+        "type": "url",
+        "name": "",
+        "url": "https://github.com"
+      },
+      {
+        "type": "url",
+        "name": "",
+        "url": "https://web.whatsapp.com"
+      },
+      {
+        "type": "url",
+        "name": "",
+        "url": "https://translate.google.com"
+      },
+      {
+        "type": "url",
+        "name": "",
+        "url": "https://fmhy.net"
+      },
+      {
+        "type": "url",
+        "name": "",
+        "url": "https://perplexity.ai"
+      },
+      {
+        "type": "url",
+        "name": "",
+        "url": "https://reddit.com"
+      },
+      {
+        "type": "folder",
+        "name": "🎨 Workspace",
+        "children": [
+          {
+            "type": "folder",
+            "name": "📘 Learn & Explore Tech",
+            "children": [
+              {
+                "type": "url",
+                "name": "Microsoft Learn",
+                "url": "https://learn.microsoft.com/en-us/training/"
+              },
+              {
+                "type": "url",
+                "name": "Google Skills (Cloud Skills Boost)",
+                "url": "https://www.skills.google/"
+              },
+              {
+                "type": "url",
+                "name": "AWS Skill Builder",
+                "url": "https://skillbuilder.aws/"
+              },
+              {
+                "type": "url",
+                "name": "Anthropic Academy",
+                "url": "https://anthropic.skilljar.com/"
+              },
+              {
+                "type": "url",
+                "name": "Anthropic / Claude Docs",
+                "url": "https://docs.claude.com/"
+              },
+              {
+                "type": "url",
+                "name": "freeCodeCamp",
+                "url": "https://www.freecodecamp.org/"
+              },
+              {
+                "type": "url",
+                "name": "The Odin Project",
+                "url": "https://www.theodinproject.com/"
+              },
+              {
+                "type": "url",
+                "name": "MDN Web Docs",
+                "url": "https://developer.mozilla.org/"
+              },
+              {
+                "type": "url",
+                "name": "roadmap.sh",
+                "url": "https://roadmap.sh/"
+              },
+              {
+                "type": "url",
+                "name": "CS50 (Harvard)",
+                "url": "https://cs50.harvard.edu/x/"
+              },
+              {
+                "type": "url",
+                "name": "Coursera",
+                "url": "https://www.coursera.org/"
+              },
+              {
+                "type": "url",
+                "name": "edX",
+                "url": "https://www.edx.org/"
+              },
+              {
+                "type": "url",
+                "name": "Kaggle Learn",
+                "url": "https://www.kaggle.com/learn"
+              },
+              {
+                "type": "url",
+                "name": "Khan Academy",
+                "url": "https://www.khanacademy.org/"
+              },
+              {
+                "type": "url",
+                "name": "Google for Developers",
+                "url": "https://developers.google.com/"
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "📈 Indian Stock Market",
+            "children": [
+              {
+                "type": "url",
+                "name": "NSE India",
+                "url": "https://www.nseindia.com"
+              },
+              {
+                "type": "url",
+                "name": "NSE Option Chain",
+                "url": "https://www.nseindia.com/option-chain"
+              },
+              {
+                "type": "url",
+                "name": "BSE India",
+                "url": "https://www.bseindia.com"
+              },
+              {
+                "type": "url",
+                "name": "Screener.in",
+                "url": "https://www.screener.in"
+              },
+              {
+                "type": "url",
+                "name": "Trendlyne",
+                "url": "https://trendlyne.com"
+              },
+              {
+                "type": "url",
+                "name": "Tickertape",
+                "url": "https://www.tickertape.in"
+              },
+              {
+                "type": "url",
+                "name": "Moneycontrol Markets",
+                "url": "https://www.moneycontrol.com/markets/"
+              },
+              {
+                "type": "url",
+                "name": "Chartink",
+                "url": "https://chartink.com"
+              },
+              {
+                "type": "url",
+                "name": "TradingView India",
+                "url": "https://in.tradingview.com/markets/"
+              },
+              {
+                "type": "url",
+                "name": "Zerodha Varsity",
+                "url": "https://zerodha.com/varsity/"
+              },
+              {
+                "type": "url",
+                "name": "ET Markets",
+                "url": "https://economictimes.indiatimes.com/markets"
+              },
+              {
+                "type": "url",
+                "name": "Groww Stocks",
+                "url": "https://groww.in/stocks"
+              },
+              {
+                "type": "url",
+                "name": "Simply Wall St - India",
+                "url": "https://simplywall.st/markets/in"
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "🚀 SME IPO",
+            "children": [
+              {
+                "type": "url",
+                "name": "BSE SME Platform",
+                "url": "https://www.bsesme.com/"
+              },
+              {
+                "type": "url",
+                "name": "NSE Emerge (SME)",
+                "url": "https://www.nseindia.com/static/products-services/emerge-platform-about-sme"
+              },
+              {
+                "type": "url",
+                "name": "Chittorgarh IPO",
+                "url": "https://www.chittorgarh.com/"
+              },
+              {
+                "type": "url",
+                "name": "IPO Watch",
+                "url": "https://ipowatch.in/"
+              },
+              {
+                "type": "url",
+                "name": "IPO Central",
+                "url": "https://ipocentral.in/"
+              },
+              {
+                "type": "url",
+                "name": "InvestorGain Live IPO GMP",
+                "url": "https://www.investorgain.com/report/live-ipo-gmp/331/"
+              },
+              {
+                "type": "url",
+                "name": "IPO Premium",
+                "url": "https://www.ipopremium.in/"
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "🌍 Geopolitics",
+            "children": [
+              {
+                "type": "url",
+                "name": "Council on Foreign Relations",
+                "url": "https://www.cfr.org/"
+              },
+              {
+                "type": "url",
+                "name": "Foreign Affairs",
+                "url": "https://www.foreignaffairs.com/"
+              },
+              {
+                "type": "url",
+                "name": "Foreign Policy",
+                "url": "https://foreignpolicy.com/"
+              },
+              {
+                "type": "url",
+                "name": "The Diplomat",
+                "url": "https://thediplomat.com/"
+              },
+              {
+                "type": "url",
+                "name": "War on the Rocks",
+                "url": "https://warontherocks.com/"
+              },
+              {
+                "type": "url",
+                "name": "Geopolitical Futures",
+                "url": "https://geopoliticalfutures.com/"
+              },
+              {
+                "type": "url",
+                "name": "Stratfor Worldview",
+                "url": "https://worldview.stratfor.com/"
+              },
+              {
+                "type": "url",
+                "name": "Carnegie Endowment for International Peace",
+                "url": "https://carnegieendowment.org/"
+              },
+              {
+                "type": "url",
+                "name": "Observer Research Foundation (ORF)",
+                "url": "https://www.orfonline.org/"
+              },
+              {
+                "type": "url",
+                "name": "European Council on Foreign Relations (ECFR)",
+                "url": "https://ecfr.eu/"
+              },
+              {
+                "type": "url",
+                "name": "Chatham House",
+                "url": "https://www.chathamhouse.org/"
+              },
+              {
+                "type": "url",
+                "name": "Brookings Institution",
+                "url": "https://www.brookings.edu/"
+              },
+              {
+                "type": "url",
+                "name": "RAND Corporation",
+                "url": "https://www.rand.org/"
+              },
+              {
+                "type": "url",
+                "name": "Reuters World",
+                "url": "https://www.reuters.com/world/"
+              },
+              {
+                "type": "url",
+                "name": "Al Jazeera",
+                "url": "https://www.aljazeera.com/"
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "🧰 Archives & Free Resources",
+            "children": [
+              {
+                "type": "url",
+                "name": "Wayback Machine",
+                "url": "https://web.archive.org"
+              },
+              {
+                "type": "url",
+                "name": "Internet Archive",
+                "url": "https://archive.org"
+              },
+              {
+                "type": "url",
+                "name": "12ft.io",
+                "url": "https://12ft.io"
+              },
+              {
+                "type": "url",
+                "name": "archive.today",
+                "url": "https://archive.today"
+              },
+              {
+                "type": "url",
+                "name": "Project Gutenberg",
+                "url": "https://www.gutenberg.org"
+              },
+              {
+                "type": "url",
+                "name": "Open Library",
+                "url": "https://openlibrary.org"
+              },
+              {
+                "type": "url",
+                "name": "Standard Ebooks",
+                "url": "https://standardebooks.org"
+              },
+              {
+                "type": "url",
+                "name": "Library Genesis",
+                "url": "https://libgen.is"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "name": "AI",
+        "children": [
+          {
+            "type": "url",
+            "name": "1-click chatbot | ora.sh",
+            "url": "https://ora.sh"
+          },
+          {
+            "type": "url",
+            "name": "AI Dungeon",
+            "url": "https://aidungeon.io"
+          },
+          {
+            "type": "url",
+            "name": "AI Model Review",
+            "url": "https://aimodelreview.com"
+          },
+          {
+            "type": "url",
+            "name": "AI Notes",
+            "url": "https://github.com/swyxio/ai-notes"
+          },
+          {
+            "type": "url",
+            "name": "Chat",
+            "url": "https://www.bing.com/search"
+          },
+          {
+            "type": "url",
+            "name": "Evals by openAI ",
+            "url": "https://github.com/openai/evals"
+          },
+          {
+            "type": "url",
+            "name": "For You | TAAFT",
+            "url": "https://theresanaiforthat.com/for-you"
+          },
+          {
+            "type": "url",
+            "name": "GPT-4 - Poe",
+            "url": "https://poe.com/GPT-4"
+          },
+          {
+            "type": "url",
+            "name": "Hands-on-llms",
+            "url": "https://github.com/iusztinpaul/hands-on-llms"
+          },
+          {
+            "type": "url",
+            "name": "Hugging Face – The AI community building the future.",
+            "url": "https://huggingface.co"
+          },
+          {
+            "type": "url",
+            "name": "LinkedIn Asstt.",
+            "url": "https://app.evyai.com/dashboard"
+          },
+          {
+            "type": "url",
+            "name": "LLM-course",
+            "url": "https://github.com/mlabonne/llm-course"
+          },
+          {
+            "type": "url",
+            "name": "Merlin | One-click access to ChatGPT /GPT-4 on all Websites",
+            "url": "https://merlin.foyer.work"
+          },
+          {
+            "type": "url",
+            "name": "ML-Papers-of-the-Week",
+            "url": "https://github.com/dair-ai/ML-Papers-of-the-Week"
+          },
+          {
+            "type": "url",
+            "name": "Models - Hugging Face",
+            "url": "https://huggingface.co/models"
+          },
+          {
+            "type": "url",
+            "name": "Papers from CS community",
+            "url": "https://github.com/papers-we-love/papers-we-love"
+          },
+          {
+            "type": "url",
+            "name": "Perplexity AI",
+            "url": "https://www.perplexity.ai"
+          },
+          {
+            "type": "url",
+            "name": "Phind: AI search engine",
+            "url": "https://www.phind.com/agent"
+          },
+          {
+            "type": "folder",
+            "name": "agent",
+            "children": [
+              {
+                "type": "url",
+                "name": "OpenRouter",
+                "url": "https://openrouter.ai"
+              },
+              {
+                "type": "url",
+                "name": "Ollama",
+                "url": "https://ollama.com"
+              },
+              {
+                "type": "url",
+                "name": "Ollama Search",
+                "url": "https://ollama.com/search"
+              }
+            ]
+          },
+          {
+            "type": "url",
+            "name": "Claude Fast: AI Led Development + Growth Marketing Kits",
+            "url": "https://claudefa.st"
+          },
+          {
+            "type": "url",
+            "name": "ValidatorAI.com - Generate and validate startup, product and small business ideas and simulate a launch with our AI analysis and advisor tool.",
+            "url": "https://validatorai.com"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "name": "Bhakti",
+        "children": [
+          {
+            "type": "url",
+            "name": "Stotram Sangrah",
+            "url": "https://www.drikpanchang.com/lyrics/stotram/stotram-collection.html"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "name": "Career",
+        "children": [
+          {
+            "type": "folder",
+            "name": "SD",
+            "children": [
+              {
+                "type": "folder",
+                "name": "Ashish",
+                "children": [
+                  {
+                    "type": "url",
+                    "name": "(170) 10+ Key Memory & Storage Systems: Crash Course System Design #5 - YouTube",
+                    "url": "https://www.youtube.com/watch"
+                  }
+                ]
+              },
+              {
+                "type": "folder",
+                "name": "BBG",
+                "children": [
+                  {
+                    "type": "url",
+                    "name": "Byte byte go",
+                    "url": "https://www.youtube.com/watch"
+                  },
+                  {
+                    "type": "url",
+                    "name": "System-design-101",
+                    "url": "https://github.com/ByteByteGoHq/system-design-101/blob/main/README.md"
+                  }
+                ]
+              },
+              {
+                "type": "folder",
+                "name": "git",
+                "children": [
+                  {
+                    "type": "url",
+                    "name": "ByteByteGo system-design-101",
+                    "url": "https://github.com/ByteByteGoHq/system-design-101"
+                  },
+                  {
+                    "type": "url",
+                    "name": "callstack/super-app-showcase: Monorepository template for super app development with React Native and Re.Pack",
+                    "url": "https://github.com/callstack/super-app-showcase"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Catalogue/System Design Interview An Insider’s Guide by Alex Xu (z-lib.org).pdf at master · G33kzD3n/Catalogue",
+                    "url": "https://github.com/G33kzD3n/Catalogue/blob/master/System%20Design%20Interview%20An%20Insider%E2%80%99s%20Guide%20by%20Alex%20Xu%20(z-lib.org).pdf"
+                  },
+                  {
+                    "type": "url",
+                    "name": "coding-parrot/Low-Level-Design: Useful Resources for Low Level System Design",
+                    "url": "https://github.com/coding-parrot/Low-Level-Design"
+                  },
+                  {
+                    "type": "url",
+                    "name": "DovAmir/awesome-design-patterns",
+                    "url": "https://github.com/DovAmir/awesome-design-patterns"
+                  },
+                  {
+                    "type": "url",
+                    "name": "InterviewReady/system-design-resources: These are the best resources for System Design on the Internet",
+                    "url": "https://github.com/InterviewReady/system-design-resources"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Primer",
+                    "url": "https://github.com/donnemartin/system-design-primer"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Scalability",
+                    "url": "https://github.com/binhnguyennus/awesome-scalability"
+                  },
+                  {
+                    "type": "url",
+                    "name": "SD Articles",
+                    "url": "https://github.com/madd86/awesome-system-design"
+                  },
+                  {
+                    "type": "url",
+                    "name": "SD: Case Study & Basics",
+                    "url": "https://github.com/systemdesign42/system-design"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Solutions to Coding Challenges",
+                    "url": "https://github.com/CodingChallengesFYI/SharedSolutions"
+                  }
+                ]
+              },
+              {
+                "type": "folder",
+                "name": "Interview",
+                "children": [
+                  {
+                    "type": "url",
+                    "name": "Tech-interview-handbook",
+                    "url": "https://github.com/yangshun/tech-interview-handbook"
+                  },
+                  {
+                    "type": "url",
+                    "name": "GitHub - kdn251/interviews: Everything you need to know to get the job.",
+                    "url": "https://github.com/kdn251/interviews"
+                  }
+                ]
+              },
+              {
+                "type": "folder",
+                "name": "yt",
+                "children": [
+                  {
+                    "type": "url",
+                    "name": "Bye Monk-Basics System Design",
+                    "url": "https://www.youtube.com/watch"
+                  },
+                  {
+                    "type": "url",
+                    "name": "GSCS-Playlist",
+                    "url": "https://www.youtube.com/@gkcs/playlists"
+                  },
+                  {
+                    "type": "url",
+                    "name": "System Design for Beginners - YouTube",
+                    "url": "https://www.youtube.com/playlist"
+                  }
+                ]
+              },
+              {
+                "type": "url",
+                "name": "Guide to Architecture Diagrams",
+                "url": "https://www.edrawsoft.com/architecture-diagram.html"
+              },
+              {
+                "type": "url",
+                "name": "Khalil Stemmler | Become a confident crafter. Learn to write testable, scalable TypeScript.",
+                "url": "https://khalilstemmler.com"
+              },
+              {
+                "type": "url",
+                "name": "Numbers Every Programmer Should Know By Year",
+                "url": "https://colin-scott.github.io/personal_website/research/interactive_latency.html"
+              },
+              {
+                "type": "url",
+                "name": "System Design Blueprint: The Ultimate Guide | by Love Sharma | ByteByteGo System Design Alliance | Medium",
+                "url": "https://archive.is/EtloD"
+              },
+              {
+                "type": "url",
+                "name": "System Design Roadmap",
+                "url": "https://roadmap.sh/system-design"
+              },
+              {
+                "type": "url",
+                "name": "system-design-primer/README.md at master · donnemartin/system-design-primer",
+                "url": "https://github.com/donnemartin/system-design-primer/blob/master/README.md"
+              },
+              {
+                "type": "url",
+                "name": "The Architect’s Blueprint: Understanding Software Styles and Patterns with Cheatsheet | by Love Sharma | ByteByteGo System Design Alliance | Medium",
+                "url": "https://archive.is/MSgy4"
+              },
+              {
+                "type": "url",
+                "name": "The Twelve-Factor App",
+                "url": "https://12factor.net"
+              },
+              {
+                "type": "url",
+                "name": "ByteByteGo - YouTube",
+                "url": "https://www.youtube.com/@ByteByteGo/playlists"
+              }
+            ]
+          },
+          {
+            "type": "url",
+            "name": "Is Careers.microsoft.com down? Live status and problems past 24 hours",
+            "url": "https://downforeveryoneorjustme.com/careers.microsoft.com"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "name": "CSheet",
+        "children": [
+          {
+            "type": "url",
+            "name": "Cheatsheets",
+            "url": "https://github.com/ThibaultJanBeyer/cheatsheets/blob/master/Email-Development-Cheatsheet.md"
+          },
+          {
+            "type": "url",
+            "name": "CSS Reference - A free visual guide to CSS",
+            "url": "https://cssreference.io"
+          },
+          {
+            "type": "url",
+            "name": "HTML Cheat Sheet 📃 - The best interactive cheat sheet",
+            "url": "https://htmlcheatsheet.com"
+          },
+          {
+            "type": "url",
+            "name": "iLoveCoding",
+            "url": "https://ilovecoding.org/blog/js-cheatsheet%E2%80%A6"
+          },
+          {
+            "type": "url",
+            "name": "JavaScript (JS) Cheat Sheet Online",
+            "url": "https://htmlcheatsheet.com/js"
+          },
+          {
+            "type": "url",
+            "name": "JavaScript Cheatsheet - Comprehensive PDF included - iLoveCoding",
+            "url": "https://ilovecoding.org/blog/js-cheatsheet"
+          },
+          {
+            "type": "url",
+            "name": "TypeScript Cheatsheet - cs.fyi",
+            "url": "https://cs.fyi/guide/typescript-cheatsheet"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "name": "DaveG",
+        "children": [
+          {
+            "type": "url",
+            "name": "Blog",
+            "url": "https://blog.isquaredsoftware.com/tags"
+          },
+          {
+            "type": "url",
+            "name": "Dave Gray Blogs",
+            "url": "https://yesdavidgray.com"
+          },
+          {
+            "type": "url",
+            "name": "Dave Gray Teaches Code",
+            "url": "https://courses.davegray.codes"
+          },
+          {
+            "type": "url",
+            "name": "GitDaGray",
+            "url": "https://github.com/gitdagray"
+          },
+          {
+            "type": "url",
+            "name": "gitdagray/react_persist_login",
+            "url": "https://github.com/gitdagray/react_persist_login"
+          },
+          {
+            "type": "url",
+            "name": "MERN Stack",
+            "url": "https://www.youtube.com/watch"
+          },
+          {
+            "type": "url",
+            "name": "Modern Redux with RTK",
+            "url": "https://redux.js.org/tutorials/fundamentals/part-8-modern-redux"
+          },
+          {
+            "type": "url",
+            "name": "React Developer Roadmap",
+            "url": "https://roadmap.sh/react"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "name": "Git",
+        "children": [
+          {
+            "type": "url",
+            "name": "alvarotrigo/fullPage.js",
+            "url": "https://github.com/alvarotrigo/fullPage.js"
+          },
+          {
+            "type": "url",
+            "name": "conventional-changelog/commitlint: 📓 Lint commit messages",
+            "url": "https://github.com/conventional-changelog/commitlint"
+          },
+          {
+            "type": "url",
+            "name": "dypsilon/frontend-dev-bookmarks",
+            "url": "https://github.com/dypsilon/frontend-dev-bookmarks"
+          },
+          {
+            "type": "url",
+            "name": "Git - tutorial",
+            "url": "https://git-scm.com/docs/gittutorial"
+          },
+          {
+            "type": "url",
+            "name": "Git hooks made easy 🐶 woof!",
+            "url": "https://github.com/typicode/husky"
+          },
+          {
+            "type": "url",
+            "name": "github/gitignore templates",
+            "url": "https://github.com/github/gitignore"
+          },
+          {
+            "type": "url",
+            "name": "LeCoupa/awesome-cheatsheets AiO",
+            "url": "https://github.com/LeCoupa/awesome-cheatsheets/tree/master"
+          },
+          {
+            "type": "url",
+            "name": "nwjs/nw.js",
+            "url": "https://github.com/nwjs/nw.js"
+          },
+          {
+            "type": "url",
+            "name": "OSSU",
+            "url": "https://github.com/ossu/computer-science"
+          },
+          {
+            "type": "url",
+            "name": "Realworld: \"mother of all demo apps\"",
+            "url": "https://github.com/gothinkster/realworld"
+          },
+          {
+            "type": "url",
+            "name": "Trending repositories on GitHub today",
+            "url": "https://github.com/trending"
+          },
+          {
+            "type": "url",
+            "name": "Trendshift - Github Trending Repositories",
+            "url": "https://trendshift.io"
+          },
+          {
+            "type": "url",
+            "name": "Trendshift - Trending Repository Details",
+            "url": "https://trendshift.io/repositories/3709"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "name": "HireUp",
+        "children": [
+          {
+            "type": "url",
+            "name": "Supabase Full Course 2025",
+            "url": "https://www.youtube.com/watch"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "name": "ME(RN)",
+        "children": [
+          {
+            "type": "folder",
+            "name": "JS",
+            "children": [
+              {
+                "type": "url",
+                "name": "📜 33 JavaScript concepts",
+                "url": "https://github.com/leonardomso/33-js-concepts"
+              },
+              {
+                "type": "url",
+                "name": "30-seconds-of-code: Short JS snippets",
+                "url": "https://github.com/30-seconds/30-seconds-of-code"
+              },
+              {
+                "type": "url",
+                "name": "AirBNB JS Style Guide",
+                "url": "https://github.com/airbnb/javascript"
+              },
+              {
+                "type": "url",
+                "name": "Azure SDKs for JS apps",
+                "url": "https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/notificationhubs/notification-hubs/README.md"
+              },
+              {
+                "type": "url",
+                "name": "JavaScript Playground",
+                "url": "https://playcode.io/javascript"
+              },
+              {
+                "type": "url",
+                "name": "JS Algorithms",
+                "url": "https://github.com/trekhleb/javascript-algorithms"
+              },
+              {
+                "type": "url",
+                "name": "Learn web development | MDN",
+                "url": "https://developer.mozilla.org/en-US/docs/Learn"
+              },
+              {
+                "type": "url",
+                "name": "Llydia hallie JS-questions",
+                "url": "https://github.com/lydiahallie/javascript-questions"
+              },
+              {
+                "type": "url",
+                "name": "State of JS",
+                "url": "https://stateofjs.com/en-US"
+              },
+              {
+                "type": "url",
+                "name": "TezJS",
+                "url": "https://tezjs.io"
+              },
+              {
+                "type": "url",
+                "name": "You-Dont-Know-JS",
+                "url": "https://github.com/getify/You-Dont-Know-JS"
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "HTML-CSS",
+            "children": [
+              {
+                "type": "folder",
+                "name": "Graphics",
+                "children": [
+                  {
+                    "type": "url",
+                    "name": "Behance :: For You",
+                    "url": "https://www.behance.net"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Balsamiq. Rapid, Effective and Fun Wireframing Software | Balsamiq",
+                    "url": "https://balsamiq.com"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Team Canvas - Get Your Team on the Same Page",
+                    "url": "https://www.theteamcanvas.com"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Rive - Build interactive animations that run anywhere",
+                    "url": "https://rive.app"
+                  },
+                  {
+                    "type": "url",
+                    "name": "felipefialho/frontend-tools",
+                    "url": "https://github.com/felipefialho/frontend-tools"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Whimsical - Where great ideas take shape",
+                    "url": "https://whimsical.com"
+                  }
+                ]
+              },
+              {
+                "type": "url",
+                "name": "Component Encyclopedia | Storybook",
+                "url": "https://storybook.js.org/showcase"
+              },
+              {
+                "type": "url",
+                "name": "CSS Protips",
+                "url": "https://github.com/AllThingsSmitty/css-protips"
+              },
+              {
+                "type": "url",
+                "name": "Front-End-Checklist",
+                "url": "https://github.com/thedaviddias/Front-End-Checklist"
+              },
+              {
+                "type": "url",
+                "name": "GitHub - tigerabrodi/css-for-js-devs-notes: Notes I took when going through the course CSS for JavaScript Developers.",
+                "url": "https://github.com/tigerabrodi/css-for-js-devs-notes"
+              },
+              {
+                "type": "url",
+                "name": "HTML5 UP! Responsive HTML5 and CSS3 Site Templates",
+                "url": "https://html5up.net"
+              },
+              {
+                "type": "url",
+                "name": "HTML5-boilerplate",
+                "url": "https://github.com/h5bp/html5-boilerplate"
+              },
+              {
+                "type": "url",
+                "name": "State of CSS",
+                "url": "https://stateofcss.com/en-US"
+              },
+              {
+                "type": "url",
+                "name": "State of HTML",
+                "url": "https://stateofhtml.com/en-US"
+              },
+              {
+                "type": "url",
+                "name": "Storybook",
+                "url": "https://github.com/storybookjs/storybook"
+              },
+              {
+                "type": "url",
+                "name": "(357) Introduction to Web Development | World's most premium Web Development Course | Lecture 0 (Reupload) - YouTube",
+                "url": "https://www.youtube.com/watch"
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "Node",
+            "children": [
+              {
+                "type": "url",
+                "name": "Node.js — Node.js Releases",
+                "url": "https://nodejs.org/en/about/previous-releases"
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "React",
+            "children": [
+              {
+                "type": "url",
+                "name": "Getting Started | Vite",
+                "url": "https://vitejs.dev/guide"
+              },
+              {
+                "type": "url",
+                "name": "pat-frontend-template/CRA_MIGRATION_GUIDE.md at master · nordcloud/pat-frontend-template · GitHub",
+                "url": "https://github.com/nordcloud/pat-frontend-template/blob/master/docs/CRA_MIGRATION_GUIDE.md"
+              },
+              {
+                "type": "url",
+                "name": "React Playground",
+                "url": "https://playcode.io/react"
+              },
+              {
+                "type": "url",
+                "name": "React Testing Library Tutorial",
+                "url": "https://www.robinwieruch.de/react-testing-library"
+              },
+              {
+                "type": "url",
+                "name": "React-MUI - CodeSandbox",
+                "url": "https://codesandbox.io/s/y191q"
+              },
+              {
+                "type": "url",
+                "name": "React-MUI (forked) - CodeSandbox",
+                "url": "https://codesandbox.io/s/react-mui-forked-1umbt3"
+              },
+              {
+                "type": "url",
+                "name": "State of React",
+                "url": "https://stateofreact.com/en-US"
+              },
+              {
+                "type": "url",
+                "name": "Using Capacitor with React",
+                "url": "https://capacitorjs.com/solution/react"
+              },
+              {
+                "type": "url",
+                "name": "Utilities for your recurring Frontend tasks - Frontend Toolkit",
+                "url": "https://www.fetoolkit.io"
+              },
+              {
+                "type": "url",
+                "name": "Vite | Next Generation Frontend Tooling",
+                "url": "https://vitejs.dev"
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "RN",
+            "children": [
+              {
+                "type": "folder",
+                "name": "App",
+                "children": [
+                  {
+                    "type": "url",
+                    "name": "The Twelve-Factor App",
+                    "url": "https://12factor.net"
+                  },
+                  {
+                    "type": "url",
+                    "name": "react-native-app-auth/azure-active-directory.md at main · FormidableLabs/react-native-app-auth · GitHub",
+                    "url": "https://github.com/FormidableLabs/react-native-app-auth/blob/main/docs/config-examples/azure-active-directory.md"
+                  }
+                ]
+              },
+              {
+                "type": "url",
+                "name": "Android Signing v1 task",
+                "url": "https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/android-signing-v1"
+              },
+              {
+                "type": "url",
+                "name": "Azure Active Directory | React Native App Auth",
+                "url": "https://commerce.nearform.com/open-source/react-native-app-auth/docs/providers/azure-active-directory"
+              },
+              {
+                "type": "url",
+                "name": "OAuth in React Native",
+                "url": "https://www.youtube.com/watch"
+              },
+              {
+                "type": "url",
+                "name": "react-native-app-auth/azure-active-directory.md at main · FormidableLabs/react-native-app-auth · GitHub",
+                "url": "https://github.com/FormidableLabs/react-native-app-auth/blob/main/docs/config-examples/azure-active-directory.md"
+              },
+              {
+                "type": "url",
+                "name": "Picasso - App Store Screenshot Tool",
+                "url": "https://getpicasso.com"
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "NPM",
+            "children": [
+              {
+                "type": "url",
+                "name": "Bundlephobia | Size of npm dependencies",
+                "url": "https://bundlephobia.com"
+              },
+              {
+                "type": "url",
+                "name": "pnpm",
+                "url": "https://pnpm.io"
+              },
+              {
+                "type": "url",
+                "name": "Installation | Bun Docs",
+                "url": "https://bun.sh/docs/installation"
+              },
+              {
+                "type": "url",
+                "name": "package.json | npm Docs",
+                "url": "https://docs.npmjs.com/cli/v10/configuring-npm/package-json"
+              },
+              {
+                "type": "url",
+                "name": "npm trends",
+                "url": "https://npmtrends.com"
+              },
+              {
+                "type": "url",
+                "name": "Scan package.json ❘ Bundlephobia",
+                "url": "https://bundlephobia.com/scan"
+              },
+              {
+                "type": "url",
+                "name": "siddharthkp/cost-of-modules: Find out which of your dependencies are slowing you down 🐢",
+                "url": "https://github.com/siddharthkp/cost-of-modules"
+              }
+            ]
+          },
+          {
+            "type": "url",
+            "name": "(1) The Complete Guide To Building A REST API With Node, Express, TypeScript & MongoDB + Authentication - YouTube",
+            "url": "https://www.youtube.com/watch"
+          },
+          {
+            "type": "url",
+            "name": "Bundlephobia | Size of npm dependencies",
+            "url": "https://bundlephobia.com"
+          },
+          {
+            "type": "url",
+            "name": "Codewars",
+            "url": "https://www.codewars.com/dashboard"
+          },
+          {
+            "type": "url",
+            "name": "esbuild - An extremely fast bundler for the web",
+            "url": "https://esbuild.github.io"
+          },
+          {
+            "type": "url",
+            "name": "Express examples",
+            "url": "https://expressjs.com/en/starter/examples.html"
+          },
+          {
+            "type": "url",
+            "name": "GraphQL Roadmap",
+            "url": "https://roadmap.sh/graphql"
+          },
+          {
+            "type": "url",
+            "name": "Node.js v18 Docs",
+            "url": "https://nodejs.org/dist/latest-v18.x/docs/api"
+          },
+          {
+            "type": "url",
+            "name": "Nodebestpractices",
+            "url": "https://github.com/goldbergyoni/nodebestpractices"
+          },
+          {
+            "type": "url",
+            "name": "State of GraphQL",
+            "url": "https://stateofgraphql.com/en-US"
+          },
+          {
+            "type": "url",
+            "name": "Utilities for your recurring Frontend tasks - Frontend Toolkit",
+            "url": "https://www.fetoolkit.io"
+          },
+          {
+            "type": "url",
+            "name": "Visual website builder",
+            "url": "https://webflow.com"
+          }
+        ]
+      },
+      {
+        "type": "url",
+        "name": "",
+        "url": "https://aacmix.com/big"
+      },
+      {
+        "type": "url",
+        "name": "",
+        "url": "https://www.youtube.com"
+      },
+      {
+        "type": "folder",
+        "name": "MindMaps",
+        "children": [
+          {
+            "type": "url",
+            "name": "All-HTTP-Status-Codes Mindmap",
+            "url": "https://graphmind.app/x/All-HTTP-Status-Codes"
+          },
+          {
+            "type": "url",
+            "name": "NodeJS-CheatSheet Mindmap",
+            "url": "https://graphmind.app/x/NodeJS-CheatSheet"
+          },
+          {
+            "type": "url",
+            "name": "GraphMind- AI Mind & DataViz & Knowledge Graphs",
+            "url": "https://graphmind.app/docs"
+          },
+          {
+            "type": "url",
+            "name": "hackingTechniques Mindmap – Online & Editable | graphmind",
+            "url": "https://graphmind.app/x/hackingTechniques"
+          },
+          {
+            "type": "url",
+            "name": "what-is-json Mindmap – Online & Editable | graphmind",
+            "url": "https://graphmind.app/x/what-is-json"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "name": "MS",
+        "children": [
+          {
+            "type": "folder",
+            "name": "Azure",
+            "children": [
+              {
+                "type": "url",
+                "name": "AZ900 Azure Hindi ",
+                "url": "https://www.youtube.com/watch"
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "Build-2023",
+            "children": [
+              {
+                "type": "url",
+                "name": "Your home for Microsoft Build",
+                "url": "https://build.microsoft.com/en-US/home"
+              },
+              {
+                "type": "url",
+                "name": "How To Make Your Boring Mac Terminal So Much Better - YouTube",
+                "url": "https://www.youtube.com/watch"
+              },
+              {
+                "type": "url",
+                "name": "Color Palettes for Designers and Artists - Color Hunt",
+                "url": "https://colorhunt.co"
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "Certifications",
+            "children": [
+              {
+                "type": "url",
+                "name": "Exam Registration - Schedule Exam",
+                "url": "https://examregistration.microsoft.com"
+              },
+              {
+                "type": "url",
+                "name": "Browse Credentials | Microsoft Learn",
+                "url": "https://learn.microsoft.com/en-us/credentials/browse"
+              },
+              {
+                "type": "url",
+                "name": "Certificates - 13757619",
+                "url": "https://learn.microsoft.com/en-us/users/13757619/credentials/certifications"
+              },
+              {
+                "type": "url",
+                "name": "All Credentials(Cert, Course)",
+                "url": "https://learn.microsoft.com/en-us/users/13757619/credentials"
+              },
+              {
+                "type": "url",
+                "name": "Azure Administrator Associate",
+                "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator"
+              },
+              {
+                "type": "url",
+                "name": "Azure Developer Associate",
+                "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-developer"
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "Challenge24",
+            "children": [
+              {
+                "type": "url",
+                "name": "Collections | Microsoft Learn",
+                "url": "https://learn.microsoft.com/en-us/collections/rqrnbgkkxkzw"
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "Devops",
+            "children": [
+              {
+                "type": "url",
+                "name": "DevOps Roadmap 2024",
+                "url": "https://github.com/milanm/DevOps-Roadmap"
+              },
+              {
+                "type": "url",
+                "name": "Study guide for Exam AZ-400: Designing and Implementing Microsoft DevOps Solutions | Microsoft Learn",
+                "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-400"
+              },
+              {
+                "type": "url",
+                "name": "Dawn of the Net - How the Internet works - YouTube",
+                "url": "https://www.youtube.com/watch"
+              },
+              {
+                "type": "url",
+                "name": "Start.me - Boost your Productivity with a Personalized Startpage",
+                "url": "https://start.me"
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "Push",
+            "children": [
+              {
+                "type": "url",
+                "name": "Notifications Overview  |  Android Developers",
+                "url": "https://developer.android.com/develop/ui/views/notifications"
+              },
+              {
+                "type": "url",
+                "name": "Notifications | React Native Firebase",
+                "url": "https://rnfirebase.io/messaging/notifications"
+              }
+            ]
+          },
+          {
+            "type": "url",
+            "name": "azure-sdk-for-js/README.md at main · Azure/azure-sdk-for-js",
+            "url": "https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/notificationhubs/notification-hubs/README.md"
+          },
+          {
+            "type": "url",
+            "name": "Certifications - 13757619 | Microsoft Learn",
+            "url": "https://learn.microsoft.com/en-us/users/13757619/certifications"
+          },
+          {
+            "type": "url",
+            "name": "Microsoft Startups - Self Application Gateway",
+            "url": "https://portal.startups.microsoft.com/en-us/selfapplication/gateway"
+          },
+          {
+            "type": "url",
+            "name": "Tutorial: Create an Android app that uses the Microsoft identity platform for authentication - Microsoft Entra | Microsoft Docs",
+            "url": "https://docs.microsoft.com/en-us/azure/active-directory/develop/tutorial-v2-android"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "name": "Claude",
+        "children": [
+          {
+            "type": "url",
+            "name": "JuliusBrussee/caveman: 🪨 why use many token ",
+            "url": "https://github.com/juliusbrussee/caveman"
+          },
+          {
+            "type": "url",
+            "name": "What kind of studier are you? — Learner Type Quiz | Revu",
+            "url": "https://revu.cards/learner-type"
+          },
+          {
+            "type": "url",
+            "name": "Caveman — the token-efficient stack for agent-native builders",
+            "url": "https://getcaveman.dev"
+          },
+          {
+            "type": "url",
+            "name": "emilkowalski/skill: A skill file based on the articles written on my personal site. Designed for designers and engineers to help them build better user interfaces.",
+            "url": "https://github.com/emilkowalski/skill"
+          },
+          {
+            "type": "url",
+            "name": "pbakaus/impeccable: The design language that makes your AI harness better at design.",
+            "url": "https://github.com/pbakaus/impeccable"
+          },
+          {
+            "type": "url",
+            "name": "Leonxlnx/taste-skill: Taste-Skill - gives your AI good taste. stops the AI from generating boring, generic slop",
+            "url": "https://github.com/Leonxlnx/taste-skill"
+          },
+          {
+            "type": "url",
+            "name": "safishamsi/graphify: AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into a queryable knowledge graph. App code + database schema + infrastructure in one graph.",
+            "url": "https://github.com/safishamsi/graphify"
+          },
+          {
+            "type": "url",
+            "name": "thedotmack/claude-mem: Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+            "url": "https://github.com/thedotmack/claude-mem"
+          },
+          {
+            "type": "url",
+            "name": "colbymchenry/codegraph: Pre-indexed code knowledge graph for Claude Code, Codex, Gemini, Cursor, OpenCode, AntiGravity, Kiro, and Hermes Agent — fewer tokens, fewer tool calls, 100% local",
+            "url": "https://github.com/colbymchenry/codegraph"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "name": "Read",
+        "children": [
+          {
+            "type": "folder",
+            "name": "Books",
+            "children": [
+              {
+                "type": "folder",
+                "name": "Naval",
+                "children": [
+                  {
+                    "type": "url",
+                    "name": "Naval on Airchat",
+                    "url": "https://www.air.chat/naval"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Naval",
+                    "url": "https://nav.al"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Melting Asphalt | Essays by Kevin Simler",
+                    "url": "https://meltingasphalt.com"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Learn faster, Think better, and make Smart Decisions",
+                    "url": "https://fs.blog"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Stratechery by Ben Thompson – On the business, strategy, and impact of technology.",
+                    "url": "https://stratechery.com"
+                  },
+                  {
+                    "type": "url",
+                    "name": "The Munger Operating System: A Life That Works",
+                    "url": "https://fs.blog/munger-operating-system"
+                  },
+                  {
+                    "type": "url",
+                    "name": "The Dilbert Blog: The Day You Became A Better Writer",
+                    "url": "https://dilbertblog.typepad.com/the_dilbert_blog/2007/06/the_day_you_bec.html"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Crony Beliefs | Melting Asphalt",
+                    "url": "https://meltingasphalt.com/crony-beliefs"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Career Decisions - by Elad Gil - Elad Blog",
+                    "url": "https://blog.eladgil.com/p/career-decisions"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Defining Aggregators – Stratechery by Ben Thompson",
+                    "url": "https://stratechery.com/2017/defining-aggregators"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Think Like Reality — LessWrong",
+                    "url": "https://www.lesswrong.com/posts/tWLFWAndSZSYN6rPB/think-like-reality"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Ed Latimore",
+                    "url": "https://edlatimore.com"
+                  },
+                  {
+                    "type": "url",
+                    "name": "You and Your Research",
+                    "url": "https://www.cs.virginia.edu/~robins/YouAndYourResearch.html"
+                  },
+                  {
+                    "type": "url",
+                    "name": "State of JavaScript",
+                    "url": "https://stateofjs.com/en-US"
+                  }
+                ]
+              },
+              {
+                "type": "url",
+                "name": "30-Days-Of-",
+                "url": "https://github.com/Asabeneh/30-Days-Of-React"
+              },
+              {
+                "type": "url",
+                "name": "awesome\" \" ",
+                "url": "https://github.com/sindresorhus/awesome"
+              },
+              {
+                "type": "url",
+                "name": "beautiful-react-",
+                "url": "https://github.com/antonioru/beautiful-react-hooks"
+              },
+              {
+                "type": "url",
+                "name": "BookBank",
+                "url": "https://github.com/ajitpal/BookBank"
+              },
+              {
+                "type": "url",
+                "name": "Clean Code Robert C. Martin",
+                "url": "https://github.com/martinmurciego/good-books/blob/master/Clean%20Code_%20A%20Handbook%20of%20Agile%20Software%20Craftsmanship%20-%20Robert%20C.%20Martin.pdf"
+              },
+              {
+                "type": "url",
+                "name": "clean-code-",
+                "url": "https://github.com/ryanmcdermott/clean-code-javascript"
+              },
+              {
+                "type": "url",
+                "name": "Corporate",
+                "url": "https://github.com/eyeke04/Books"
+              },
+              {
+                "type": "url",
+                "name": "CS.fyi",
+                "url": "https://cs.fyi"
+              },
+              {
+                "type": "url",
+                "name": "DevRoad",
+                "url": "https://roadmap.sh/roadmaps"
+              },
+              {
+                "type": "url",
+                "name": "Free-programming-books",
+                "url": "https://github.com/EbookFoundation/free-programming-books"
+              },
+              {
+                "type": "url",
+                "name": "golab/react-developer-",
+                "url": "https://github.com/adam-golab/react-developer-roadmap"
+              },
+              {
+                "type": "url",
+                "name": "harishbisht29/osho_books",
+                "url": "https://github.com/harishbisht29/osho_books"
+              },
+              {
+                "type": "url",
+                "name": "History of Western Philosophy",
+                "url": "http://www.ntslibrary.com/PDF%20Books/History%20of%20Western%20Philosophy.pdf"
+              },
+              {
+                "type": "url",
+                "name": "History-Books",
+                "url": "https://github.com/manjunath5496/The-Best-History-Books"
+              },
+              {
+                "type": "url",
+                "name": "hocs\" \" ",
+                "url": "https://github.com/deepsweet/hocs"
+              },
+              {
+                "type": "url",
+                "name": "Official react",
+                "url": "https://github.com/facebook/react"
+              },
+              {
+                "type": "url",
+                "name": "react-bits\" ",
+                "url": "https://github.com/vasanthk/react-bits"
+              },
+              {
+                "type": "url",
+                "name": "react-in-",
+                "url": "https://github.com/krasimir/react-in-patterns"
+              },
+              {
+                "type": "url",
+                "name": "react-use\" ",
+                "url": "https://github.com/streamich/react-use"
+              },
+              {
+                "type": "url",
+                "name": "Under-the-Reactjs",
+                "url": "https://github.com/Bogdan-Lyashenko/Under-the-hood-ReactJS"
+              },
+              {
+                "type": "url",
+                "name": "Youtube-React\" ",
+                "url": "https://github.com/ANandasaad/Youtube-React"
+              },
+              {
+                "type": "folder",
+                "name": "97-Things",
+                "children": [
+                  {
+                    "type": "url",
+                    "name": "97-things repositories · GitHub",
+                    "url": "https://github.com/orgs/97-things/repositories"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "Forum",
+            "children": [
+              {
+                "type": "url",
+                "name": "18 poetic forms every poet should know | BBC Maestro",
+                "url": "https://www.bbcmaestro.com/blog/poetic-forms"
+              },
+              {
+                "type": "url",
+                "name": "bookmyshow.com Competitors - Top Sites Like bookmyshow.com | Similarweb",
+                "url": "https://www.similarweb.com/website/bookmyshow.com/competitors"
+              },
+              {
+                "type": "url",
+                "name": "CS.fyi",
+                "url": "https://cs.fyi"
+              },
+              {
+                "type": "url",
+                "name": "Developer Roadmaps",
+                "url": "https://roadmap.sh/roadmaps"
+              },
+              {
+                "type": "url",
+                "name": "Free for Developers",
+                "url": "https://free-for.dev"
+              },
+              {
+                "type": "url",
+                "name": "Free Stock Photos, Royalty Free Stock Images & Copyright Free Pictures · Pexels",
+                "url": "https://www.pexels.com"
+              },
+              {
+                "type": "url",
+                "name": "fullPage.js E.G.",
+                "url": "https://alvarotrigo.com/fullPage"
+              },
+              {
+                "type": "url",
+                "name": "GET Requests with Axios",
+                "url": "https://masteringjs.io/tutorials/axios/get"
+              },
+              {
+                "type": "url",
+                "name": "GitHub - kamranahmedse/developer-roadmap: Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+                "url": "https://github.com/kamranahmedse/developer-roadmap"
+              },
+              {
+                "type": "url",
+                "name": "Google Images",
+                "url": "https://images.google.com"
+              },
+              {
+                "type": "url",
+                "name": "markdown-cheatsheet/README.md at master · tchapi/markdown-cheatsheet",
+                "url": "https://github.com/tchapi/markdown-cheatsheet/blob/master/README.md"
+              },
+              {
+                "type": "url",
+                "name": "Share coding knowledge – CodepediaOrg",
+                "url": "https://www.codepedia.org"
+              }
+            ]
+          },
+          {
+            "type": "url",
+            "name": "Learning by Proxy with Vivek Srinivasan | Substack",
+            "url": "https://www.learningbyproxy.com"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "name": "Tools",
+        "children": [
+          {
+            "type": "folder",
+            "name": "z",
+            "children": [
+              {
+                "type": "folder",
+                "name": "Fin",
+                "children": [
+                  {
+                    "type": "folder",
+                    "name": "Akshat",
+                    "children": [
+                      {
+                        "type": "url",
+                        "name": "10 Financial Mistakes by Salaried Class - YouTube",
+                        "url": "https://www.youtube.com/watch"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "folder",
+                    "name": "Google finance",
+                    "children": [
+                      {
+                        "type": "url",
+                        "name": "Finance",
+                        "url": "https://www.google.com/finance"
+                      },
+                      {
+                        "type": "url",
+                        "name": "ASIANPAINT ₹3,300.90 (▲0.80%) Asian Paints Ltd | Google Finance",
+                        "url": "https://www.google.com/finance/quote/ASIANPAINT:NSE"
+                      },
+                      {
+                        "type": "url",
+                        "name": "BAJAJHFL ₹160.59 (▼7.53%) Bajaj Housing Finance Ltd | Google Finance",
+                        "url": "https://www.google.com/finance/quote/BAJAJHFL:NSE"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "folder",
+                    "name": "Pushkar",
+                    "children": [
+                      {
+                        "type": "url",
+                        "name": "Free Complete Candlestick Patterns Course",
+                        "url": "https://www.youtube.com/watch"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "folder",
+                    "name": "Screener",
+                    "children": [
+                      {
+                        "type": "url",
+                        "name": "FII Buying",
+                        "url": "https://www.screener.in/screens/343087/fii-buying"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "folder",
+                    "name": "TV-Category",
+                    "children": [
+                      {
+                        "type": "url",
+                        "name": "Pine Script Language Reference Manual — TradingView",
+                        "url": "https://www.tradingview.com/pine-script-reference/v5"
+                      },
+                      {
+                        "type": "url",
+                        "name": "freqtrade/freqtrade: Free, open source crypto trading bot",
+                        "url": "https://github.com/freqtrade/freqtrade"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "url",
+                    "name": "(3) SIMPLE Head and Shoulders Pattern in Hindi | Price Action Analysis - YouTube",
+                    "url": "https://www.youtube.com/watch"
+                  },
+                  {
+                    "type": "url",
+                    "name": "(8) India’s diamond-shaped version of pasta 🤯 w @YourFoodLab #shorts - YouTube",
+                    "url": "https://www.youtube.com/shorts/JahNwARWvCU"
+                  },
+                  {
+                    "type": "url",
+                    "name": "All E Technologies Limited Share Price Today, Stock Price, Live NSE News, Quotes, Tips – NSE India",
+                    "url": "https://www.nseindia.com/get-quotes/equity"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Chart Pattern Analysis",
+                    "url": "https://www.youtube.com/playlist"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Core Watchlist feed - Screener",
+                    "url": "https://www.screener.in"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Investments | BOND",
+                    "url": "https://www.bondcap.com"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Live IPO GMP | Grey Market Premium",
+                    "url": "https://www.investorgain.com/report/live-ipo-gmp/331"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Live Technical Analysis, Charts, Screener Research & Price",
+                    "url": "https://chartink.com"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Samvardhana Motherson International Ltd share price | About Samvardh. Mothe. | Key Insights - Screener",
+                    "url": "https://www.screener.in/company/MOTHERSON/consolidated"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Simply Wall St",
+                    "url": "https://simplywall.st"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Stock Screener",
+                    "url": "https://scanx.trade/stock-screener"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Tata Company Stock Data",
+                    "url": "https://www.tata.com/stockdata"
+                  },
+                  {
+                    "type": "url",
+                    "name": "MSN Money | Advanced Chart with interactive tools",
+                    "url": "https://www.msn.com/en-us/money/chart"
+                  }
+                ]
+              },
+              {
+                "type": "folder",
+                "name": "Travel",
+                "children": [
+                  {
+                    "type": "url",
+                    "name": "Google Flights",
+                    "url": "https://www.google.com/travel/flights"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Ara Güler | İstanbul Photos",
+                    "url": "https://www.araguler.com.tr/istanbulphotos.html"
+                  }
+                ]
+              },
+              {
+                "type": "folder",
+                "name": "Startup",
+                "children": [
+                  {
+                    "type": "url",
+                    "name": "Y Combinator Series",
+                    "url": "https://www.ycombinator.com/library"
+                  }
+                ]
+              },
+              {
+                "type": "folder",
+                "name": "LinkedIn",
+                "children": [
+                  {
+                    "type": "url",
+                    "name": "Generate Word Cloud",
+                    "url": "https://www.freewordcloudgenerator.com/generatewordcloud"
+                  }
+                ]
+              },
+              {
+                "type": "folder",
+                "name": "Career",
+                "children": [
+                  {
+                    "type": "url",
+                    "name": "Find Software Engineer Jobs in Leeds with JobServe.com",
+                    "url": "https://jobserve.com/gb/en/JobSearch.aspx"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Kesha Williams",
+                    "url": "https://topmate.io/kesha_williams"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Find Startup Jobs Near You and Remote Jobs | Wellfound (formerly AngelList Talent)",
+                    "url": "https://wellfound.com/jobs"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Free Virtual Work Experience Programs from Top Companies - Forage",
+                    "url": "https://www.theforage.com"
+                  }
+                ]
+              },
+              {
+                "type": "folder",
+                "name": "Domains",
+                "children": [
+                  {
+                    "type": "url",
+                    "name": "Domain Name Generator",
+                    "url": "https://www.nameboy.com"
+                  },
+                  {
+                    "type": "url",
+                    "name": "WHOIS | Lookup Domains",
+                    "url": "https://www.domain.com/whois/whois"
+                  }
+                ]
+              },
+              {
+                "type": "folder",
+                "name": "Conferences",
+                "children": [
+                  {
+                    "type": "url",
+                    "name": "The Future of Software conference | Powered by Eficode",
+                    "url": "https://www.thefutureofsoftware.com"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Get the lowdown on Developer Productivity Engineering (DPE)",
+                    "url": "https://dpe.org/lowdown"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Gartner IT Symposium/Xpo™ 2025 Conference on the Gold Coast, Australia",
+                    "url": "https://www.gartner.com/en/conferences/apac/symposium-australia"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Commercial UAV Expo | Drone Conference & Trade Show",
+                    "url": "https://www.expouav.com"
+                  },
+                  {
+                    "type": "url",
+                    "name": "RALLY | September 24 & 25 | Indianapolis",
+                    "url": "https://www.rallyinnovation.com"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Speakers",
+                    "url": "https://www.rallyinnovation.com/speakers"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Las Vegas | VMware Explore | Aug. 25 – 28, 2025",
+                    "url": "https://www.vmware.com/explore/us"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Speakers at SecureIT New York 2024 - Foundry Events",
+                    "url": "https://event.foundryco.com/secureit-new-york/speakers"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Home | AI and Data Science Conference Dubai | London | Data Science Week 2026",
+                    "url": "https://datascience.thepeopleevents.com"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Past Speakers | Data Science & AI Conferences Dubai & London | Data Science Week 2026",
+                    "url": "https://datascience.thepeopleevents.com/past-speakers-2025"
+                  },
+                  {
+                    "type": "url",
+                    "name": "PegaWorld 2026 | June 7-9, 2026 | Pega",
+                    "url": "https://www.pega.com/events/pegaworld"
+                  },
+                  {
+                    "type": "url",
+                    "name": "London Tech Week 2025 | The ultimate tech experience",
+                    "url": "https://londontechweek.com"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Conference programme for Infosecurity Europe | Featured speakers",
+                    "url": "https://www.infosecurityeurope.com/en-gb/conference-programme/speakers.html"
+                  },
+                  {
+                    "type": "url",
+                    "name": "WebSci24 - May 21-24, 2024 in Stuttgart, Germany",
+                    "url": "https://websci24.org"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Keynote Speakers - WebSci24",
+                    "url": "https://websci24.org/program/keynote-speakers"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Embedded Vision Summit | Computer Vision and AI Conference",
+                    "url": "https://embeddedvisionsummit.com"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Informatica World 2025: AI-Ready Data Conference",
+                    "url": "https://www.informaticaworld.com"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Discover the Minds Shaping the Future: AI, Data, and Leadership Speakers at FutureIT Boston 2024",
+                    "url": "https://event.ciofutureit.com/boston/speakers"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Red Hat Summit 2026 Homepage",
+                    "url": "https://www.redhat.com/en/summit"
+                  },
+                  {
+                    "type": "url",
+                    "name": "RSAC 2026 Conference | RSAC Conference",
+                    "url": "https://www.rsaconference.com/usa"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Home - eMerge Americas",
+                    "url": "https://emergeamericas.com"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Appian World 2025 | April 27-30, 2025 | Denver, CO",
+                    "url": "https://www.appianworld.com"
+                  },
+                  {
+                    "type": "url",
+                    "name": "appianworld.com/speakers",
+                    "url": "https://www.appianworld.com/speakers"
+                  }
+                ]
+              },
+              {
+                "type": "folder",
+                "name": "Shop",
+                "children": [
+                  {
+                    "type": "url",
+                    "name": "Tata Ne",
+                    "url": "https://www.tatadigital.com/home"
+                  },
+                  {
+                    "type": "folder",
+                    "name": "Shoes",
+                    "children": [
+                      {
+                        "type": "url",
+                        "name": "Mens Outdoor Footwear | Boots, Shoes, Wellies | Sports Direct",
+                        "url": "https://www.sportsdirect.com/outdoor/outdoor-footwear/mens-outdoor-footwear"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "url",
+                    "name": "Men's Coats & Jackets | Men's Essential Jackets | Primark",
+                    "url": "https://www.primark.com/en-gb/c/men/clothing/coats-and-jackets"
+                  },
+                  {
+                    "type": "url",
+                    "name": "River Island",
+                    "url": "https://www.riverisland.com"
+                  }
+                ]
+              },
+              {
+                "type": "folder",
+                "name": "AppyTKJ ",
+                "children": [
+                  {
+                    "type": "url",
+                    "name": "Speakers | The Future of Software - Copenhagen, October 21, 2025",
+                    "url": "https://www.thefutureofsoftware.com/copenhagen/speakers"
+                  }
+                ]
+              },
+              {
+                "type": "folder",
+                "name": "Cars",
+                "children": [
+                  {
+                    "type": "url",
+                    "name": "2014 Black Dacia Sandero",
+                    "url": "https://www.autotrader.co.uk/car-details/202508085251492"
+                  }
+                ]
+              },
+              {
+                "type": "folder",
+                "name": "DrivingTest",
+                "children": [
+                  {
+                    "type": "url",
+                    "name": "driving_theory_practical_test_uk_highway_code_ebook_pdf_2023.pdf",
+                    "url": "https://driving-test.uk/driving_theory_practical_test_uk_highway_code_ebook_pdf_2023.pdf"
+                  },
+                  {
+                    "type": "url",
+                    "name": "UK Theory Test 2025",
+                    "url": "https://www.youtube.com/watch"
+                  }
+                ]
+              },
+              {
+                "type": "folder",
+                "name": "WT",
+                "children": [
+                  {
+                    "type": "folder",
+                    "name": "Chants",
+                    "children": [
+                      {
+                        "type": "url",
+                        "name": "Focus Chants ",
+                        "url": "https://www.youtube.com/watch"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "folder",
+                    "name": "Ertrugul Ghazi",
+                    "children": [
+                      {
+                        "type": "url",
+                        "name": "1",
+                        "url": "https://www.youtube.com/watch"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "folder",
+                    "name": "Mubi",
+                    "children": [
+                      {
+                        "type": "url",
+                        "name": "(1) shahid full movie 720p 2012 hindi thriller cinema - YouTube",
+                        "url": "https://www.youtube.com/watch"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "folder",
+                    "name": "Poetry",
+                    "children": [
+                      {
+                        "type": "url",
+                        "name": "Ikram Arfi - Sitara Saaz Ankhon Main",
+                        "url": "https://www.youtube.com/watch"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "folder",
+                    "name": "Songs",
+                    "children": [
+                      {
+                        "type": "url",
+                        "name": "y Irrfan",
+                        "url": "https://www.youtube.com/watch"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "url",
+                    "name": "Transfer Playlists | Tune My Music",
+                    "url": "https://www.tunemymusic.com"
+                  },
+                  {
+                    "type": "folder",
+                    "name": "Maybe Subs",
+                    "children": [
+                      {
+                        "type": "url",
+                        "name": "Daily Reader | CTQ Compounds",
+                        "url": "https://www.ctqcompounds.com/product-page/dailyreader"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "folder",
+                    "name": "Podcast",
+                    "children": [
+                      {
+                        "type": "url",
+                        "name": "The Seen and the Unseen",
+                        "url": "https://www.youtube.com/@TheSeenAndTheUnseen/videos"
+                      },
+                      {
+                        "type": "url",
+                        "name": "Dwarkesh Patel",
+                        "url": "https://www.youtube.com/@DwarkeshPatel"
+                      },
+                      {
+                        "type": "url",
+                        "name": "The Truth Seeker",
+                        "url": "https://www.youtube.com/@TheTruthSeekerPodcast"
+                      },
+                      {
+                        "type": "url",
+                        "name": "Tim Ferriss",
+                        "url": "https://www.youtube.com/@timferriss"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "url",
+                    "name": "Live Sports",
+                    "url": "https://fmhy.net/videopiracyguide"
+                  },
+                  {
+                    "type": "folder",
+                    "name": "New folder",
+                    "children": [
+                      {
+                        "type": "url",
+                        "name": "Sultan Salahuddin Ayyubi | Qist 115 [URDU DUB] - YouTube",
+                        "url": "https://www.youtube.com/watch"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "folder",
+                    "name": "PJ",
+                    "children": [
+                      {
+                        "type": "url",
+                        "name": "Hip Hip Hurray ( हिप हिप हुर्रे ) 4K Movie | Prakash Jha's BEST MOVIE EVER | Raj Kiran | Deepti - YouTube",
+                        "url": "https://www.youtube.com/watch"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "folder",
+                    "name": "Islamic History",
+                    "children": [
+                      {
+                        "type": "url",
+                        "name": "Saladin: Tabii",
+                        "url": "https://www.youtube.com/watch"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "url",
+                    "name": "Welcome • freemediaheckyeah",
+                    "url": "https://fmhy.net"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "AI",
+            "children": [
+              {
+                "type": "url",
+                "name": "1-click chatbot | ora.sh",
+                "url": "https://ora.sh"
+              },
+              {
+                "type": "url",
+                "name": "AI Dungeon",
+                "url": "https://aidungeon.io"
+              },
+              {
+                "type": "url",
+                "name": "Chat",
+                "url": "https://www.bing.com/search"
+              },
+              {
+                "type": "url",
+                "name": "Evals by openAI ",
+                "url": "https://github.com/openai/evals"
+              },
+              {
+                "type": "url",
+                "name": "GPT-4 - Poe",
+                "url": "https://poe.com/GPT-4"
+              },
+              {
+                "type": "url",
+                "name": "Hugging Face – The AI community building the future.",
+                "url": "https://huggingface.co"
+              },
+              {
+                "type": "url",
+                "name": "Merlin | One-click access to ChatGPT /GPT-4 on all Websites",
+                "url": "https://merlin.foyer.work"
+              },
+              {
+                "type": "url",
+                "name": "Models - Hugging Face",
+                "url": "https://huggingface.co/models"
+              },
+              {
+                "type": "url",
+                "name": "Perplexity AI",
+                "url": "https://www.perplexity.ai"
+              },
+              {
+                "type": "url",
+                "name": "Phind: AI search engine",
+                "url": "https://www.phind.com/agent"
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "Live Compilers",
+            "children": [
+              {
+                "type": "url",
+                "name": "JavaScript Playground",
+                "url": "https://playcode.io/javascript"
+              },
+              {
+                "type": "url",
+                "name": "JS",
+                "url": "https://www.programiz.com/javascript/online-compiler"
+              },
+              {
+                "type": "url",
+                "name": "OpenPlayground",
+                "url": "https://nat.dev"
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "OpenSource",
+            "children": [
+              {
+                "type": "url",
+                "name": "Coolify: An open-source & self-hostable Heroku / Netlify / Vercel alternative.",
+                "url": "https://github.com/coollabsio/coolify"
+              },
+              {
+                "type": "url",
+                "name": "Development/Extension Development - The Document Foundation Wiki",
+                "url": "https://wiki.documentfoundation.org/Development/Extension_Development"
+              },
+              {
+                "type": "url",
+                "name": "dokku/dokku: A docker-powered PaaS that helps you build and manage the lifecycle of applications",
+                "url": "https://github.com/dokku/dokku"
+              },
+              {
+                "type": "url",
+                "name": "ERPNext: Free and Open Source Cloud ERP Software",
+                "url": "https://erpnext.com"
+              },
+              {
+                "type": "url",
+                "name": "frappe/erpnext: Free and Open Source Enterprise Resource Planning (ERP)",
+                "url": "https://github.com/frappe/erpnext"
+              },
+              {
+                "type": "url",
+                "name": "instantdb/instant: The realtime client-side database",
+                "url": "https://github.com/instantdb/instant"
+              },
+              {
+                "type": "url",
+                "name": "Jitsi Meet",
+                "url": "https://meet.jit.si"
+              },
+              {
+                "type": "url",
+                "name": "mattermost/mattermost: Mattermost is an open source platform for secure collaboration across the entire software development lifecycle..",
+                "url": "https://github.com/mattermost/mattermost"
+              },
+              {
+                "type": "url",
+                "name": "Plane - The open source project management tool",
+                "url": "https://plane.so"
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "Product tools",
+            "children": [
+              {
+                "type": "url",
+                "name": "Clerk | Authentication and User Management",
+                "url": "https://clerk.com"
+              },
+              {
+                "type": "url",
+                "name": "Content Marketing Blueprint",
+                "url": "https://www.thecontentmarketingblueprint.com"
+              },
+              {
+                "type": "url",
+                "name": "posthog",
+                "url": "https://posthog.com"
+              },
+              {
+                "type": "url",
+                "name": "Supabase | The Open Source Firebase Alternative",
+                "url": "https://supabase.com"
+              },
+              {
+                "type": "url",
+                "name": "The ultimate MySQL database platform — PlanetScale",
+                "url": "https://planetscale.com"
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "MS Copilot",
+            "children": [
+              {
+                "type": "url",
+                "name": "Manage and execute Fabric notebooks with public APIs - Microsoft Fabric | Microsoft Learn",
+                "url": "https://learn.microsoft.com/en-us/fabric/data-engineering/notebook-public-api"
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "name": "VS Code",
+            "children": [
+              {
+                "type": "url",
+                "name": "Make Windows Terminal Look Better | Oh My Posh",
+                "url": "https://www.youtube.com/watch"
+              }
+            ]
+          },
+          {
+            "type": "url",
+            "name": "Adalo: Design & Build Custom Apps • No Code Required",
+            "url": "https://www.adalo.com"
+          },
+          {
+            "type": "url",
+            "name": "Build your ideas, no coding required | Makerpad",
+            "url": "https://makerpad.zapier.com"
+          },
+          {
+            "type": "url",
+            "name": "commitlint - Lint commit messages",
+            "url": "https://commitlint.js.org"
+          },
+          {
+            "type": "url",
+            "name": "Convert curl commands to code",
+            "url": "https://curlconverter.com"
+          },
+          {
+            "type": "url",
+            "name": "CSV to DB Converter Online - AnyConv",
+            "url": "https://anyconv.com/csv-to-db-converter"
+          },
+          {
+            "type": "url",
+            "name": "curldiff",
+            "url": "https://pastelsky.github.io/curldiff"
+          },
+          {
+            "type": "url",
+            "name": "Download YouTube Publer",
+            "url": "https://publer.io/tools/youtube-downloader"
+          },
+          {
+            "type": "url",
+            "name": "Draftbit - Visually build native mobile apps",
+            "url": "https://draftbit.com"
+          },
+          {
+            "type": "url",
+            "name": "Elicit: The AI Research Assistant",
+            "url": "https://elicit.org"
+          },
+          {
+            "type": "url",
+            "name": "Excalidraw",
+            "url": "https://excalidraw.com"
+          },
+          {
+            "type": "url",
+            "name": "FlutterFlow - Build beautiful, modern apps incredibly fast",
+            "url": "https://flutterflow.io"
+          },
+          {
+            "type": "url",
+            "name": "Free Stock Photos, Royalty Free Stock Images & Copyright Free Pictures · Pexels",
+            "url": "https://www.pexels.com"
+          },
+          {
+            "type": "url",
+            "name": "Google Arts & Culture",
+            "url": "https://artsandculture.google.com"
+          },
+          {
+            "type": "url",
+            "name": "Google Images",
+            "url": "https://images.google.com"
+          },
+          {
+            "type": "url",
+            "name": "Greg Isenberg",
+            "url": "https://bento.me/greg"
+          },
+          {
+            "type": "url",
+            "name": "IconKitchen",
+            "url": "https://icon.kitchen/i/H4sIAAAAAAAAAxXKQQqAIBBG4bv8a0%2FgOdxFi4kZTdIMB4sQ755tHjz4Om5KTRS2g6kebpcssJ6SioEP7r3mImYKgmGQC7f08wV0ci2RYRCLzj6yYR0fMQ5MslEAAAA%3D"
+          },
+          {
+            "type": "url",
+            "name": "Inch Ruler",
+            "url": "https://www.piliapp.com/actual-size/inch-ruler"
+          },
+          {
+            "type": "url",
+            "name": "Notability",
+            "url": "https://notability.com"
+          },
+          {
+            "type": "url",
+            "name": "OSWALGREEN ₹63.44 (▼4.33%) Oswal Greentech Ltd | Google Finance",
+            "url": "https://www.google.com/finance/quote/OSWALGREEN:NSE"
+          },
+          {
+            "type": "url",
+            "name": "Price History - Price Tracker for Amazon, Flipkart & more",
+            "url": "https://pricehistoryapp.com"
+          },
+          {
+            "type": "url",
+            "name": "Scam Detector",
+            "url": "https://www.scam-detector.com/validator"
+          },
+          {
+            "type": "url",
+            "name": "View mobile availability - Ofcom Checker",
+            "url": "https://checker.ofcom.org.uk/en-gb/mobile-coverage"
+          },
+          {
+            "type": "url",
+            "name": "VS Code",
+            "url": "https://vscode.dev"
+          },
+          {
+            "type": "url",
+            "name": "Create a secure virtual data room (VDR) with DocSend Spaces | DocSend",
+            "url": "https://www.docsend.com/features/virtual-data-room"
+          },
+          {
+            "type": "url",
+            "name": "Layoffs.fyi - Tech Layoff Tracker and DOGE Layoff Tracker",
+            "url": "https://layoffs.fyi"
+          },
+          {
+            "type": "url",
+            "name": "Software Engineering Salary - IC3 (Proficient) | $128k - $170k",
+            "url": "https://app.comprehensive.io/benchmarking/s/jobFamily=Software+Engineering&level=IC3"
+          },
+          {
+            "type": "url",
+            "name": "Base64 to PDF Decode - Online Tool",
+            "url": "https://www.base64decode.net/base64-to-pdf"
+          },
+          {
+            "type": "url",
+            "name": "Base64 to PDF | Base64 Decode | Base64 Converter | Base64",
+            "url": "https://base64.guru/converter/decode/pdf"
+          },
+          {
+            "type": "url",
+            "name": "YAMLlint - The YAML Validator",
+            "url": "https://www.yamllint.com"
+          },
+          {
+            "type": "url",
+            "name": "Partner with Vagnar Group for Sustainable Products",
+            "url": "https://www.vegnar.com/partner"
+          }
+        ]
+      },
+      {
+        "type": "url",
+        "name": "MG-1-91",
+        "url": "https://oshoworld.com/100-maha-geeta-01-91"
+      },
+      {
+        "type": "url",
+        "name": "DuckDuckGo",
+        "url": "https://duckduckgo.com"
+      },
+      {
+        "type": "url",
+        "name": "blekko | search",
+        "url": "http://blekko.com"
+      },
+      {
+        "type": "url",
+        "name": "Engineering books | Learn about technology",
+        "url": "http://bookboon.com/en/engineering-ebooks"
+      },
+      {
+        "type": "url",
+        "name": "Free download engineering e books | Online engineering Free ebooks |Engineering PDF download",
+        "url": "http://engineering108.com"
+      },
+      {
+        "type": "folder",
+        "name": "K8s",
+        "children": [
+          {
+            "type": "url",
+            "name": "Docker Tutorial for beginners - Complete One Shot - YouTube",
+            "url": "https://www.youtube.com/watch"
+          }
+        ]
+      },
+      {
+        "type": "url",
+        "name": "(35) Full Walkthrough: Workflow for AI Coding from Planning to Production — Matt Pocock (@mattpocockuk ) - YouTube",
+        "url": "https://www.youtube.com/watch"
+      },
+      {
+        "type": "url",
+        "name": "Free Line Icons for Designers and Developers - Lineicons",
+        "url": "https://lineicons.com"
+      },
+      {
+        "type": "folder",
+        "name": "Mubi",
+        "children": [
+          {
+            "type": "url",
+            "name": "Online Movies fmhy",
+            "url": "https://fmhy.net/videopiracyguide"
+          },
+          {
+            "type": "url",
+            "name": "ANEMONE - Official Trailer [HD] - Only in Theaters October 3 - YouTube",
+            "url": "https://www.youtube.com/watch"
+          }
+        ]
+      }
+    ]
+  },
+  "other": {
+    "type": "folder",
+    "name": "Other favourites",
+    "children": [
+      {
+        "type": "folder",
+        "name": "Synced Bookmarks",
+        "children": [
+          {
+            "type": "url",
+            "name": "Timeline-Ayodha-Matter | PT's IAS Academy",
+            "url": "http://civils.pteducation.com/p/timeline-ayodhya-matter.html"
+          }
+        ]
+      }
+    ]
+  },
+  "synced": {
+    "type": "folder",
+    "name": "Mobile favourites",
+    "children": [
+      {
+        "type": "url",
+        "name": "Webpage archive",
+        "url": "https://archive.is"
+      }
+    ]
+  }
+}
