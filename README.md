@@ -138,6 +138,17 @@ If the `code` command isn't on your PATH, extension install is skipped with a
 hint (install VS Code first via `--essentials`, or add `code` to PATH). Use
 `--dry-run` to preview the exact commands.
 
+## Commands
+
+| Command        | Description                                                                 |
+| -------------- | --------------------------------------------------------------------------- |
+| `--dotfiles`   | Install `.gitconfig`, `.npmrc`, shell, VS Code and Gradle dotfiles          |
+| `--docs [dir]` | Generate setup documentation into `[dir]` (default: `./docs`)               |
+| `--edge`       | Set up Microsoft Edge with a curated extensions/settings/bookmarks baseline |
+| `--vscode`     | Install recommended VS Code extensions plus user settings and keybindings   |
+
+Run without a command to pick a tool profile interactively.
+
 ## Options
 
 | Flag            | Description                                                                        |
