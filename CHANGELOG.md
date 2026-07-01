@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.7](https://github.com/vpnsin-labs/devsetup/compare/v0.1.6...v0.1.7) (2026-07-01)
+
+
+### Features
+
+* add --edge and --vscode setup commands ([#20](https://github.com/vpnsin-labs/devsetup/issues/20)) ([e54059c](https://github.com/vpnsin-labs/devsetup/commit/e54059c8d55a9c3182027c377017e62b57cbd90e))
+* add essentials profile for everyday laptop setup ([1671412](https://github.com/vpnsin-labs/devsetup/commit/1671412bb3d91f30847d7117498bf41e0a1dde7a))
+* add essentials profile for everyday laptop setup ([#16](https://github.com/vpnsin-labs/devsetup/issues/16)) ([fd11f07](https://github.com/vpnsin-labs/devsetup/commit/fd11f0791a0bae3e892d402af835bf8ab65fcd5b))
+
 ## [0.1.6](https://github.com/vpnsin-labs/devsetup/compare/v0.1.5...v0.1.6) (2026-06-18)
 
 
