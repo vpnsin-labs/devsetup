@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.8](https://github.com/vpnsin-labs/devsetup/compare/v0.1.7...v0.1.8) (2026-07-01)
+
+
+### Documentation
+
+* document commands in the README ([#21](https://github.com/vpnsin-labs/devsetup/issues/21)) ([14fb3a2](https://github.com/vpnsin-labs/devsetup/commit/14fb3a20b92ced94578fc0127a4f4ab469b5b988))
+
 ## [0.1.7](https://github.com/vpnsin-labs/devsetup/compare/v0.1.6...v0.1.7) (2026-07-01)
 
 
