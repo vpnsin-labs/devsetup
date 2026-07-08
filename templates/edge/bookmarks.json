@@ -521,7 +521,7 @@
           {
             "type": "url",
             "name": "Phind: AI search engine",
-            "url": "https://www.phind.com/agent"
+            "url": "https://www.phindai.org"
           },
           {
             "type": "folder",
@@ -558,17 +558,6 @@
       },
       {
         "type": "folder",
-        "name": "Bhakti",
-        "children": [
-          {
-            "type": "url",
-            "name": "Stotram Sangrah",
-            "url": "https://www.drikpanchang.com/lyrics/stotram/stotram-collection.html"
-          }
-        ]
-      },
-      {
-        "type": "folder",
         "name": "Career",
         "children": [
           {
@@ -577,23 +566,12 @@
             "children": [
               {
                 "type": "folder",
-                "name": "Ashish",
-                "children": [
-                  {
-                    "type": "url",
-                    "name": "(170) 10+ Key Memory & Storage Systems: Crash Course System Design #5 - YouTube",
-                    "url": "https://www.youtube.com/watch"
-                  }
-                ]
-              },
-              {
-                "type": "folder",
-                "name": "BBG",
+                "name": "ByteByteGO",
                 "children": [
                   {
                     "type": "url",
                     "name": "Byte byte go",
-                    "url": "https://www.youtube.com/watch"
+                    "url": "https://www.youtube.com/watch?v=dvRFHG2-uYs&list=PLCRMIe5FDPsd0gVs500xeOewfySTsmEjf&index=50"
                   },
                   {
                     "type": "url",
@@ -667,6 +645,11 @@
                 "type": "folder",
                 "name": "Interview",
                 "children": [
+                   {
+                    "type": "url",
+                    "name": "(170) 10+ Key Memory & Storage Systems: Crash Course System Design #5 - YouTube",
+                    "url": "https://www.youtube.com/watch?v=lX4CrbXMsNQ&list=PLCRMIe5FDPsd0gVs500xeOewfySTsmEjf"
+                  },
                   {
                     "type": "url",
                     "name": "Tech-interview-handbook",
@@ -681,22 +664,207 @@
               },
               {
                 "type": "folder",
-                "name": "yt",
+                "name": "youtube",
                 "children": [
                   {
                     "type": "url",
-                    "name": "Bye Monk-Basics System Design",
-                    "url": "https://www.youtube.com/watch"
+                    "name": "Byte Monk-Basics System Design",
+                    "url": "https://www.youtube.com/watch?v=yioOQ4ItYuo&list=PLJq-63ZRPdBt423WbyAD1YZO0Ljo1pzvY"
                   },
                   {
                     "type": "url",
-                    "name": "GSCS-Playlist",
-                    "url": "https://www.youtube.com/@gkcs/playlists"
+                    "url": "https://www.youtube.com/watch?v=d9kA8CW8Cns&list=PLA3GkZPtsafZdyC5iucNM_uhqGJ5yFNUM&index=11",
+                    "name": "System design playlist"
                   },
                   {
                     "type": "url",
-                    "name": "System Design for Beginners - YouTube",
-                    "url": "https://www.youtube.com/playlist"
+                    "url": "https://www.youtube.com/watch?v=-PdjUx9JZ2E&list=PL0Zuz27SZ-6OJQfjH8g_CAjgMbLoIleKN&ab_channel=DaveGray",
+                    "name": "MongoDB and Mongoose"
+                  },
+
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=xzu3QXwo1BU&list=PL_cUvD4qzbkw-phjGK2qq0nQiG6gw1cKK&ab_channel=AnsontheDeveloper",
+                    "name": "NestJS Crash Course"
+                  },
+
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=6h649f2fB9Q&list=PL0Zuz27SZ-6Pk-QJIdGd1tGZEzy9RTgtj&ab_channel=DaveGray",
+                    "name": "Next.js 13 Tutorial for Beginners"
+                  },
+
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=JZXQ455OT3A&list=PL0Zuz27SZ-6PFkIxaJ6Xx_X46avTM1aYw&ab_channel=DaveGray",
+                    "name": "Node JS Dave gray"
+                  },
+
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=u3KlatzB7GM&list=PL0Zuz27SZ-6M1J5I1w2-uZx36Qp6qhjKo&index=2&ab_channel=DaveGray",
+                    "name": "React Redux Toolkit"
+                  },
+
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=pYaamz6AyvU&list=PL0Zuz27SZ-6M8znNpim8dRiICRrP5HPft&ab_channel=DaveGray",
+                    "name": "Tailwind CSS"
+                  },
+
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=MOO5vrtTUTE&list=PL0Zuz27SZ-6NS8GXt5nPrcYpust89zq_b&ab_channel=DaveGray",
+                    "name": "Typescript"
+                  },
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=kyphLGnSz6Q",
+                    "name": "Supabase Full Course 2025"
+                  },
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=XIj7nmIYtbo",
+                    "name": "(364) Understand the Supabase SSR Package easily"
+                  },
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=IdsBwplQAMw",
+                    "name": "(364) Every NestJS Concept Explained in 9 Minutes"
+                  },
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=l1EssrLxt7E&list=PLfqMhTWNBTe3H6c9OGXb5_6wcc1Mca52n",
+                    "name": "(357) Introduction to Web Development | World&#39;s most premium Web Development Course | Lecture 0 (Reupload)"
+                  },
+
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=qjWm06CUAZI&ab_channel=TelexarAcademy",
+                    "name": "OAuth in React Native"
+                  },
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=b8ZUb_Okxro&t=58s",
+                    "name": "(1) The Complete Guide To Building A REST API With Node, Express, TypeScript &amp; MongoDB + Authentication"
+                  },
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=NPEsD6n9A_I&list=PLGjZwEtPN7j-Q59JYso3L4_yoCjj2syrM",
+                    "name": "AZ-900-Adam"
+                  },
+
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=38vrt6sU3oA",
+                    "name": "AI-102 -Azure AI Solutions"
+                  },
+
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=jPdIRX6q4jA&list=PLy7NrYWoggjwPggqtFsI_zMAwvG0SqYCb",
+                    "name": "Docker-Kubernetes"
+                  },
+
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=DoWhZO7nbCY",
+                    "name": "Azure DevOps: Zero to Hero"
+                  },
+
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=CF1tMjvHDRA",
+                    "name": "How To Make Your Boring Mac Terminal So Much Better"
+                  },
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=hymzoUpM0K0",
+                    "name": "Dawn of the Net - How the Internet works"
+                  },
+
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=mz6xaDT3iUI&ab_channel=AkshatShrivastava",
+                    "name": "10 Financial Mistakes by Salaried Class"
+                  },
+
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=j4uRkc612qw&ab_channel=AkshatShrivastava",
+                    "name": "NOW Debt Mutual Funds to be taxed Higher. New Finance Amendment Bill &amp; implications for Stock Market"
+                  },
+
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=4oymDY_Mb_I&ab_channel=AkshatShrivastava",
+                    "name": "My salary went from 10,000 to 5L AFTER I learned these skills | Get promoted fast &amp; 2X your salary"
+                  },
+
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=s1OxtSgfhxk&ab_channel=AkshatShrivastava",
+                    "name": "[How to BUILD a startup?] I built an AiRBnB business in GOA using these 6 simple steps | Akshat"
+                  },
+
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=j_wB3olOukU&ab_channel=AkshatShrivastava",
+                    "name": "Build a 100Cr portfolio by buying Stocks, Bonds and Real Estate (in this order) | Akshat Shrivastava"
+                  },
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=EVlQgmirnCg&list=PLxNHpNhDaEFIZwO9g_q5JDibAiq5dFkpg",
+                    "name": "Free Complete Candlestick Patterns Course"
+                  },
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=7SOy4XLO4qM",
+                    "name": "(357) Create Your Simple Stock Watchlist in Google Sheets Now!"
+                  },
+
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=Ao7WHrRw_VM&t=31s",
+                    "name": "(357) Learn How To Invest In Stock Market For Beginners | Ep 34"
+                  },
+
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=6flHiM5-n50",
+                    "name": "(365) Use Moving Averages Like A Pro ( 7 HACKS )"
+                  },
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=7EbnGe-CwYU&t=3124s",
+                    "name": "Find Multibaggers using ValuePickr"
+                  },
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=Y3kzzE9Elns",
+                    "name": "TU Stock Market Cours"
+                  },
+
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=-G6GbXGo4wo",
+                    "name": "Make Windows Terminal Look Better | Oh My Posh"
+                  },
+
+                  {
+                    "type": "url",
+                    "url": "https://www.youtube.com/watch?v=B-s71n0dHUk&list=PLj6YeMhvp2S5UgiQnBfvD7XgOMKs3O_G6&ab_channel=VisualStudioCode",
+                    "name": "Learn Visual Studio Code in 7min"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Full Walkthrough: Workflow for AI Coding — Matt Pocock",
+                    "url": "https://www.youtube.com/watch?v=-QFHIoCo-Ko"
+                  },
+                  {
+                    "type": "url",
+                    "name": "Docker Tutorial for beginners - Complete One Shot",
+                    "url": "https://www.youtube.com/watch?v=exmSJpJvIPs"
                   }
                 ]
               },
@@ -827,7 +995,7 @@
           {
             "type": "url",
             "name": "MERN Stack",
-            "url": "https://www.youtube.com/watch"
+            "url": "https://www.youtube.com/watch?v=H-9l-gTq-C4&list=PL0Zuz27SZ-6P4dQUsoDatjEGpmBpcOW8V"
           },
           {
             "type": "url",
@@ -909,17 +1077,6 @@
             "type": "url",
             "name": "Trendshift - Trending Repository Details",
             "url": "https://trendshift.io/repositories/3709"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "HireUp",
-        "children": [
-          {
-            "type": "url",
-            "name": "Supabase Full Course 2025",
-            "url": "https://www.youtube.com/watch"
           }
         ]
       },
@@ -1072,12 +1229,8 @@
                 "type": "url",
                 "name": "Storybook",
                 "url": "https://github.com/storybookjs/storybook"
-              },
-              {
-                "type": "url",
-                "name": "(357) Introduction to Web Development | World's most premium Web Development Course | Lecture 0 (Reupload) - YouTube",
-                "url": "https://www.youtube.com/watch"
               }
+
             ]
           },
           {
@@ -1177,11 +1330,7 @@
                 "name": "Azure Active Directory | React Native App Auth",
                 "url": "https://commerce.nearform.com/open-source/react-native-app-auth/docs/providers/azure-active-directory"
               },
-              {
-                "type": "url",
-                "name": "OAuth in React Native",
-                "url": "https://www.youtube.com/watch"
-              },
+
               {
                 "type": "url",
                 "name": "react-native-app-auth/azure-active-directory.md at main · FormidableLabs/react-native-app-auth · GitHub",
@@ -1235,11 +1384,7 @@
               }
             ]
           },
-          {
-            "type": "url",
-            "name": "(1) The Complete Guide To Building A REST API With Node, Express, TypeScript & MongoDB + Authentication - YouTube",
-            "url": "https://www.youtube.com/watch"
-          },
+
           {
             "type": "url",
             "name": "Bundlephobia | Size of npm dependencies",
@@ -1341,11 +1486,7 @@
             "type": "folder",
             "name": "Azure",
             "children": [
-              {
-                "type": "url",
-                "name": "AZ900 Azure Hindi ",
-                "url": "https://www.youtube.com/watch"
-              }
+
             ]
           },
           {
@@ -1357,11 +1498,7 @@
                 "name": "Your home for Microsoft Build",
                 "url": "https://build.microsoft.com/en-US/home"
               },
-              {
-                "type": "url",
-                "name": "How To Make Your Boring Mac Terminal So Much Better - YouTube",
-                "url": "https://www.youtube.com/watch"
-              },
+
               {
                 "type": "url",
                 "name": "Color Palettes for Designers and Artists - Color Hunt",
@@ -1430,11 +1567,7 @@
                 "name": "Study guide for Exam AZ-400: Designing and Implementing Microsoft DevOps Solutions | Microsoft Learn",
                 "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-400"
               },
-              {
-                "type": "url",
-                "name": "Dawn of the Net - How the Internet works - YouTube",
-                "url": "https://www.youtube.com/watch"
-              },
+
               {
                 "type": "url",
                 "name": "Start.me - Boost your Productivity with a Personalized Startpage",
@@ -1822,11 +1955,7 @@
                     "type": "folder",
                     "name": "Akshat",
                     "children": [
-                      {
-                        "type": "url",
-                        "name": "10 Financial Mistakes by Salaried Class - YouTube",
-                        "url": "https://www.youtube.com/watch"
-                      }
+
                     ]
                   },
                   {
@@ -1854,11 +1983,7 @@
                     "type": "folder",
                     "name": "Pushkar",
                     "children": [
-                      {
-                        "type": "url",
-                        "name": "Free Complete Candlestick Patterns Course",
-                        "url": "https://www.youtube.com/watch"
-                      }
+
                     ]
                   },
                   {
@@ -1888,11 +2013,7 @@
                       }
                     ]
                   },
-                  {
-                    "type": "url",
-                    "name": "(3) SIMPLE Head and Shoulders Pattern in Hindi | Price Action Analysis - YouTube",
-                    "url": "https://www.youtube.com/watch"
-                  },
+
                   {
                     "type": "url",
                     "name": "(8) India’s diamond-shaped version of pasta 🤯 w @YourFoodLab #shorts - YouTube",
@@ -2218,158 +2339,8 @@
                     "type": "url",
                     "name": "driving_theory_practical_test_uk_highway_code_ebook_pdf_2023.pdf",
                     "url": "https://driving-test.uk/driving_theory_practical_test_uk_highway_code_ebook_pdf_2023.pdf"
-                  },
-                  {
-                    "type": "url",
-                    "name": "UK Theory Test 2025",
-                    "url": "https://www.youtube.com/watch"
                   }
-                ]
-              },
-              {
-                "type": "folder",
-                "name": "WT",
-                "children": [
-                  {
-                    "type": "folder",
-                    "name": "Chants",
-                    "children": [
-                      {
-                        "type": "url",
-                        "name": "Focus Chants ",
-                        "url": "https://www.youtube.com/watch"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "folder",
-                    "name": "Ertrugul Ghazi",
-                    "children": [
-                      {
-                        "type": "url",
-                        "name": "1",
-                        "url": "https://www.youtube.com/watch"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "folder",
-                    "name": "Mubi",
-                    "children": [
-                      {
-                        "type": "url",
-                        "name": "(1) shahid full movie 720p 2012 hindi thriller cinema - YouTube",
-                        "url": "https://www.youtube.com/watch"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "folder",
-                    "name": "Poetry",
-                    "children": [
-                      {
-                        "type": "url",
-                        "name": "Ikram Arfi - Sitara Saaz Ankhon Main",
-                        "url": "https://www.youtube.com/watch"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "folder",
-                    "name": "Songs",
-                    "children": [
-                      {
-                        "type": "url",
-                        "name": "y Irrfan",
-                        "url": "https://www.youtube.com/watch"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "url",
-                    "name": "Transfer Playlists | Tune My Music",
-                    "url": "https://www.tunemymusic.com"
-                  },
-                  {
-                    "type": "folder",
-                    "name": "Maybe Subs",
-                    "children": [
-                      {
-                        "type": "url",
-                        "name": "Daily Reader | CTQ Compounds",
-                        "url": "https://www.ctqcompounds.com/product-page/dailyreader"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "folder",
-                    "name": "Podcast",
-                    "children": [
-                      {
-                        "type": "url",
-                        "name": "The Seen and the Unseen",
-                        "url": "https://www.youtube.com/@TheSeenAndTheUnseen/videos"
-                      },
-                      {
-                        "type": "url",
-                        "name": "Dwarkesh Patel",
-                        "url": "https://www.youtube.com/@DwarkeshPatel"
-                      },
-                      {
-                        "type": "url",
-                        "name": "The Truth Seeker",
-                        "url": "https://www.youtube.com/@TheTruthSeekerPodcast"
-                      },
-                      {
-                        "type": "url",
-                        "name": "Tim Ferriss",
-                        "url": "https://www.youtube.com/@timferriss"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "url",
-                    "name": "Live Sports",
-                    "url": "https://fmhy.net/videopiracyguide"
-                  },
-                  {
-                    "type": "folder",
-                    "name": "New folder",
-                    "children": [
-                      {
-                        "type": "url",
-                        "name": "Sultan Salahuddin Ayyubi | Qist 115 [URDU DUB] - YouTube",
-                        "url": "https://www.youtube.com/watch"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "folder",
-                    "name": "PJ",
-                    "children": [
-                      {
-                        "type": "url",
-                        "name": "Hip Hip Hurray ( हिप हिप हुर्रे ) 4K Movie | Prakash Jha's BEST MOVIE EVER | Raj Kiran | Deepti - YouTube",
-                        "url": "https://www.youtube.com/watch"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "folder",
-                    "name": "Islamic History",
-                    "children": [
-                      {
-                        "type": "url",
-                        "name": "Saladin: Tabii",
-                        "url": "https://www.youtube.com/watch"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "url",
-                    "name": "Welcome • freemediaheckyeah",
-                    "url": "https://fmhy.net"
-                  }
+
                 ]
               }
             ]
@@ -2548,11 +2519,7 @@
             "type": "folder",
             "name": "VS Code",
             "children": [
-              {
-                "type": "url",
-                "name": "Make Windows Terminal Look Better | Oh My Posh",
-                "url": "https://www.youtube.com/watch"
-              }
+
             ]
           },
           {
@@ -2732,22 +2699,7 @@
         "name": "Free download engineering e books | Online engineering Free ebooks |Engineering PDF download",
         "url": "http://engineering108.com"
       },
-      {
-        "type": "folder",
-        "name": "K8s",
-        "children": [
-          {
-            "type": "url",
-            "name": "Docker Tutorial for beginners - Complete One Shot - YouTube",
-            "url": "https://www.youtube.com/watch"
-          }
-        ]
-      },
-      {
-        "type": "url",
-        "name": "(35) Full Walkthrough: Workflow for AI Coding from Planning to Production — Matt Pocock (@mattpocockuk ) - YouTube",
-        "url": "https://www.youtube.com/watch"
-      },
+
       {
         "type": "url",
         "name": "Free Line Icons for Designers and Developers - Lineicons",
@@ -2755,17 +2707,12 @@
       },
       {
         "type": "folder",
-        "name": "Mubi",
+        "name": "fmhy",
         "children": [
           {
             "type": "url",
             "name": "Online Movies fmhy",
             "url": "https://fmhy.net/videopiracyguide"
-          },
-          {
-            "type": "url",
-            "name": "ANEMONE - Official Trailer [HD] - Only in Theaters October 3 - YouTube",
-            "url": "https://www.youtube.com/watch"
           }
         ]
       }
@@ -2774,29 +2721,6 @@
   "other": {
     "type": "folder",
     "name": "Other favourites",
-    "children": [
-      {
-        "type": "folder",
-        "name": "Synced Bookmarks",
-        "children": [
-          {
-            "type": "url",
-            "name": "Timeline-Ayodha-Matter | PT's IAS Academy",
-            "url": "http://civils.pteducation.com/p/timeline-ayodhya-matter.html"
-          }
-        ]
-      }
-    ]
-  },
-  "synced": {
-    "type": "folder",
-    "name": "Mobile favourites",
-    "children": [
-      {
-        "type": "url",
-        "name": "Webpage archive",
-        "url": "https://archive.is"
-      }
-    ]
+    "children": []
   }
 }
