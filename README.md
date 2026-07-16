@@ -4,6 +4,16 @@
 
 A CLI that detects your OS and installs the tools you choose — everyday laptop essentials, web, mobile, backend, DevOps, or the full stack. Runs on macOS, Linux, and Windows.
 
+**Never set up a dev machine before?** Two commands:
+
+```bash
+npx @vpnsin-labs/devsetup --bootcamp   # install the basics
+npx @vpnsin-labs/devsetup --doctor     # check it worked
+```
+
+`--doctor` inspects your machine, changes nothing, and prints a copy-pasteable fix
+under anything that's broken.
+
 ## Fresh machine setup
 
 Start here on a **brand-new machine that doesn't have Node.js yet**. These bootstrap
@@ -36,6 +46,7 @@ Or skip the profile prompt by passing a flag:
 
 ```bash
 npx @vpnsin-labs/devsetup --essentials  # Everyday apps for a new laptop
+npx @vpnsin-labs/devsetup --bootcamp    # First-time setup — Git, Node, VS Code, Ollama
 npx @vpnsin-labs/devsetup --js          # Minimal JavaScript dev
 npx @vpnsin-labs/devsetup --web         # Web + Docker + Supabase + MongoDB
 npx @vpnsin-labs/devsetup --mobile      # Android + iOS (Xcode CLI)
@@ -43,12 +54,18 @@ npx @vpnsin-labs/devsetup --backend     # Docker + DBs + Kubernetes + AWS
 npx @vpnsin-labs/devsetup --devops      # Kubernetes-focused
 npx @vpnsin-labs/devsetup --full-stack  # Everything
 
+# Check your setup (read-only) and set your Git identity
+npx @vpnsin-labs/devsetup --doctor
+npx @vpnsin-labs/devsetup --doctor --bootcamp
+npx @vpnsin-labs/devsetup --identity
+
 # Dotfiles (gitconfig, npmrc, zshrc, VS Code settings, Gradle config)
 npx @vpnsin-labs/devsetup --dotfiles
 
-# Documentation (7 markdown guides written to ./docs/)
+# Documentation (8 markdown guides written to ./docs/)
 npx @vpnsin-labs/devsetup --docs
 npx @vpnsin-labs/devsetup --docs ./team-docs
+npx @vpnsin-labs/devsetup --docs --bootcamp   # beginner guides instead
 
 # Microsoft Edge baseline (curated extensions, settings & bookmarks)
 npx @vpnsin-labs/devsetup --edge
@@ -62,12 +79,54 @@ npx @vpnsin-labs/devsetup --vscode
 | Profile        | Automatically installed | Optional (prompted)                                                                                                                                |
 | -------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **essentials** | git                     | VS Code, Notepad++ (Windows), GitHub Desktop, GitHub CLI, Google Chrome, VLC, 7-Zip (Windows), PowerToys (Windows), Obsidian                       |
+| **bootcamp**   | git, fnm, Node.js LTS   | VS Code, GitHub CLI, Ollama, Postman — a lean first-time setup, no Docker/WSL2                                                                     |
 | **js**         | git, fnm, Node.js LTS   | pnpm, GitHub CLI, VS Code, Bun, GitHub Desktop, Windows Terminal                                                                                   |
 | **web**        | git, fnm, Node.js LTS   | pnpm, GitHub CLI, VS Code, Bun, WSL 2 (Windows), Docker, Supabase CLI, MongoDB, Postman, GitHub Desktop                                            |
 | **mobile**     | git, fnm, Java 17       | VS Code, Xcode CLI, Android Studio, Watchman, CocoaPods, Flutter                                                                                   |
 | **backend**    | git, fnm, jq            | pnpm, GitHub CLI, VS Code, WSL 2 (Windows), Docker, MongoDB, Supabase CLI, Postgres, Redis, AWS CLI, direnv, kubectl, minikube, Helm, k9s, Postman |
 | **devops**     | git                     | WSL 2 (Windows), Docker, jq, AWS CLI, kubectl, minikube, Helm, k9s                                                                                 |
 | **full-stack** | git, fnm, jq, Java 17   | everything above                                                                                                                                   |
+
+## Doctor
+
+`--doctor` diagnoses your machine and exits non-zero if something required is
+missing — so it works as a personal sanity check, a pre-flight for a room full of
+laptops, or a CI gate. It only reads; it never installs or changes anything.
+
+```text
+$ npx @vpnsin-labs/devsetup --doctor --bootcamp
+
+Doctor — bootcamp checklist
+  Checking your machine. Nothing is installed or changed.
+
+  ✔ Git                  2.43.0
+  ✔ Node.js              v22.11.0
+  ✔ npm                  10.9.0
+  ✘ Git identity         user.email not set
+    → devsetup --identity
+  ✔ VS Code              1.96.2
+  ! Ollama               not found (optional)
+    → devsetup --bootcamp
+
+  5 of 8 checks passed.
+  ✘ 1 blocking issue: Git identity
+```
+
+Pair it with a profile to check that profile's tools: `--doctor --bootcamp`,
+`--doctor --web`, `--doctor --backend`. Without one, it runs a core checklist
+(git, Node, npm, Git identity, VS Code).
+
+`✘` marks a blocker and sets exit code 1. `!` is an optional extra and doesn't.
+
+## Git identity
+
+`--identity` sets just your Git name and email — the two lines every commit is
+signed with — without the full `--dotfiles` rewrite of your shell profile, npmrc
+and Gradle config:
+
+```bash
+npx @vpnsin-labs/devsetup --identity
+```
 
 ## Dotfiles
 
@@ -134,6 +193,10 @@ Edge afterwards. Use `--dry-run` to preview every change first.
 - **Settings & keybindings** — writes the same `settings.json` and
   `keybindings.json` shipped by `--dotfiles`, backing up any existing files.
 
+Add `--minimal` to install only four essentials — ESLint, Prettier, GitLens and
+Error Lens — instead of the full set. Useful on a low-spec or shared machine, or
+for a first-time setup where 30+ extensions is noise.
+
 If the `code` command isn't on your PATH, extension install is skipped with a
 hint (install VS Code first via `--essentials`, or add `code` to PATH). Use
 `--dry-run` to preview the exact commands.
@@ -142,6 +205,8 @@ hint (install VS Code first via `--essentials`, or add `code` to PATH). Use
 
 | Command        | Description                                                                 |
 | -------------- | --------------------------------------------------------------------------- |
+| `--doctor`     | Diagnose your setup and print a fix for anything broken (read-only)         |
+| `--identity`   | Set your Git name and email                                                 |
 | `--dotfiles`   | Install `.gitconfig`, `.npmrc`, shell, VS Code and Gradle dotfiles          |
 | `--docs [dir]` | Generate setup documentation into `[dir]` (default: `./docs`)               |
 | `--edge`       | Set up Microsoft Edge with a curated extensions/settings/bookmarks baseline |
@@ -155,6 +220,8 @@ Run without a command to pick a tool profile interactively.
 | --------------- | ---------------------------------------------------------------------------------- |
 | `--yes`, `-y`   | Auto-confirm all optional tool prompts                                             |
 | `--no-optional` | Skip all optional tools (required tools only)                                      |
+| `--minimal`     | With `--vscode`: install only 4 core extensions instead of the full set            |
+| `--corporate`   | With `--dotfiles`: always ask for proxy/CA cert details                            |
 | `--dry-run`     | Print the full ordered install plan (primary + fallbacks) without running anything |
 | `--help`        | Show help                                                                          |
 
@@ -187,6 +254,7 @@ For a new laptop — useful whether or not you write code:
 - **GitHub Desktop** — GUI git client (macOS/Windows)
 - **Postman** — API development and testing
 - **Windows Terminal** — modern terminal for Windows
+- **Ollama** — run AI models locally (`ollama pull llama3`)
 
 ### Containers & Kubernetes
 

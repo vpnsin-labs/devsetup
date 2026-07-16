@@ -46,8 +46,12 @@ Entry point. Responsibilities:
   2. `--dotfiles` — delegates to `lib/dotfiles.js` after collecting user inputs.
   3. `--docs` — delegates to `lib/docs.js`.
   4. `--edge` — delegates to `lib/edge.js` (Microsoft Edge baseline).
-  5. `--vscode` — delegates to `lib/vscode.js` (extensions + settings/keybindings).
-  6. _(default)_ — profile selection → tool installation loop.
+  5. `--vscode` — delegates to `lib/vscode.js` (extensions + settings/keybindings;
+     `--minimal` swaps the 32-extension set for a 4-extension one).
+  6. `--doctor` — delegates to `lib/doctor.js` (read-only diagnosis; exits 1 on
+     blockers). Pairs with a profile flag (`--doctor --bootcamp`).
+  7. `--identity` — sets just `user.name`/`user.email` via `git config --global`.
+  8. _(default)_ — profile selection → tool installation loop.
 - The installation loop builds each tool's runnable methods via
   `chooseCandidates(tool.install[platform], managers)` and tries them in order.
   The first method that exits cleanly wins; any non-zero exit throws and falls
@@ -340,7 +344,19 @@ Handles `--vscode`. Single export `setupVscode(platform, { dryRun, autoYes, conf
   the `vscode-*` targets + `installDotfile`) to write `settings.json`/`keybindings.json`,
   backing up existing files.
 
-`loadRecommendations()` is also exported for tests. Everything honours `--dry-run`.
+`loadRecommendations(set)` is also exported (`set` = `'full'` | `'minimal'`), used by
+`--vscode --minimal` and by the doctor's extension check. Everything honours `--dry-run`.
+
+### `lib/doctor.js`
+
+Handles `--doctor`. Read-only: each check runs a version/status probe through
+`runner.capture()` (returns `null` on a missing command or non-zero exit and never
+throws) and yields `{ status: 'pass' | 'fail' | 'warn', detail, fix? }`. `CHECK_LIBRARY`
+holds the individual checks; `CHECKLISTS` maps an audience (`default`, `bootcamp`,
+`web`, …) to a list of check ids. `runDoctor({ checklist, extensions })` prints the
+report and returns `{ results, blockers }`; `bin/cli.js` exits `1` when `blockers > 0`,
+so `--doctor` doubles as a CI gate or workshop pre-flight. The GitHub-reachability probe
+is bounded to 10s so a captive network can't hang the diagnosis.
 
 ---
 

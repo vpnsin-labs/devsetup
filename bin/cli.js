@@ -68,8 +68,13 @@ ${c.bold('devsetup')} — developer machine bootstrap
 
 ${c.bold('Usage:')}  npx @vpnsin-labs/devsetup [command|profile] [options]
 
+${c.bold('New to this?')}  ${c.dim('Start here:')}
+  ${c.cyan('npx @vpnsin-labs/devsetup --bootcamp')}   ${c.dim('install the basics')}
+  ${c.cyan('npx @vpnsin-labs/devsetup --doctor')}     ${c.dim('check it worked')}
+
 ${c.bold('Tool profiles:')}
   --essentials   everyday laptop apps — VS Code, Notepad++, Chrome, GitHub, 7-Zip, VLC, PowerToys
+  --bootcamp     first-time setup — Git, Node.js, VS Code, Ollama, Postman
   --js           git, fnm, Node.js LTS, pnpm, VS Code, GitHub CLI
   --web          JS tools + Docker, Supabase, MongoDB, Postman
   --mobile       Xcode CLI, Java, Android Studio, CocoaPods, Flutter
@@ -77,15 +82,23 @@ ${c.bold('Tool profiles:')}
   --devops       Docker, Kubernetes (kubectl, minikube, helm, k9s), AWS CLI
   --full-stack   everything above combined
 
+${c.bold('Check & fix:')}
+  --doctor       diagnose your setup and print a fix for anything broken
+                 ${c.dim('pair with a profile, e.g. --doctor --bootcamp')}
+  --identity     set your Git name and email (just the two lines, nothing else)
+
 ${c.bold('Dotfiles & docs:')}
   --dotfiles     install .gitconfig, .npmrc, .zshrc, VS Code settings, Gradle config
   --docs [dir]   generate setup documentation into [dir] (default: ./docs)
+                 ${c.dim('--docs --bootcamp writes beginner guides instead')}
   --edge         set up Microsoft Edge with a curated extensions/settings/bookmarks baseline
   --vscode       install recommended VS Code extensions + settings and keybindings
+                 ${c.dim('--vscode --minimal installs just 4 essentials')}
 
 ${c.bold('Options:')}
   --yes, -y      auto-confirm all optional tool prompts
   --no-optional  skip all optional tools (required tools only)
+  --corporate    ask for corporate proxy/CA cert details in --dotfiles
   --dry-run      print commands without running them
   --help         show this help
 `);
@@ -101,6 +114,60 @@ if (dryRun) log.warn('Dry-run mode — no changes will be made');
 if (autoYes) log.info('Auto-yes mode — all optional tools will be installed');
 if (noOptional) log.info('No-optional mode — only required tools will be installed');
 
+// ── Doctor command ────────────────────────────────────────────────────────────
+// Read-only: diagnoses the machine and exits non-zero if a required check
+// fails, so it doubles as a pre-flight in CI or a workshop.
+if (has('--doctor')) {
+  const { runDoctor, CHECKLISTS } = await import('../lib/doctor.js');
+  const { loadRecommendations } = await import('../lib/vscode.js');
+
+  const checklist =
+    Object.keys(CHECKLISTS).find((k) => k !== 'default' && has(`--${k}`)) ?? 'default';
+  const extensions = checklist === 'bootcamp' ? loadRecommendations('minimal') : [];
+
+  const { blockers } = runDoctor({ checklist, extensions });
+  rl.close();
+  process.exit(blockers > 0 ? 1 : 0);
+}
+
+// ── Identity command ──────────────────────────────────────────────────────────
+// Just the two lines of git config everyone needs, without the full --dotfiles
+// rewrite of shell profiles, npmrc and Gradle.
+if (has('--identity')) {
+  log.section('Git identity');
+  console.log(`  ${c.dim('Every commit you make is signed with this name and email.')}\n`);
+
+  const current = { name: null, email: null };
+  if (hasCommand('git')) {
+    const { capture } = await import('../lib/runner.js');
+    current.name = capture('git', ['config', '--global', 'user.name']);
+    current.email = capture('git', ['config', '--global', 'user.email']);
+  } else {
+    log.warn('Git is not installed yet — run `devsetup --bootcamp` first.');
+    rl.close();
+    process.exit(1);
+  }
+
+  const gitName = await ask('Your full name', current.name ?? '');
+  const gitEmail = await ask('Your email (use your GitHub one)', current.email ?? '');
+
+  if (!gitName || !gitEmail) {
+    log.warn('Both a name and an email are needed — nothing changed.');
+    rl.close();
+    process.exit(1);
+  }
+
+  console.log('');
+  run(`git config --global user.name "${gitName}"`, { dryRun });
+  run(`git config --global user.email "${gitEmail}"`, { dryRun });
+  log.ok(`Git identity set to ${c.bold(gitName)} <${gitEmail}>`);
+  console.log(
+    `\n  ${c.dim('Tip: use the same email as your GitHub account, or your commits')}\n  ${c.dim("won't link to your profile.")}\n`
+  );
+  rl.close();
+  process.exit(0);
+}
+
 // ── Dotfiles command ──────────────────────────────────────────────────────────
 if (has('--dotfiles')) {
   const { getDotfileTargets, buildVars, installDotfile } = await import('../lib/dotfiles.js');
@@ -109,9 +176,12 @@ if (has('--dotfiles')) {
   console.log(`  ${c.dim('Existing files will be backed up with a .bak suffix.')}\n`);
 
   const gitName = await ask('Your full name (for .gitconfig)');
-  const gitEmail = await ask('Your work email (for .gitconfig)');
-  const proxyUrl = await ask('Corporate proxy URL (leave blank if none)');
-  const zscalerCert = await ask('Zscaler CA cert path (leave blank if none)');
+  const gitEmail = await ask('Your email (for .gitconfig)');
+  const proxyUrl = await ask('Proxy URL, if your network uses one (leave blank if none)');
+  // A CA cert path is a corporate concern. Asking a first-timer for one is
+  // noise, so only surface it when a proxy was given or --corporate is passed.
+  const zscalerCert =
+    proxyUrl || has('--corporate') ? await ask('Zscaler CA cert path (leave blank if none)') : '';
 
   const vars = buildVars(platform, { gitName, gitEmail, proxyUrl, zscalerCert });
   const targets = getDotfileTargets(platform);
@@ -138,16 +208,15 @@ if (has('--dotfiles')) {
 
 // ── Docs command ──────────────────────────────────────────────────────────────
 if (has('--docs')) {
-  const { generateDocs } = await import('../lib/docs.js');
+  const { generateDocs, listDocs } = await import('../lib/docs.js');
   const outputDir = argAfter('--docs') ?? 'docs';
+  const docSet = has('--bootcamp') ? 'bootcamp' : 'default';
 
   log.section(`Generating documentation → ${c.bold(outputDir)}/`);
-  const count = generateDocs(outputDir, { dryRun });
+  const count = generateDocs(outputDir, { dryRun, set: docSet });
   log.ok(`Generated ${count} documentation files in ${c.bold(outputDir)}/`);
-  console.log(`\n  ${c.dim('Topics:')} macbook-setup, windows-setup, proxy-setup,`);
-  console.log(
-    `  ${c.dim('         ')} repository-cloning, environment-settings, azure-vpn-setup, utility-scripts\n`
-  );
+  const topics = listDocs(docSet);
+  if (topics.length) console.log(`\n  ${c.dim('Topics:')} ${topics.join(', ')}\n`);
   rl.close();
   process.exit(0);
 }
@@ -163,15 +232,23 @@ if (has('--edge')) {
 // ── VS Code setup command ──────────────────────────────────────────────────────
 if (has('--vscode')) {
   const { setupVscode } = await import('../lib/vscode.js');
-  await setupVscode(platform, { dryRun, autoYes, confirm });
+  const set = has('--minimal') ? 'minimal' : 'full';
+  await setupVscode(platform, { dryRun, autoYes, confirm, set });
   rl.close();
   process.exit(0);
 }
 
 // Select profile
-let profileKey = ['essentials', 'js', 'web', 'mobile', 'backend', 'devops', 'full-stack'].find(
-  (p) => has(`--${p}`)
-);
+let profileKey = [
+  'essentials',
+  'bootcamp',
+  'js',
+  'web',
+  'mobile',
+  'backend',
+  'devops',
+  'full-stack',
+].find((p) => has(`--${p}`));
 if (!profileKey) {
   profileKey = await selectChoice(
     'Which setup profile?',
