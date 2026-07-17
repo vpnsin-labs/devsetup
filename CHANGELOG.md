@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/vpnsin-labs/devsetup/compare/v0.1.8...v0.2.0) (2026-07-17)
+
+
+### Features
+
+* add --doctor, --bootcamp, --identity; serve beginners and pros ([#26](https://github.com/vpnsin-labs/devsetup/issues/26)) ([174bd22](https://github.com/vpnsin-labs/devsetup/commit/174bd226b84b74294cf9223e6f801a4763ed82b8))
+
 ## [0.1.8](https://github.com/vpnsin-labs/devsetup/compare/v0.1.7...v0.1.8) (2026-07-01)
 
 
