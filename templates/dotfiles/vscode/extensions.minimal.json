@@ -1,0 +1,9 @@
+{
+  "//": "The smallest set that makes a first-time setup pleasant. Linting, formatting, git history, and inline errors — nothing else. Use extensions.json for the full professional set.",
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "eamodio.gitlens",
+    "usernamehw.errorlens"
+  ]
+}

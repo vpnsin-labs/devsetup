@@ -1,7 +1,7 @@
 {
   "name": "@vpnsin-labs/devsetup",
   "version": "0.1.8",
-  "description": "Machine bootstrap CLI for web/mobile full-stack developers.",
+  "description": "Machine bootstrap CLI for developers — from first-time setup to full-stack professional.",
   "type": "module",
   "bin": {
     "devsetup": "bin/cli.js"
@@ -31,7 +31,13 @@
     "nodejs",
     "docker",
     "android",
-    "mobile"
+    "mobile",
+    "cli",
+    "doctor",
+    "beginner",
+    "onboarding",
+    "developer-experience",
+    "ollama"
   ],
   "license": "MIT",
   "publishConfig": {
