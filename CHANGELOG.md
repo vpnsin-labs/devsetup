@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/vpnsin-labs/devsetup/compare/v0.2.0...v0.2.1) (2026-07-17)
+
+
+### Bug Fixes
+
+* pin devkit and correct renamed Homebrew cask tokens ([#29](https://github.com/vpnsin-labs/devsetup/issues/29)) ([05eaadb](https://github.com/vpnsin-labs/devsetup/commit/05eaadbb8a201777ee70f6dc16f4bd7a8cfbc8e9))
+
 ## [0.2.0](https://github.com/vpnsin-labs/devsetup/compare/v0.1.8...v0.2.0) (2026-07-17)
 
 
