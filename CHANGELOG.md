@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/vpnsin-labs/devsetup/compare/v0.2.2...v0.2.3) (2026-07-31)
+
+
+### Bug Fixes
+
+* make winget installs non-interactive and prompts stdin-safe on Windows ([#35](https://github.com/vpnsin-labs/devsetup/issues/35)) ([5a3f57b](https://github.com/vpnsin-labs/devsetup/commit/5a3f57b831f61c40ce5b2b9b4413678e620bea47))
+
 ## [0.2.2](https://github.com/vpnsin-labs/devsetup/compare/v0.2.1...v0.2.2) (2026-07-31)
 
 
