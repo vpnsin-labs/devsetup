@@ -9,6 +9,7 @@ import {
   detectManagers,
   chooseCandidates,
   managerKeyOf,
+  refreshWindowsPath,
 } from '../lib/platform.js';
 import { TOOLS, PROFILES } from '../lib/tools.js';
 import { hasCommand, run, log, c } from '../lib/runner.js';
@@ -74,7 +75,7 @@ ${c.bold('New to this?')}  ${c.dim('Start here:')}
 
 ${c.bold('Tool profiles:')}
   --essentials   everyday laptop apps — VS Code, Notepad++, Chrome, GitHub, 7-Zip, VLC, PowerToys
-  --bootcamp     first-time setup — Git, Node.js, VS Code, Ollama, Postman
+  --bootcamp     first-time setup — Git, Node.js, VS Code, Postman
   --js           git, fnm, Node.js LTS, pnpm, VS Code, GitHub CLI
   --web          JS tools + Docker, Supabase, MongoDB, Postman
   --mobile       Xcode CLI, Java, Android Studio, CocoaPods, Flutter
@@ -94,6 +95,7 @@ ${c.bold('Dotfiles & docs:')}
   --edge         set up Microsoft Edge with a curated extensions/settings/bookmarks baseline
   --vscode       install recommended VS Code extensions + settings and keybindings
                  ${c.dim('--vscode --minimal installs just 4 essentials')}
+  --ollama       install Ollama on its own to run AI models locally (ollama pull llama3)
 
 ${c.bold('Options:')}
   --yes, -y      auto-confirm all optional tool prompts
@@ -109,6 +111,10 @@ ${c.bold('Options:')}
 console.log(`\n${c.bold('devsetup')} ${c.dim('— developer machine bootstrap')}\n`);
 
 const platform = detectPlatform();
+// On Windows, pick up PATH entries written by installers earlier in this shell
+// (or in a prior session) so doctor and the install loop don't false-report a
+// just-installed tool as missing. No-op on macOS/Linux.
+refreshWindowsPath();
 log.info(`Platform: ${c.bold(platform)} (${process.arch})`);
 if (dryRun) log.warn('Dry-run mode — no changes will be made');
 if (autoYes) log.info('Auto-yes mode — all optional tools will be installed');
@@ -234,6 +240,16 @@ if (has('--vscode')) {
   const { setupVscode } = await import('../lib/vscode.js');
   const set = has('--minimal') ? 'minimal' : 'full';
   await setupVscode(platform, { dryRun, autoYes, confirm, set });
+  rl.close();
+  process.exit(0);
+}
+
+// ── Ollama command ─────────────────────────────────────────────────────────────
+// Standalone install of the local-AI runtime — deliberately not a profile, so
+// it stays opt-in and skips the profile loop's Node-LTS bootstrap.
+if (has('--ollama')) {
+  const { setupOllama } = await import('../lib/ollama.js');
+  await setupOllama(platform, { dryRun, autoYes, confirm });
   rl.close();
   process.exit(0);
 }

@@ -48,10 +48,12 @@ Entry point. Responsibilities:
   4. `--edge` — delegates to `lib/edge.js` (Microsoft Edge baseline).
   5. `--vscode` — delegates to `lib/vscode.js` (extensions + settings/keybindings;
      `--minimal` swaps the 32-extension set for a 4-extension one).
-  6. `--doctor` — delegates to `lib/doctor.js` (read-only diagnosis; exits 1 on
+  6. `--ollama` — delegates to `lib/ollama.js` (installs the Ollama runtime on its
+     own; deliberately a command, not a profile).
+  7. `--doctor` — delegates to `lib/doctor.js` (read-only diagnosis; exits 1 on
      blockers). Pairs with a profile flag (`--doctor --bootcamp`).
-  7. `--identity` — sets just `user.name`/`user.email` via `git config --global`.
-  8. _(default)_ — profile selection → tool installation loop.
+  8. `--identity` — sets just `user.name`/`user.email` via `git config --global`.
+  9. _(default)_ — profile selection → tool installation loop.
 - The installation loop builds each tool's runnable methods via
   `chooseCandidates(tool.install[platform], managers)` and tries them in order.
   The first method that exits cleanly wins; any non-zero exit throws and falls
@@ -212,11 +214,24 @@ Detection, normalisation, and package-manager bootstrap:
   the run; under `--dry-run` it instead records the manager as assumed-present
   (per platform) so the printed plan reflects it.
 
+- **`refreshWindowsPath()`** — Windows only (no-op elsewhere). Re-reads the machine
+  (`HKLM\…\Session Manager\Environment`) and user (`HKCU\Environment`) `Path` values
+  from the registry via `reg query`, expands `%VAR%` references, and merges any new
+  directories into `process.env.PATH`. A tool installed by winget/choco/scoop (or the
+  Node MSI) earlier in the same shell writes its bin dir to the registry `Path`, but
+  this process inherited the shell's older PATH — so without this refresh a
+  just-installed `git`/`npm` reads as "not found" until a new terminal. Called once at
+  `bin/cli.js` startup so both `--doctor` and the install loop see fresh entries.
+  Purely additive and best-effort: existing entries keep priority, and any `reg`
+  failure leaves PATH untouched.
+
 - **`buildInstallCmd(spec)`** — given a single candidate object, returns the
   shell command (or `null`). Priority: `brew` → `cask` → `apt` → `dnf` → `yum`
   → `pacman` → `zypper` → `snap` → `flatpak` → `winget` → `scoop` → `choco` →
   `npm` → `script`. A legacy single-key object therefore produces a
-  byte-identical command to before this layer existed.
+  byte-identical command to before this layer existed. `winget` commands carry
+  `--accept-source-agreements --accept-package-agreements` so an unattended run
+  never blocks on winget's first-run agreement prompt.
 
 ---
 
@@ -240,6 +255,13 @@ Thin utilities with no external dependencies:
 
 - **`hasCommand(cmd)`** — uses `spawnSync('which'/'where')` to check if a command
   exists; returns boolean. Uses `where` on Windows, `which` elsewhere.
+
+- **`capture(cmd, args, { timeout })`** — runs a command and returns trimmed stdout,
+  or `null` on a missing command / non-zero exit (never throws). Used for read-only
+  version and config probes. Runs with `shell: true` **on Windows only** so shim
+  commands like `npm.cmd` / `code.cmd` (which `where` finds but `CreateProcess` can't
+  launch directly) are probed correctly; POSIX stays shell-free. All call sites pass
+  fixed literal args, so there is nothing user-controlled to shell-inject.
 
 - **`run(cmd, { dryRun })`** — prints the command (always), then calls
   `execSync(cmd, { stdio: 'inherit' })` unless `dryRun` is true.
@@ -346,6 +368,19 @@ Handles `--vscode`. Single export `setupVscode(platform, { dryRun, autoYes, conf
 
 `loadRecommendations(set)` is also exported (`set` = `'full'` | `'minimal'`), used by
 `--vscode --minimal` and by the doctor's extension check. Everything honours `--dry-run`.
+
+### `lib/ollama.js`
+
+Handles `--ollama`. Single export `setupOllama(platform, { dryRun, autoYes, confirm })`.
+Ollama is a normal entry in `TOOLS` (its install spec and `check` live in the catalogue);
+the standalone command installs just that one tool, reusing `platform.js`'s ordered-fallback
+installer (`detectManagers` → `chooseCandidates` → `buildInstallCmd` → run-with-fallbacks) —
+the same shape as `edge.js`'s `installEdge` — preceded by the profile loop's
+`ensurePackageManager` bootstrap. The post-install "pull a model" hint is defined in the
+command itself (not read from the catalogue). It is intentionally a dedicated command rather
+than a profile, so it never appears in the interactive profile menu and never triggers the
+profile loop's fnm/Node-LTS bootstrap; local-AI tooling stays strictly opt-in. Everything
+honours `--dry-run` (prints the full ordered plan without executing).
 
 ### `lib/doctor.js`
 
