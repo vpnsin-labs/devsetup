@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/vpnsin-labs/devsetup/compare/v0.2.1...v0.2.2) (2026-07-31)
+
+
+### Features
+
+* add standalone --ollama command and fix Windows install/doctor issues ([#33](https://github.com/vpnsin-labs/devsetup/issues/33)) ([7083334](https://github.com/vpnsin-labs/devsetup/commit/7083334847a7385cc207d647b77b97b5d9d55ca6))
+
 ## [0.2.1](https://github.com/vpnsin-labs/devsetup/compare/v0.2.0...v0.2.1) (2026-07-17)
 
 
