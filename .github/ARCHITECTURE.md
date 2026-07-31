@@ -40,7 +40,11 @@ Entry point. Responsibilities:
 - Parses `process.argv` (no third-party arg parser — uses `argv.includes` and an
   `argAfter` helper).
 - Detects interactive mode via `process.stdin.isTTY`; falls back to defaults when
-  piped or in CI.
+  piped or in CI. Prompts (`confirm`/`ask`/`selectChoice`) open a readline
+  interface **per question** and close it immediately (`prompt()`), rather than
+  holding one open for the whole run — a persistent interface keeps stdin in
+  readline's raw/resumed mode across the `execSync` installs, which on Windows
+  swallows the keystrokes an installer's own prompt is waiting for.
 - Handles several top-level modes, each exiting early after completion:
   1. `--help` — prints usage and exits.
   2. `--dotfiles` — delegates to `lib/dotfiles.js` after collecting user inputs.
@@ -230,8 +234,10 @@ Detection, normalisation, and package-manager bootstrap:
   → `pacman` → `zypper` → `snap` → `flatpak` → `winget` → `scoop` → `choco` →
   `npm` → `script`. A legacy single-key object therefore produces a
   byte-identical command to before this layer existed. `winget` commands carry
-  `--accept-source-agreements --accept-package-agreements` so an unattended run
-  never blocks on winget's first-run agreement prompt.
+  `--accept-source-agreements --accept-package-agreements --source winget` so an
+  unattended run never blocks on winget's first-run agreement prompt — the
+  `--source winget` in particular keeps resolution off the `msstore` source,
+  whose region/terms prompt is the one users got stuck on.
 
 ---
 

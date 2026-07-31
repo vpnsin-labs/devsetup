@@ -45,7 +45,7 @@ test('buildInstallCmd produces the original commands for legacy keys', () => {
   assert.equal(buildInstallCmd({ snap: 'code --classic' }), 'sudo snap install code --classic');
   assert.equal(
     buildInstallCmd({ winget: 'Git.Git' }),
-    'winget install --silent --accept-source-agreements --accept-package-agreements --id Git.Git'
+    'winget install --silent --accept-source-agreements --accept-package-agreements --source winget --id Git.Git'
   );
   assert.equal(buildInstallCmd({ npm: 'pnpm' }), 'npm install -g pnpm');
   assert.equal(buildInstallCmd({ script: 'curl x | sh' }), 'curl x | sh');
@@ -70,12 +70,15 @@ test('buildInstallCmd preserves legacy priority for a multi-key object', () => {
   assert.equal(buildInstallCmd({ script: 'x', brew: 'git' }), 'brew install git');
 });
 
-test('winget installs auto-accept source and package agreements', () => {
-  // Without these flags winget blocks on a first-run agreement prompt that an
-  // unattended install can't answer (stdin is owned by our readline).
+test('winget installs are fully non-interactive (agreements + winget source)', () => {
+  // Without these winget blocks on a first-run agreement prompt that an
+  // unattended install can't answer (stdin is owned by our readline). --source
+  // winget also keeps it off the msstore source, whose region/terms prompt is
+  // the one users actually got stuck on.
   const cmd = buildInstallCmd({ winget: 'Schniz.fnm' });
   assert.match(cmd, /--accept-source-agreements/);
   assert.match(cmd, /--accept-package-agreements/);
+  assert.match(cmd, /--source winget/);
 });
 
 // ── refreshWindowsPath ────────────────────────────────────────────────────────
