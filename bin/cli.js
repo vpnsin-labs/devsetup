@@ -23,12 +23,26 @@ function postInstallNote(tool, platform) {
 
 // ── Prompts ──────────────────────────────────────────────────────────────────
 const isInteractive = Boolean(process.stdin.isTTY);
-const rl = createInterface({ input: process.stdin, output: process.stdout });
+
+// Open a readline interface only for the duration of a single question, then
+// close it. A single persistent interface (the previous design) would hold stdin
+// in readline's raw/resumed mode across the execSync installs in run(); on
+// Windows that swallows the keystrokes an installer's own prompt (e.g. winget's
+// Y/N source-agreement) is waiting for, so the terminal looks "stuck" and Y
+// never registers. Closing between prompts hands a clean stdin to each child.
+async function prompt(query) {
+  const iface = createInterface({ input: process.stdin, output: process.stdout });
+  try {
+    return await iface.question(query);
+  } finally {
+    iface.close();
+  }
+}
 
 async function confirm(message, defaultYes = true) {
   if (!isInteractive) return defaultYes;
   const hint = defaultYes ? 'Y/n' : 'y/N';
-  const answer = await rl.question(`  ${message} [${hint}] `);
+  const answer = await prompt(`  ${message} [${hint}] `);
   if (answer.trim() === '') return defaultYes;
   return answer.trim().toLowerCase().startsWith('y');
 }
@@ -36,7 +50,7 @@ async function confirm(message, defaultYes = true) {
 async function ask(message, defaultValue = '') {
   if (!isInteractive) return defaultValue;
   const hint = defaultValue ? ` (${c.dim(defaultValue)})` : '';
-  const answer = await rl.question(`  ${c.cyan('?')} ${message}${hint}: `);
+  const answer = await prompt(`  ${c.cyan('?')} ${message}${hint}: `);
   return answer.trim() || defaultValue;
 }
 
@@ -46,7 +60,7 @@ async function selectChoice(message, choices) {
   choices.forEach(({ name, description }, i) => {
     console.log(`    ${c.cyan(String(i + 1))}. ${c.bold(name)}  ${c.dim(description)}`);
   });
-  const answer = await rl.question(`\n  Enter number [1]: `);
+  const answer = await prompt(`\n  Enter number [1]: `);
   const idx = parseInt(answer.trim(), 10) - 1;
   const valid = !isNaN(idx) && idx >= 0 && idx < choices.length;
   return choices[valid ? idx : 0].value;
@@ -132,7 +146,6 @@ if (has('--doctor')) {
   const extensions = checklist === 'bootcamp' ? loadRecommendations('minimal') : [];
 
   const { blockers } = runDoctor({ checklist, extensions });
-  rl.close();
   process.exit(blockers > 0 ? 1 : 0);
 }
 
@@ -150,7 +163,6 @@ if (has('--identity')) {
     current.email = capture('git', ['config', '--global', 'user.email']);
   } else {
     log.warn('Git is not installed yet — run `devsetup --bootcamp` first.');
-    rl.close();
     process.exit(1);
   }
 
@@ -159,7 +171,6 @@ if (has('--identity')) {
 
   if (!gitName || !gitEmail) {
     log.warn('Both a name and an email are needed — nothing changed.');
-    rl.close();
     process.exit(1);
   }
 
@@ -170,7 +181,6 @@ if (has('--identity')) {
   console.log(
     `\n  ${c.dim('Tip: use the same email as your GitHub account, or your commits')}\n  ${c.dim("won't link to your profile.")}\n`
   );
-  rl.close();
   process.exit(0);
 }
 
@@ -208,7 +218,6 @@ if (has('--dotfiles')) {
   console.log(`\n${c.bold('Next steps:')}`);
   console.log(`  1. Restart your terminal for shell file changes to take effect`);
   console.log(`  2. Review each installed file and customise as needed\n`);
-  rl.close();
   process.exit(0);
 }
 
@@ -223,7 +232,6 @@ if (has('--docs')) {
   log.ok(`Generated ${count} documentation files in ${c.bold(outputDir)}/`);
   const topics = listDocs(docSet);
   if (topics.length) console.log(`\n  ${c.dim('Topics:')} ${topics.join(', ')}\n`);
-  rl.close();
   process.exit(0);
 }
 
@@ -231,7 +239,6 @@ if (has('--docs')) {
 if (has('--edge')) {
   const { setupEdge } = await import('../lib/edge.js');
   await setupEdge(platform, { dryRun, autoYes, confirm });
-  rl.close();
   process.exit(0);
 }
 
@@ -240,7 +247,6 @@ if (has('--vscode')) {
   const { setupVscode } = await import('../lib/vscode.js');
   const set = has('--minimal') ? 'minimal' : 'full';
   await setupVscode(platform, { dryRun, autoYes, confirm, set });
-  rl.close();
   process.exit(0);
 }
 
@@ -250,7 +256,6 @@ if (has('--vscode')) {
 if (has('--ollama')) {
   const { setupOllama } = await import('../lib/ollama.js');
   await setupOllama(platform, { dryRun, autoYes, confirm });
-  rl.close();
   process.exit(0);
 }
 
@@ -287,7 +292,6 @@ const tools = profile.ids
 
 if (tools.length === 0) {
   log.warn('No tools available for this profile on the current platform.');
-  rl.close();
   process.exit(0);
 }
 
@@ -433,5 +437,3 @@ ${c.bold('Next steps:')}
   1. Restart your terminal so shell profile changes take effect
   2. In each project: ${c.cyan('npx @vpnsin-labs/devkit init')}
 `);
-
-rl.close();
