@@ -11,6 +11,11 @@ npx @vpnsin-labs/devsetup --bootcamp   # install the basics
 npx @vpnsin-labs/devsetup --doctor     # check it worked
 ```
 
+> **Prerequisite — Node.js:** `npx` ships with Node.js, so both commands need
+> Node.js already installed. On a brand-new machine that doesn't have it yet,
+> start with [Fresh machine setup](#fresh-machine-setup) below — it installs
+> fnm + Node.js first, then runs devsetup for you.
+
 `--doctor` inspects your machine, changes nothing, and prints a copy-pasteable fix
 under anything that's broken.
 
@@ -46,7 +51,7 @@ Or skip the profile prompt by passing a flag:
 
 ```bash
 npx @vpnsin-labs/devsetup --essentials  # Everyday apps for a new laptop
-npx @vpnsin-labs/devsetup --bootcamp    # First-time setup — Git, Node, VS Code, Ollama
+npx @vpnsin-labs/devsetup --bootcamp    # First-time setup — Git, Node, VS Code, Postman
 npx @vpnsin-labs/devsetup --js          # Minimal JavaScript dev
 npx @vpnsin-labs/devsetup --web         # Web + Docker + Supabase + MongoDB
 npx @vpnsin-labs/devsetup --mobile      # Android + iOS (Xcode CLI)
@@ -72,6 +77,9 @@ npx @vpnsin-labs/devsetup --edge
 
 # VS Code (recommended extensions + settings & keybindings)
 npx @vpnsin-labs/devsetup --vscode
+
+# Ollama — install the local-AI runtime on its own
+npx @vpnsin-labs/devsetup --ollama
 ```
 
 ## Profiles
@@ -79,7 +87,7 @@ npx @vpnsin-labs/devsetup --vscode
 | Profile        | Automatically installed | Optional (prompted)                                                                                                                                |
 | -------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **essentials** | git                     | VS Code, Notepad++ (Windows), GitHub Desktop, GitHub CLI, Google Chrome, VLC, 7-Zip (Windows), PowerToys (Windows), Obsidian                       |
-| **bootcamp**   | git, fnm, Node.js LTS   | VS Code, GitHub CLI, Ollama, Postman — a lean first-time setup, no Docker/WSL2                                                                     |
+| **bootcamp**   | git, fnm, Node.js LTS   | VS Code, GitHub CLI, Postman — a lean first-time setup, no Docker/WSL2                                                                             |
 | **js**         | git, fnm, Node.js LTS   | pnpm, GitHub CLI, VS Code, Bun, GitHub Desktop, Windows Terminal                                                                                   |
 | **web**        | git, fnm, Node.js LTS   | pnpm, GitHub CLI, VS Code, Bun, WSL 2 (Windows), Docker, Supabase CLI, MongoDB, Postman, GitHub Desktop                                            |
 | **mobile**     | git, fnm, Java 17       | VS Code, Xcode CLI, Android Studio, Watchman, CocoaPods, Flutter                                                                                   |
@@ -105,10 +113,8 @@ Doctor — bootcamp checklist
   ✘ Git identity         user.email not set
     → devsetup --identity
   ✔ VS Code              1.96.2
-  ! Ollama               not found (optional)
-    → devsetup --bootcamp
 
-  5 of 8 checks passed.
+  5 of 7 checks passed.
   ✘ 1 blocking issue: Git identity
 ```
 
@@ -201,6 +207,29 @@ If the `code` command isn't on your PATH, extension install is skipped with a
 hint (install VS Code first via `--essentials`, or add `code` to PATH). Use
 `--dry-run` to preview the exact commands.
 
+## Ollama
+
+`--ollama` installs [Ollama](https://ollama.com) — a runtime for running open AI
+models locally on your own machine — on its own:
+
+```bash
+npx @vpnsin-labs/devsetup --ollama
+```
+
+It installs just the Ollama runtime, using the same ordered-fallback installer as
+everything else (Homebrew on macOS, winget → Scoop on Windows, the official script
+on Linux). Models are downloaded separately and can be several gigabytes, so pull
+one on a fast connection when you're ready:
+
+```bash
+ollama pull llama3   # ~4.7GB
+ollama run llama3
+```
+
+Ollama is intentionally its own command rather than part of a profile — including
+`--full-stack` — so local-AI tooling stays strictly opt-in. Use `--dry-run` to
+preview the install command first.
+
 ## Commands
 
 | Command        | Description                                                                 |
@@ -211,6 +240,7 @@ hint (install VS Code first via `--essentials`, or add `code` to PATH). Use
 | `--docs [dir]` | Generate setup documentation into `[dir]` (default: `./docs`)               |
 | `--edge`       | Set up Microsoft Edge with a curated extensions/settings/bookmarks baseline |
 | `--vscode`     | Install recommended VS Code extensions plus user settings and keybindings   |
+| `--ollama`     | Install Ollama on its own to run AI models locally                          |
 
 Run without a command to pick a tool profile interactively.
 
@@ -254,7 +284,6 @@ For a new laptop — useful whether or not you write code:
 - **GitHub Desktop** — GUI git client (macOS/Windows)
 - **Postman** — API development and testing
 - **Windows Terminal** — modern terminal for Windows
-- **Ollama** — run AI models locally (`ollama pull llama3`)
 
 ### Containers & Kubernetes
 

@@ -28,7 +28,6 @@ If you don't have Node.js yet, start with the bootstrap script instead:
 | **Git** | Saves versions of your code and shares it with your team |
 | **Node.js + npm** | Runs JavaScript outside the browser; npm installs libraries |
 | **VS Code** | The editor you write code in |
-| **Ollama** | Runs AI models locally on your machine (optional) |
 | **Postman** | Tests APIs without building a frontend first |
 | **GitHub CLI** | Talks to GitHub from your terminal |
 
@@ -57,15 +56,6 @@ git config --global user.email "your-github-email@example.com"
 ```
 
 Use the same email as your GitHub account, or your commits won't link to your profile.
-
-## Pull an AI model (optional)
-
-Ollama installs in seconds; the *model* is a few gigabytes. Do this on fast wifi:
-
-```bash
-ollama pull llama3
-ollama run llama3
-```
 
 ## You're ready when…
 

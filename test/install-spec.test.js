@@ -7,6 +7,7 @@ import {
   managerKeyOf,
   isRunnable,
   chooseCandidates,
+  refreshWindowsPath,
 } from '../lib/platform.js';
 import { TOOLS } from '../lib/tools.js';
 
@@ -42,7 +43,10 @@ test('buildInstallCmd produces the original commands for legacy keys', () => {
   assert.equal(buildInstallCmd({ cask: 'docker' }), 'brew install --cask docker');
   assert.equal(buildInstallCmd({ apt: 'jq' }), 'sudo apt-get install -y jq');
   assert.equal(buildInstallCmd({ snap: 'code --classic' }), 'sudo snap install code --classic');
-  assert.equal(buildInstallCmd({ winget: 'Git.Git' }), 'winget install --silent --id Git.Git');
+  assert.equal(
+    buildInstallCmd({ winget: 'Git.Git' }),
+    'winget install --silent --accept-source-agreements --accept-package-agreements --id Git.Git'
+  );
   assert.equal(buildInstallCmd({ npm: 'pnpm' }), 'npm install -g pnpm');
   assert.equal(buildInstallCmd({ script: 'curl x | sh' }), 'curl x | sh');
   assert.equal(buildInstallCmd(null), null);
@@ -64,6 +68,38 @@ test('buildInstallCmd supports the new manager keys', () => {
 test('buildInstallCmd preserves legacy priority for a multi-key object', () => {
   // brew wins over script, matching the pre-change behaviour.
   assert.equal(buildInstallCmd({ script: 'x', brew: 'git' }), 'brew install git');
+});
+
+test('winget installs auto-accept source and package agreements', () => {
+  // Without these flags winget blocks on a first-run agreement prompt that an
+  // unattended install can't answer (stdin is owned by our readline).
+  const cmd = buildInstallCmd({ winget: 'Schniz.fnm' });
+  assert.match(cmd, /--accept-source-agreements/);
+  assert.match(cmd, /--accept-package-agreements/);
+});
+
+// ── refreshWindowsPath ────────────────────────────────────────────────────────
+test('refreshWindowsPath never throws and only ever adds PATH entries', () => {
+  const before = process.env.PATH;
+  assert.doesNotThrow(() => refreshWindowsPath());
+  assert.equal(typeof process.env.PATH, 'string', 'PATH must remain a string');
+  // Off Windows it is a pure no-op; on Windows it is additive but normalizes
+  // (trims, drops empty segments, dedupes case-insensitively). Compare on the
+  // same normalized footing: every real entry present before must still be
+  // present afterwards. (A raw compare would false-fail on a Windows PATH with
+  // a trailing ';' — a common, correctly-dropped empty segment.)
+  const norm = (p) =>
+    new Set(
+      (p ?? '')
+        .split(';')
+        .map((seg) => seg.trim().toLowerCase())
+        .filter(Boolean)
+    );
+  const after = norm(process.env.PATH);
+  for (const dir of norm(before)) {
+    assert.ok(after.has(dir), `refreshWindowsPath dropped an existing PATH entry: ${dir}`);
+  }
+  if (process.platform !== 'win32') assert.equal(process.env.PATH, before);
 });
 
 // ── managerKeyOf ──────────────────────────────────────────────────────────────
